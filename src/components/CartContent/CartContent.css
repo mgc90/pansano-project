@@ -1,0 +1,75 @@
+.cartContent {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    border: 5px solid black;
+    width: 100vh;
+    margin: 0.5vh auto;
+}
+
+.cartContent > img {
+    height: 120px;
+    width: 15vh;
+    height: 15vh;
+    text-align: center;
+}
+
+.cartTotal {
+    margin: auto;
+    font-size: 2.5vh;
+    width: 100vh;
+    border: 5px solid black;
+    text-align: center;
+    padding: 0.5vh;
+}
+
+.cartMessageEmpty {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.counterButton {
+    font-size: 2.5vh;
+    text-align: center;
+    cursor: pointer;
+    font-weight: bold;
+    border: 2px solid black;
+    border-radius: 15%;
+    width: 3vh;
+    margin: 0px 0px; 
+}
+
+.counterButton:hover {
+    background-color: cyan;
+}
+
+.quantyCounter {
+    margin-left: -5vh;
+    text-align: center;
+}
+
+.cartDeleteButton {
+    cursor: pointer;
+    margin-right: 3vh;
+}
+
+.name {
+    width: 45vh;
+    font-size: 2.5vh;
+    margin-left: -7vh;
+    text-align: start;
+}
+
+.price {
+    font-size: 2.5vh;
+    margin-left: -3vh;
+}
+
+.quanty {
+    font-size: 2.5vh;
+    font-weight: bold;
+    margin: 0px 0px;
+    border: 2px solid black;
+    border-radius: 15%;
+}

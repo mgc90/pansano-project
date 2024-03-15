@@ -1,0 +1,50 @@
+.navContainer {
+    position: sticky;
+    z-index: 3;
+    top: 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    height: 9vh;
+    background-color: white;
+    border: 4px groove grey
+}
+
+.navbarLogo {
+    justify-self: start;
+    margin-left: 20px;
+    color: #fff;
+    margin-top: 4vh;
+    cursor: pointer;
+}
+
+.navbarLogo > img {
+    justify-self: self-start;
+    height: 7vh;
+    margin-top: -3vh;
+}
+
+
+.seeCart {
+    font-size: 25px;
+    margin-right: 4vh;
+    margin-top: 4vh;
+    cursor: pointer;
+    text-decoration: none;
+    position: fixed;   
+    top: 0;
+    right: 0;
+}
+
+.cartItemsTotal {
+    background-color: rgb(243, 59, 46);
+    color: white;
+    border-radius: 50%;
+    font-size: 15px;
+    padding: 3px;
+    position: absolute;
+    margin-left: 3.5vh;
+    margin-top: -4vh;
+}

@@ -1,0 +1,58 @@
+[
+    {
+        "id": 1,
+        "name": "Pan Clásico de Masa Madre",
+        "price": 1800,
+        "img": "imgs/clasicoMasaMadre.jpg",
+        "quanty": 1
+    },
+    {
+        "id": 2,
+        "name": "Pan de Campo Integral",
+        "price": 1800,
+        "img": "imgs/campoIntegral.jpg",
+        "quanty": 1
+    },
+    {
+        "id": 3, 
+        "name": "Pan de Campo Sarraceno",
+        "price": 1800,
+        "img":"imgs/campoIntegral.jpg",
+        "quanty": 1
+    },
+    {
+        "id": 4,
+        "name": "Pan Alemán de Centeno",
+        "price": 1900,
+        "img": "imgs/alemanCenteno.jpg",
+        "quanty": 1
+    },
+    {
+        "id": 5,
+        "name": "Pan de Calabaza Asada",
+        "price": 2200,
+        "img": "imgs/calabazaAsada.jpg",
+        "quanty": 1
+    },
+    {
+        "id": 6,
+        "name": "Focaccia",
+        "price": 2500,
+        "img": "imgs/focaccia.jpg",
+        "quanty": 1
+    },
+    {
+        "id": 7,
+        "name": "Prepizzas de Masa Madre de Centeno",
+        "price": 1300,
+        "img": "imgs/prepizza.jpg",
+        "quanty": 1
+    },
+    {
+        "id": 8,
+        "name": "Pastafrola Integral de Peras y Manzanas",
+        "price": 6500,
+        "img": "imgs/pastafrola.jpg",
+        "quanty": 1
+    }
+]
