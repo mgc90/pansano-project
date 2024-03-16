@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/pansano-project/static/css/main.571894cf.css",
-    "main.js": "/pansano-project/static/js/main.d668c933.js",
+    "main.css": "/pansano-project/static/css/main.b34e6a91.css",
+    "main.js": "/pansano-project/static/js/main.03fd45dc.js",
     "static/js/453.782225b2.chunk.js": "/pansano-project/static/js/453.782225b2.chunk.js",
     "static/media/pansanoBanner.jpg": "/pansano-project/static/media/pansanoBanner.ae593a685de467563384.jpg",
     "index.html": "/pansano-project/index.html",
-    "main.571894cf.css.map": "/pansano-project/static/css/main.571894cf.css.map",
-    "main.d668c933.js.map": "/pansano-project/static/js/main.d668c933.js.map",
+    "main.b34e6a91.css.map": "/pansano-project/static/css/main.b34e6a91.css.map",
+    "main.03fd45dc.js.map": "/pansano-project/static/js/main.03fd45dc.js.map",
     "453.782225b2.chunk.js.map": "/pansano-project/static/js/453.782225b2.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.571894cf.css",
-    "static/js/main.d668c933.js"
+    "static/css/main.b34e6a91.css",
+    "static/js/main.03fd45dc.js"
   ]
 }
