@@ -20,9 +20,9 @@ function CartElements() {
   return cart.map((product) => {
     return (
       <div className="cartContent" key={product.id}>
-        <img src={product.img} alt="productCard" />
-        <h3 className="name">{product.name}</h3>
-        <h4 className="price">${product.price * product.quanty},00</h4>
+        <img src={product.img} alt="productCard" title="Imagen del producto" />
+        <h3 className="name" title="Nombre del producto">{product.name}</h3>
+        <h4 className="price" title="Precio del producto en Pesos Argentinos">${product.price * product.quanty},00</h4>
         <CartItemCounter product={product} />
         <h3 className="cartDeleteButton" title="Eliminar del Carrito" onClick={() => deleteProduct(product.id)}>
           ❌

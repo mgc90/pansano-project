@@ -9,7 +9,7 @@ const CartTotal = () => {
 
   return (
     <div className="cartTotal">
-        <h3>Total a Pagar:&nbsp;&nbsp;&nbsp;&nbsp;${total},00 </h3>
+        <h3 title="Total a pagar en Pesos Argentinos">Total a Pagar:&nbsp;&nbsp;&nbsp;&nbsp;${total},00 </h3>
     </div>
   ) 
 }
