@@ -19,7 +19,7 @@ const Products = () => {
         <div className="card" key={product.id}>
             <img src={product.img} alt="imgProductCard" className="imgCard" />
             <h3>{product.name}</h3>
-            <h4 className="price">${product.price}</h4>
+            <h4 className="price">${product.price},00</h4>
             <button onClick={() => buyProducts(product)}>Agregar al Carrito</button>
         </div>
     )
