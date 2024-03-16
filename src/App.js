@@ -1,7 +1,7 @@
 import Home from './components/Home/Home';
 import CartContent from './components/CartContent/CartContent';
 import DataProvider from './components/Context/DataContext';
-import { BrowserRouter, HashRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (

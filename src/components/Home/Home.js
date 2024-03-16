@@ -8,7 +8,7 @@ const Home = () => {
         <Navbar />
         <Banner /> 
         <div className="productCardContainer">
-            <Products />
+         <Products />
         </div>
         
     </div>

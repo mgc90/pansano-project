@@ -25,9 +25,17 @@
     height: 34vh;
 }
 
-.banner p {
+.banner h2 {
     text-align: center;
-    font-size: 50px;
+    font-size: 5vh;
+    color: white;
+    opacity: 0.7;
+    text-shadow: 1px 1px 3px grey;
+}
+
+.banner h3 {
+    text-align: center;
+    font-size: 4vh;
     color: white;
     opacity: 0.7;
     text-shadow: 1px 1px 3px grey;
