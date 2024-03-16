@@ -10,6 +10,9 @@ const Products = () => {
 
   const { buyProducts } = useContext(dataContext);
 
+  const { cart } = useContext(dataContext);
+
+
   useEffect(() => {
     axios.get("data.json").then((res) => setData(res.data));
   }, []);
@@ -18,9 +21,12 @@ const Products = () => {
     return (
         <div className="card" key={product.id}>
             <img src={product.img} alt="imgProductCard" className="imgCard" />
-            <h3>{product.name}</h3>
-            <h4 className="price">${product.price},00</h4>
-            <button onClick={() => buyProducts(product)}>Agregar al Carrito</button>
+            <h3 title="Nombre del producto">{product.name}</h3>
+            <h4 className="price" title="Precio en pesos argentinos">${product.price},00</h4>
+            { cart.some((item) => item.id === product.id) ? 
+            (<button onClick={() => buyProducts(product)} className="yaAgregado" title="Producto ya agregado al carrito">En el Carrito!</button>) : 
+            (<button onClick={() => buyProducts(product)}  title="Agregar producto al carrito" >Agregar al Carrito</button>)}
+            
         </div>
     )
   });

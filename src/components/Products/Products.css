@@ -47,3 +47,16 @@
     opacity: 0.7;
     background-color: coral;
 }
+
+.card .yaAgregado {
+    border: 2px solid grey;
+    outline: 0;
+    padding: 1vh;
+    color: white;
+    background-color:cornflowerblue;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 2svh;
+    font-weight: bold;
+}
