@@ -14,9 +14,9 @@ const CartItemCounter = ({ product }) => {
 
   return (
     <div className="quantyCounter">
-        <button className='counterButton' onClick={() => buyProducts(product)}>+ </button>
+        <button className='counterButton' onClick={decrease}>- </button>
         <p className="quanty"> {product.quanty} </p>
-        <button className='counterButton' onClick={decrease}>-</button>
+        <button className='counterButton' onClick={() => buyProducts(product)}>+</button>
     </div>
   )
 }

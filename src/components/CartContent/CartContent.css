@@ -16,8 +16,8 @@
 }
 
 .cartContent > img {
-    width: 12vh;
-    height: 12vh;
+    width: 10vh;
+    height: 10vh;
 }
 
 .cartMessageEmpty {
@@ -42,8 +42,10 @@
 }
 
 .quantyCounter {
+    display: flex;
     margin: auto;
     text-align: center;
+    flex-direction: row;
 }
 
 .cartDeleteButton {
@@ -52,7 +54,7 @@
 }
 
 .name {
-    width: 40vh;
+    width: 35vh;
     font-size: 2.5vh;
     margin: auto;
     text-align: start;
@@ -69,6 +71,7 @@
     margin: auto;
     border: 2px solid black;
     border-radius: 15%;
+    width: 3vh;
 }
 
 .cartTotal {
