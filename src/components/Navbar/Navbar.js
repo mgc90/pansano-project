@@ -11,12 +11,12 @@ const Navbar = () => {
   return (
     <div className="nav-Container">
         <nav className="navbar">
-          <Link to={"/"}>
+          <Link to={"/"} title="Ir a página principal">
             <h1 className="navbarLogo">
               <img alt="logo" src="imgs/pansanoLogoNegro.png" />
             </h1>
           </Link>
-          <Link className="seeCart" to={"/cart"}>
+          <Link className="seeCart" to={"/cart"} title="Carrito de compras" >
             🛒
             {cart.length > 0 ? <TotalItems /> : null}
           </Link>

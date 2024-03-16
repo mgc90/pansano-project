@@ -50,7 +50,7 @@
 
 .cartDeleteButton {
     cursor: pointer;
-    margin-left: auto;
+    margin-right: 2vh;
 }
 
 .name {
