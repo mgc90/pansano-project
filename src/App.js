@@ -7,11 +7,11 @@ function App() {
   return (
     <DataProvider>
       <HashRouter>
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/cart' element={<CartContent />} />
-      </Routes>
-    </HashRouter>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/cart' element={<CartContent />} />
+        </Routes>
+      </HashRouter>
     </DataProvider>
     
   );

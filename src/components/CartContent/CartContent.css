@@ -1,3 +1,10 @@
+.cartContainer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
 .cartContent {
     display: flex;
     justify-content: space-between;
@@ -5,11 +12,10 @@
     align-items: center;
     border: 5px solid black;
     width: 100vh;
-    margin: 0.5vh auto;
+    margin: auto;
 }
 
 .cartContent > img {
-    height: 120px;
     width: 15vh;
     height: 15vh;
     text-align: center;
@@ -26,7 +32,8 @@
 
 .cartMessageEmpty {
     text-align: center;
-    margin-top: 40px;
+    margin-top: 30vh;
+    font-size: 7vh;
 }
 
 .counterButton {
@@ -37,7 +44,7 @@
     border: 2px solid black;
     border-radius: 15%;
     width: 3vh;
-    margin: 0px 0px; 
+    margin: auto; 
 }
 
 .counterButton:hover {
@@ -45,31 +52,31 @@
 }
 
 .quantyCounter {
-    margin-left: -5vh;
+    margin: auto;
     text-align: center;
 }
 
 .cartDeleteButton {
     cursor: pointer;
-    margin-right: 3vh;
+    margin: auto;
 }
 
 .name {
     width: 45vh;
     font-size: 2.5vh;
-    margin-left: -7vh;
+    margin: auto;
     text-align: start;
 }
 
 .price {
     font-size: 2.5vh;
-    margin-left: -3vh;
+    margin: auto;
 }
 
 .quanty {
     font-size: 2.5vh;
     font-weight: bold;
-    margin: 0px 0px;
+    margin: auto;
     border: 2px solid black;
     border-radius: 15%;
 }
