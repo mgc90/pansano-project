@@ -8,11 +8,12 @@
 }
 
 .card {
-    margin: 2vh 2vh;
+    margin-top: 2vh;
     border: 5px solid black;
     border-radius: 1%;
     width: 30rem;
     height: auto;
+    margin: auto;
 }
 
 
