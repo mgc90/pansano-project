@@ -11,29 +11,29 @@
     flex-wrap: wrap;
     align-items: center;
     border: 5px solid black;
-    width: 100vh;
+    width: 70rem;
     margin: auto;
 }
 
 .cartContent > img {
-    width: 10vh;
-    height: 10vh;
+    width: 10rem;
+    height: 10rem;
 }
 
 .cartMessageEmpty {
     text-align: center;
     margin-top: 30vh;
-    font-size: 7vh;
+    font-size: 5rem;
 }
 
 .counterButton {
-    font-size: 2.5vh;
+    font-size: 1.7rem;
     text-align: center;
     cursor: pointer;
     font-weight: bold;
     border: 2px solid black;
     border-radius: 15%;
-    width: 3vh;
+    width: 2rem;
     margin: auto; 
 }
 
@@ -50,34 +50,34 @@
 
 .cartDeleteButton {
     cursor: pointer;
-    margin-right: 2vh;
+    margin-right: 1.5rem;
 }
 
 .name {
-    width: 35vh;
-    font-size: 2.5vh;
+    width: 30rem;
+    font-size: 2rem;
     margin: auto;
     text-align: start;
 }
 
 .price {
-    font-size: 2.5vh;
+    font-size: 2rem;
     margin: auto;
 }
 
 .quanty {
-    font-size: 2.5vh;
+    font-size: 1.5rem;
     font-weight: bold;
     margin: auto;
     border: 2px solid black;
     border-radius: 15%;
-    width: 3vh;
+    width: 2rem;
 }
 
 .cartTotal {
     margin: auto;
-    font-size: 2.5vh;
-    width: 100vh;
+    font-size: 2.2rem;
+    width: 70rem;
     border: 5px solid black;
     text-align: center;
     
