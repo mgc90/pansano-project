@@ -4,22 +4,22 @@
     flex-wrap: wrap;
     margin: auto;
     text-align: center;
-    
+    align-items: center;
 }
 
 .card {
     margin: 2vh 2vh;
     border: 5px solid black;
     border-radius: 1%;
-    width: 50vh;
+    width: 30rem;
     height: auto;
 }
 
 
 .card > h4 {
     font-size: 2rem;
-    margin: 0px;
-    
+    margin: auto;
+    height: auto;
 }
 
 .card > h3 {
@@ -30,8 +30,8 @@
 }
 
 .imgCard {
-    width: 50vh;
-    height: 40vh;
+    width: 30rem;
+    height: 20rem;
 }
 
 .card button {
