@@ -3,6 +3,7 @@
     justify-content: center;
     flex-wrap: wrap;
     flex-direction: row;
+    margin: auto;
 }
 
 .cartContent {
@@ -11,8 +12,9 @@
     flex-wrap: wrap;
     align-items: center;
     border: 5px solid black;
-    width: 70rem;
     margin: auto;
+    width: 70rem;
+    
 }
 
 .cartContent > img {
@@ -55,7 +57,7 @@
 }
 
 .name {
-    width: 30rem;
+    width: 25rem;
     font-size: 2rem;
     margin: auto;
     text-align: start;
