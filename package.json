@@ -1,5 +1,6 @@
 {
   "name": "pansano-project",
+  "homepage": "https://mgc90.github.io/pansano-project/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
