@@ -2,6 +2,7 @@
     background-size: cover;
     background-position: center;
     height: 50rem;
+    width: auto;
     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
     url("../../../public/imgs/pansanoBanner.jpg");
 }
