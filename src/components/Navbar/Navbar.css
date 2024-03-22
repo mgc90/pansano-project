@@ -41,13 +41,12 @@
 .cartItemsTotal {
     background-color: rgb(243, 59, 46);
     color: white;
-    border-radius: 50%;
-    font-size: 1.5rem;
+    border-radius: 40%;
+    font-size: 1.2rem;
     font-weight: bold;
     margin-left: 3rem;
     margin-top: -2rem;
-    width: 2rem;
-    height: 2rem;
+    width: auto;
     text-align: center;
-    
+    padding: 0 0.5rem;
 }
