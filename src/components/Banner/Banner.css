@@ -1,7 +1,7 @@
 .banner {
     background-size: cover;
     background-position: center;
-    height: 60rem;
+    height: 65rem;
     
     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
     url("../../../public/imgs/pansanoBanner.jpg");
@@ -17,13 +17,13 @@
     margin: 0;
     color: white;
     text-shadow: 1px 1px 3px grey;
-    font-size: 10rem;
+    font-size: 15rem;
     font-weight: bold;
 }
 
 .mainLogo {
     margin-top: 2vh;
-    height: 16.5rem;
+    height: 20rem;
 }
 
 .banner h2 {

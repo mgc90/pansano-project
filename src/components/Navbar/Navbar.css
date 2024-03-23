@@ -11,6 +11,7 @@
     background-color: white;
     border: 0.5rem groove grey; 
     width: auto;
+    align-items: center;
 }
 
 .navbarLogo {
@@ -24,7 +25,7 @@
 .navbarLogo > img {
     justify-self: self-start;
     height: 5rem;
-    margin: 0px 0px;
+    margin: 0px 0px;  
 }
 
 
