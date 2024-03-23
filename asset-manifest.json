@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/pansano-project/static/css/main.c07edecd.css",
-    "main.js": "/pansano-project/static/js/main.19ec2fa7.js",
-    "static/js/453.c27afb05.chunk.js": "/pansano-project/static/js/453.c27afb05.chunk.js",
-    "static/media/pansanoBanner.jpg": "/pansano-project/static/media/pansanoBanner.ae593a685de467563384.jpg",
-    "index.html": "/pansano-project/index.html",
-    "main.c07edecd.css.map": "/pansano-project/static/css/main.c07edecd.css.map",
-    "main.19ec2fa7.js.map": "/pansano-project/static/js/main.19ec2fa7.js.map",
-    "453.c27afb05.chunk.js.map": "/pansano-project/static/js/453.c27afb05.chunk.js.map"
+    "main.css": "/static/css/main.7281985d.css",
+    "main.js": "/static/js/main.55fa8ff5.js",
+    "static/js/453.c27afb05.chunk.js": "/static/js/453.c27afb05.chunk.js",
+    "static/media/pansanoBanner.jpg": "/static/media/pansanoBanner.ae593a685de467563384.jpg",
+    "index.html": "/index.html",
+    "main.7281985d.css.map": "/static/css/main.7281985d.css.map",
+    "main.55fa8ff5.js.map": "/static/js/main.55fa8ff5.js.map",
+    "453.c27afb05.chunk.js.map": "/static/js/453.c27afb05.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c07edecd.css",
-    "static/js/main.19ec2fa7.js"
+    "static/css/main.7281985d.css",
+    "static/js/main.55fa8ff5.js"
   ]
 }
