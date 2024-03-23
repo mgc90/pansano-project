@@ -11,7 +11,7 @@
     margin: 1.5rem 1.5rem;
     border: 5px solid black;
     border-radius: 1%;
-    width: 25rem;
+    width: 23rem;
     height: auto;
     
 }
@@ -31,8 +31,8 @@
 }
 
 .imgCard {
-    width: 25rem;
-    height: 20rem;
+    width: 23rem;
+    height: 18rem;
 }
 
 .card button {
