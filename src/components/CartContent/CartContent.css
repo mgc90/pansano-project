@@ -23,7 +23,7 @@
 }
 
 .name {  
-    width: 35rem;
+    width: 34rem;
     font-size: 1.8rem;
     text-align: start;
     padding-left: 1rem;
@@ -32,7 +32,7 @@
 .price {
     font-size: 1.9rem;
     margin: auto;
-    padding: 0 0.8rem;
+    
 }
 
 .quanty {
@@ -84,7 +84,7 @@
 
 .cartDeleteButton {
     cursor: pointer;
-    margin-right: 1.5rem;
+    margin-right: 1rem;
     font-size: 1.5rem;
     padding: 0 0.8rem;
 }

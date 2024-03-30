@@ -1,7 +1,7 @@
 import { useContext, useState, useEffect } from "react";
 import { dataContext } from "../Context/DataContext";
+import { getAllProductos } from "../../api/productos.api";
 
-import axios from "axios";
 
 import "./Products.css"
 
@@ -14,7 +14,7 @@ const Products = () => {
 
 
   useEffect(() => {
-    axios.get("data.json").then((res) => setData(res.data));
+    getAllProductos().then((res) => setData(res.data));
   }, []);
 
   return data.map((product) => {
