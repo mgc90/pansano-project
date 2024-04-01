@@ -1,6 +1,7 @@
 import {BsCart3, BsFillArchiveFill, BsFillGearFill, BsFillGrid3X3GapFill, BsGrid1X2Fill, BsListCheck, BsMenuButtonWideFill, BsPeopleFill} 
 from 'react-icons/bs';
 import "./Sidebar.css";
+import { Link } from 'react-router-dom';
 
 const Sidebar = ({openSidebarToggle, OpenSidebar}) => {
   return (
@@ -14,11 +15,14 @@ const Sidebar = ({openSidebarToggle, OpenSidebar}) => {
 
         <ul className='sidebar-list'>
             <li className='sidebar-list-item'>
+                <Link to={"/admin"} title='Volver al dashboard' >
                 <a href='a'>
                     <BsGrid1X2Fill className='icon'/> Dashboard
                 </a>
+                </Link> 
             </li>
             <li className='sidebar-list-item'>
+                
                 <a href='b'>
                     <BsFillArchiveFill className='icon'/> Productos
                 </a>

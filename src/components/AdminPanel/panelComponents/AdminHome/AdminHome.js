@@ -20,7 +20,7 @@ const AdminHome = () => {
                     <h3>PRODUCTOS</h3>
                     <BsFillArchiveFill className='card-icon' />
                 </div>
-                <h1>1500</h1>
+                <h1>10</h1>
             </div>
             <div className='categories' id='card'>
                 <div className='card-inner' >

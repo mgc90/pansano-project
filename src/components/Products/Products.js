@@ -1,6 +1,6 @@
 import { useContext, useState, useEffect } from "react";
 import { dataContext } from "../Context/DataContext";
-import { getAllProductos } from "../../api/productos.api";
+import getAllProductos from "../../api/productos.api";
 
 
 import "./Products.css"
@@ -24,7 +24,9 @@ const Products = () => {
             <h3 title="Nombre del producto">{product.name}</h3>
             <h4 className="price" title="Precio en pesos argentinos">${product.price},00</h4>
             { cart.some((item) => item.id === product.id) ? 
-            (<button onClick={() => buyProducts(product)} className="yaAgregado" title="Producto ya agregado al carrito">En el Carrito!</button>) : 
+            (<button onClick={() => buyProducts(product)} className="yaAgregado" title="Producto ya agregado al carrito">
+              En el Carrito({cart.map(item => item.id === product.id && item.quanty)})
+              </button>) : 
             (<button onClick={() => buyProducts(product)}  title="Agregar producto al carrito" >Agregar al Carrito</button>)}
             
         </div>
