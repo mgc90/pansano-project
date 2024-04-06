@@ -23,9 +23,9 @@ const Sidebar = ({openSidebarToggle, OpenSidebar}) => {
             </li>
             <li className='sidebar-list-item'>
                 
-                <a href='b'>
+                <Link to={"/admin/productos-dash"} >
                     <BsFillArchiveFill className='icon'/> Productos
-                </a>
+                </Link>
             </li>
             <li className='sidebar-list-item'>
                 <a href='c'>

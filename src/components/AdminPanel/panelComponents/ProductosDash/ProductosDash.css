@@ -1,0 +1,30 @@
+.cell {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+    border: 5px solid black;
+    margin: auto;
+    width: 60rem;
+    justify-content: space-between;
+}
+
+.imgList {
+    width: 7rem;
+    height: 7rem;
+    margin: 0;
+}
+
+.name-admin {
+    font-size: 1.5rem;
+    padding: 0 2rem;
+    margin-left: 2rem;
+    text-align: start;
+}
+
+.price-admin {
+  
+    margin-right: 2rem;
+    font-size: 1.5rem;
+}

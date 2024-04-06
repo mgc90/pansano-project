@@ -17,6 +17,8 @@ const Products = () => {
     getAllProductos().then((res) => setData(res.data));
   }, []);
 
+  console.log(data)
+
   return data.map((product) => {
     return (
         <div className="card" key={product.id}>
