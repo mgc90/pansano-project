@@ -16,9 +16,7 @@ const Sidebar = ({openSidebarToggle, OpenSidebar}) => {
         <ul className='sidebar-list'>
             <li className='sidebar-list-item'>
                 <Link to={"/admin"} title='Volver al dashboard' >
-                <a href='a'>
                     <BsGrid1X2Fill className='icon'/> Dashboard
-                </a>
                 </Link> 
             </li>
             <li className='sidebar-list-item'>

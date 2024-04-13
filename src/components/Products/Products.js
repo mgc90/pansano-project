@@ -1,6 +1,6 @@
 import { useContext, useState, useEffect } from "react";
 import { dataContext } from "../Context/DataContext";
-import getAllProductos from "../../api/productos.api";
+import { getAllProductos } from "../../api/productos.api";
 
 
 import styles from "./Products.module.css"
@@ -18,7 +18,7 @@ const Products = () => {
     getAllProductos().then((res) => setData(res.data));
   }, []);
 
-  console.log(data)
+  /*console.log(data)*/
 
   return data.map((product) => {
     return (

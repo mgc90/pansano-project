@@ -18,7 +18,7 @@ const AdminPanel = () => {
     <div className="grid-container">
         <Header OpenSidebar={OpenSidebar} />
         <Sidebar openSidebarToggle={openSidebarToggle} OpenSidebar={OpenSidebar}/>
-        
+        <AdminHome /> 
     </div>
   )
 }
