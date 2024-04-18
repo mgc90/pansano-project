@@ -2,6 +2,7 @@
 import { updateProducto, deleteProducto, createProducto, getAllProductos } from '../../../../api/productos.api';
 import "./ProductosList.css"
 import 'primeicons/primeicons.css';
+import '/node_modules/primeflex/primeflex.css'
 
 import React, { useState, useEffect, useRef } from 'react';
 import { classNames } from 'primereact/utils';
@@ -9,7 +10,7 @@ import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
 import { Toast } from 'primereact/toast';
 import { Button } from 'primereact/button';
-
+import { FileUpload } from 'primereact/fileupload';
 import { Toolbar } from 'primereact/toolbar';
 import { InputTextarea } from 'primereact/inputtextarea';
 
@@ -17,7 +18,7 @@ import { InputNumber } from 'primereact/inputnumber';
 import { Dialog } from 'primereact/dialog';
 import { InputText } from 'primereact/inputtext';
 
-
+import axios from 'axios';
 
 
 
@@ -43,9 +44,15 @@ export default function ProductsDemo() {
     const toast = useRef(null);
     const dt = useRef(null);
 
-    useEffect(() => {
+    /*HOOK PARA LLAMAR PRODUCTOS DESDE EL SERVER DJANGO */
+    /*useEffect(() => {
         getAllProductos().then((res) => setProducts(res.data));
-      }, []);
+      }, []);*/
+
+      /*HOOK PARA LLAMAR PRODUCTOS DESDE JSON LOCAL */
+      useEffect(() => {
+        axios("data.json").then((res) => setProducts(res.data));
+    }, []);
 
     const formatCurrency = (value) => {
         return value.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
@@ -194,7 +201,7 @@ export default function ProductsDemo() {
     };
 
     const imageBodyTemplate = (rowData) => {
-        return <img src={`${rowData.img}`} alt={rowData.img} className="shadow-2 border-round" style={{ width: '64px' }} />;
+        return <img src={`${rowData.img}`} alt={rowData.img} className="shadow-2" style={{ width: '4rem', height: '4rem' }} />;
     };
 
     const priceBodyTemplate = (rowData) => {
@@ -247,25 +254,38 @@ export default function ProductsDemo() {
     return (
         <div className='totalComponent'>
             <Toast ref={toast} />
-            <div className="card">
+            <div className="card" >
                 <Toolbar className="mb-4" left={leftToolbarTemplate} right={rightToolbarTemplate}></Toolbar>
 
-                <DataTable ref={dt} value={products} selection={selectedProducts} onSelectionChange={(e) => setSelectedProducts(e.value) }
+                <DataTable ref={dt} value={products} selection={selectedProducts} onSelectionChange={(e) => setSelectedProducts(e.value) } fit 
                         dataKey="id"  paginator rows={25} rowsPerPageOptions={[5, 10, 25, 50]} key={product.id}
                         paginatorTemplate="FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink CurrentPageReport RowsPerPageDropdown"
                         currentPageReportTemplate="Showing {first} to {last} of {totalRecords} products" globalFilter={globalFilter} header={header} >
                     <Column selectionMode="multiple" exportable={false}></Column>
                     <Column field="id" header="ID" sortable ></Column>
                     <Column field="name" header="Nombre" sortable ></Column>
-                    <Column field="img" header="Imagen" body={imageBodyTemplate}  ></Column>
+                    <Column field="img" header="Imagen" body={imageBodyTemplate} ></Column>
                     <Column field="price" header="Precio" body={priceBodyTemplate} sortable ></Column>
-                    
-                    <Column body={actionBodyTemplate} exportable={false} style={{ minWidth: '12rem' }}></Column>
+                    <Column body={actionBodyTemplate} exportable={false} ></Column>
                 </DataTable>
             </div>
 
             <Dialog visible={productDialog} style={{ width: '32rem' }} breakpoints={{ '960px': '75vw', '641px': '90vw' }} header="Product Details" modal className="p-fluid" footer={productDialogFooter} onHide={hideDialog}>
-                {product.img && <img src={`${product.img}`} alt={product.img} className="product-image block m-auto pb-3" />}
+                <div className="field">
+                    <label htmlFor="img" className="font-bold">
+                        Imagen
+                    </label>
+                    {product.img && <img src={`${product.img}`} style={{ width: '15rem', height: '15rem' }} alt={product.img} className="product-image block m-auto pb-3" />}
+                    <div style={{display: 'flex'}}>
+                    <InputText id="img" value={product.img} onChange={(e) => onInputChange(e, 'img')} required autoFocus className={classNames({ 'p-invalid': submitted && !product.img })} style={{ width: '20rem'}} />
+                    <FileUpload  FileNameElement={product.img} mode="basic" name="demo[]" url="/public/imgs" accept="image/*" maxFileSize={1000000} /> 
+                    </div>
+                    
+                    
+                    
+                    {submitted && !product.img && <small className="p-error">Image is required.</small>}
+                    </div>
+
                 <div className="field">
                     <label htmlFor="name" className="font-bold">
                         Nombre
@@ -283,13 +303,7 @@ export default function ProductsDemo() {
                         <InputNumber id="price" value={product.price} onValueChange={(e) => onInputNumberChange(e, 'price')} mode="currency" currency="USD" locale="en-US" />
                     </div>
 
-                    <div className="field">
-                    <label htmlFor="img" className="font-bold">
-                        Imagen
-                    </label>
-                    <InputText id="img" value={product.img} onChange={(e) => onInputChange(e, 'img')} required autoFocus className={classNames({ 'p-invalid': submitted && !product.img })} />
-                    {submitted && !product.img && <small className="p-error">Image is required.</small>}
-                    </div>
+                    
 
                     <div className="field col">
                         <label htmlFor="quanty" className="font-bold">

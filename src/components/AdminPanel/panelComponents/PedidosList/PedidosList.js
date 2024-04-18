@@ -6,17 +6,16 @@ import { Column } from 'primereact/column';
 
 import { Toast } from 'primereact/toast';
 import { Button } from 'primereact/button';
-import { FileUpload } from 'primereact/fileupload';
+
 
 import { Toolbar } from 'primereact/toolbar';
-import { InputTextarea } from 'primereact/inputtextarea';
-import { RadioButton } from 'primereact/radiobutton';
 import { InputNumber } from 'primereact/inputnumber';
 import { Dialog } from 'primereact/dialog';
 import { InputText } from 'primereact/inputtext';
 import { Tag } from 'primereact/tag';
 
 import axios from 'axios';
+
 
 export default function PedidosList() {
     let emptyorder = {
@@ -275,19 +274,19 @@ export default function PedidosList() {
             <div className="card">
                 <Toolbar className="mb-4" left={leftToolbarTemplate} right={rightToolbarTemplate}></Toolbar>
 
-                <DataTable ref={dt} value={orders} selection={selectedorders} onSelectionChange={(e) => setSelectedorders(e.value)}
+                <DataTable ref={dt} value={orders} selection={selectedorders} onSelectionChange={(e) => setSelectedorders(e.value)} fit
                         dataKey="id"  paginator rows={10} rowsPerPageOptions={[5, 10, 25]}
                         paginatorTemplate="FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink CurrentPageReport RowsPerPageDropdown"
                         currentPageReportTemplate="Showing {first} to {last} of {totalRecords} orders" globalFilter={globalFilter} header={header}>
-                    <Column selectionMode="multiple" exportable={false}></Column>
-                    <Column field="id" header="ID" sortable style={{ minWidth: '12rem' }}></Column>
-                    <Column field="zone" header="Zona" sortable style={{ minWidth: '16rem' }}></Column>
-                    <Column field="customer-name" header="Cliente" sortable style={{ minWidth: '10rem' }}></Column>
-                    <Column field="total" header="Total" body={totalBodyTemplate} sortable style={{ minWidth: '8rem' }}></Column>
+                    <Column className='column' selectionMode="multiple" exportable={false}></Column>
+                    <Column className='column' field="id" header="ID" sortable ></Column>
+                    <Column className='column' field="zone" header="Zona" sortable ></Column>
+                    <Column className='column' field="customer-name" header="Cliente" sortable ></Column>
                     
-                    <Column field="receptionStatus" header="Enterga" body={receptionStatusBodyTemplate} sortable style={{ minWidth: '12rem' }}></Column>
-                    <Column field="pay-status" header="Pago" body={payStatusBodyTemplate} sortable style={{ minWidth: '12rem' }}></Column>
-                    <Column body={actionBodyTemplate} exportable={false} style={{ minWidth: '12rem' }}></Column>
+                    <Column className='column' field="total" header="Total" body={totalBodyTemplate} sortable ></Column>
+                    <Column className='column' field="receptionStatus" header="Enterga" body={receptionStatusBodyTemplate} sortable ></Column>
+                    <Column className='column' field="pay-status" header="Pago" body={payStatusBodyTemplate} sortable ></Column>
+                    <Column className='column' body={actionBodyTemplate} exportable={false} ></Column>
                 </DataTable>
             </div>
 
