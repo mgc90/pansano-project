@@ -2,3 +2,6 @@
     grid-area: main;
 }
 
+.grid-container {
+    margin: 0;
+}

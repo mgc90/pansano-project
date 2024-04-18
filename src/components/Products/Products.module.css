@@ -6,14 +6,17 @@
     text-align: center;
     padding: 0 2rem;
     background: white;
+    margin: 0;
+    padding: 0;
 }
 
 .product-card {
     margin: 2rem;
     border: 5px solid black;
     border-radius: 1%;
-    width: 23.5rem;
+    width: 25rem;
     height: auto;
+    padding: 0;
 }
 
 
@@ -22,6 +25,7 @@
     margin: auto;
     height: auto;
     color: black;
+    padding: 1rem;
 }
 
 .product-card > h3 {
@@ -30,6 +34,7 @@
     height: 5rem;
     line-height: 2.2rem;
     color:black;
+    padding: 0;
 }
 
 .imgCard {

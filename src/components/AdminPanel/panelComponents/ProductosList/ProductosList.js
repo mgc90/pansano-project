@@ -22,6 +22,7 @@ import axios from 'axios';
 
 
 
+
 export default function ProductsDemo() {
     let emptyProduct = {
         
@@ -190,18 +191,18 @@ export default function ProductsDemo() {
     const leftToolbarTemplate = () => {
         return (
             <div className="flex flex-wrap gap-2">
-                <Button label="New" icon="pi pi-plus" severity="success" onClick={openNew} />
-                <Button label="Delete" icon="pi pi-trash" severity="danger" onClick={confirmDeleteSelected} disabled={!selectedProducts || !selectedProducts.length} />
+                <Button label="Nuevo" icon="pi pi-plus" severity="success" onClick={openNew} />
+                <Button label="Borrar" icon="pi pi-trash" severity="danger" onClick={confirmDeleteSelected} disabled={!selectedProducts || !selectedProducts.length} />
             </div>
         );
     };
 
     const rightToolbarTemplate = () => {
-        return <Button label="Export" icon="pi pi-upload" className="p-button-help" onClick={exportCSV} />;
+        return <Button label="Exportar" icon="pi pi-upload" className="p-button-help" onClick={exportCSV} />;
     };
 
     const imageBodyTemplate = (rowData) => {
-        return <img src={`${rowData.img}`} alt={rowData.img} className="shadow-2" style={{ width: '4rem', height: '4rem' }} />;
+        return <img src={`${rowData.img}`} alt={rowData.img} className="shadow-2" style={{ width: '3rem', height: '3rem' }} />;
     };
 
     const priceBodyTemplate = (rowData) => {
@@ -209,8 +210,7 @@ export default function ProductsDemo() {
     };
 
  
-
- 
+   
 
     const actionBodyTemplate = (rowData) => {
         return (
@@ -225,10 +225,10 @@ export default function ProductsDemo() {
 
     const header = (
         <div className="flex flex-wrap gap-2 align-items-center justify-content-between">
-            <h4 className="m-0">Manage Products</h4>
+            <h4 className="m-0">Administrar Productos</h4>
             <span className="p-input-icon-left">
                 <i className="pi pi-search" />
-                <InputText type="search" onInput={(e) => setGlobalFilter(e.target.value)} placeholder="Search..." />
+                <InputText type="search" onInput={(e) => setGlobalFilter(e.target.value)} placeholder="Buscar..." />
             </span>
         </div>
     );
@@ -257,20 +257,24 @@ export default function ProductsDemo() {
             <div className="card" >
                 <Toolbar className="mb-4" left={leftToolbarTemplate} right={rightToolbarTemplate}></Toolbar>
 
-                <DataTable ref={dt} value={products} selection={selectedProducts} onSelectionChange={(e) => setSelectedProducts(e.value) } fit 
-                        dataKey="id"  paginator rows={25} rowsPerPageOptions={[5, 10, 25, 50]} key={product.id}
-                        paginatorTemplate="FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink CurrentPageReport RowsPerPageDropdown"
-                        currentPageReportTemplate="Showing {first} to {last} of {totalRecords} products" globalFilter={globalFilter} header={header} >
-                    <Column selectionMode="multiple" exportable={false}></Column>
-                    <Column field="id" header="ID" sortable ></Column>
-                    <Column field="name" header="Nombre" sortable ></Column>
+                <DataTable ref={dt} value={products} selection={selectedProducts} onSelectionChange={(e) => setSelectedProducts(e.value) } 
+                        reorderableColumns reorderableRows onRowReorder={(e) => setProducts(e.value)}  responsiveLayout="stack" breakpoint='600px'
+                        dataKey="id"  paginator rows={25} rowsPerPageOptions={[5, 10, 25, 50]} key={product.id} fit={true} showGridlines={true}
+                        paginatorTemplate="FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink CurrentPageReport RowsPerPageDropdown" 
+                        currentPageReportTemplate="Mostrando {first} a {last} de {totalRecords} productos" globalFilter={globalFilter} header={header} >
+                    
+                    
+                    <Column  key="seleccionar" columnKey='seleccionar' selectionMode="multiple" exportable={false}  ></Column>
+                    <Column field="id" header="ID" sortable key="id" columnKey="id" ></Column>
+                    <Column field="name" header="Nombre" sortable key="name" columnKey="name" ></Column>
                     <Column field="img" header="Imagen" body={imageBodyTemplate} ></Column>
                     <Column field="price" header="Precio" body={priceBodyTemplate} sortable ></Column>
-                    <Column body={actionBodyTemplate} exportable={false} ></Column>
+                    <Column header="Edit" key="editar" columnKey='editar' body={actionBodyTemplate} exportable={false} ></Column>
+                    <Column header="Mover" key="mover" columnKey='mover' rowReorder style={{ minWidth: '3rem' }} />
                 </DataTable>
             </div>
 
-            <Dialog visible={productDialog} style={{ width: '32rem' }} breakpoints={{ '960px': '75vw', '641px': '90vw' }} header="Product Details" modal className="p-fluid" footer={productDialogFooter} onHide={hideDialog}>
+            <Dialog visible={productDialog} style={{ width: '30rem' }} breakpoints={{ '960px': '75vw', '641px': '90vw' }} header="Product Details" modal className="p-fluid" footer={productDialogFooter} onHide={hideDialog}>
                 <div className="field">
                     <label htmlFor="img" className="font-bold">
                         Imagen
@@ -326,7 +330,7 @@ export default function ProductsDemo() {
                     <i className="pi pi-exclamation-triangle mr-3" style={{ fontSize: '2rem' }} />
                     {product && (
                         <span>
-                            Are you sure you want to delete <b>{product.name}</b>?
+                            ¿Seguro desea borrar<b>{product.name}</b>?
                         </span>
                     )}
                 </div>
@@ -335,7 +339,7 @@ export default function ProductsDemo() {
             <Dialog visible={deleteProductsDialog} style={{ width: '32rem' }} breakpoints={{ '960px': '75vw', '641px': '90vw' }} header="Confirm" modal footer={deleteProductsDialogFooter} onHide={hideDeleteProductsDialog}>
                 <div className="confirmation-content">
                     <i className="pi pi-exclamation-triangle mr-3" style={{ fontSize: '2rem' }} />
-                    {product && <span>Are you sure you want to delete the selected products?</span>}
+                    {product && <span>¿Está seguro de borrar el producto seleccionado?</span>}
                 </div>
             </Dialog>
         </div>

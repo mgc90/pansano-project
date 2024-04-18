@@ -1,13 +1,11 @@
+import "./PedidosList.css"
 
 import React, { useState, useEffect, useRef } from 'react';
 import { classNames } from 'primereact/utils';
 import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
-
 import { Toast } from 'primereact/toast';
 import { Button } from 'primereact/button';
-
-
 import { Toolbar } from 'primereact/toolbar';
 import { InputNumber } from 'primereact/inputnumber';
 import { Dialog } from 'primereact/dialog';
@@ -174,14 +172,14 @@ export default function PedidosList() {
     const leftToolbarTemplate = () => {
         return (
             <div className="flex flex-wrap gap-2">
-                <Button label="New" icon="pi pi-plus" severity="success" onClick={openNew} />
-                <Button label="Delete" icon="pi pi-trash" severity="danger" onClick={confirmDeleteSelected} disabled={!selectedorders || !selectedorders.length} />
+                <Button label="Nuevo" icon="pi pi-plus" severity="success" onClick={openNew} />
+                <Button label="Borrar" icon="pi pi-trash" severity="danger" onClick={confirmDeleteSelected} disabled={!selectedorders || !selectedorders.length} />
             </div>
         );
     };
 
     const rightToolbarTemplate = () => {
-        return <Button label="Export" icon="pi pi-upload" className="p-button-help" onClick={exportCSV} />;
+        return <Button label="Exportar" icon="pi pi-upload" className="p-button-help" onClick={exportCSV} />;
     };
 
 
@@ -242,10 +240,10 @@ export default function PedidosList() {
 
     const header = (
         <div className="flex flex-wrap gap-2 align-items-center justify-content-between">
-            <h4 className="m-0">Manage orders</h4>
+            <h4 className="m-0">Administrar Pedidos</h4>
             <span className="p-input-icon-left">
                 <i className="pi pi-search" />
-                <InputText type="search" onInput={(e) => setGlobalFilter(e.target.value)} placeholder="Search..." />
+                <InputText type="search" onInput={(e) => setGlobalFilter(e.target.value)} placeholder="Buscar..." />
             </span>
         </div>
     );
@@ -275,18 +273,19 @@ export default function PedidosList() {
                 <Toolbar className="mb-4" left={leftToolbarTemplate} right={rightToolbarTemplate}></Toolbar>
 
                 <DataTable ref={dt} value={orders} selection={selectedorders} onSelectionChange={(e) => setSelectedorders(e.value)} fit
-                        dataKey="id"  paginator rows={10} rowsPerPageOptions={[5, 10, 25]}
+                        dataKey="id"  paginator rows={10} rowsPerPageOptions={[5, 10, 25]} responsiveLayout="stack" breakpoint='750px' 
+                        reorderableColumns reorderableRows onRowReorder={(e) => setorders(e.value)}
                         paginatorTemplate="FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink CurrentPageReport RowsPerPageDropdown"
-                        currentPageReportTemplate="Showing {first} to {last} of {totalRecords} orders" globalFilter={globalFilter} header={header}>
-                    <Column className='column' selectionMode="multiple" exportable={false}></Column>
-                    <Column className='column' field="id" header="ID" sortable ></Column>
-                    <Column className='column' field="zone" header="Zona" sortable ></Column>
-                    <Column className='column' field="customer-name" header="Cliente" sortable ></Column>
-                    
-                    <Column className='column' field="total" header="Total" body={totalBodyTemplate} sortable ></Column>
-                    <Column className='column' field="receptionStatus" header="Enterga" body={receptionStatusBodyTemplate} sortable ></Column>
-                    <Column className='column' field="pay-status" header="Pago" body={payStatusBodyTemplate} sortable ></Column>
-                    <Column className='column' body={actionBodyTemplate} exportable={false} ></Column>
+                        currentPageReportTemplate="Mostrando {first} de {last} de {totalRecords} pedidos" globalFilter={globalFilter} header={header}>
+                    <Column selectionMode="multiple" exportable={false}></Column>
+                    <Column  field="id" header="ID" sortable ></Column>
+                    <Column  field="zone" header="Zona" sortable ></Column>
+                    <Column  field="customer-name" header="Cliente" sortable ></Column>
+                    <Column  field="total" header="Total" body={totalBodyTemplate} sortable ></Column>
+                    <Column  field="receptionStatus" header="Enterga" body={receptionStatusBodyTemplate} sortable ></Column>
+                    <Column  field="pay-status" header="Pago" body={payStatusBodyTemplate} sortable ></Column>
+                    <Column  body={actionBodyTemplate} exportable={false} ></Column>
+                    <Column header="Mover" key="mover" columnKey='mover' rowReorder style={{ minWidth: '3rem' }} />
                 </DataTable>
             </div>
 
@@ -319,7 +318,7 @@ export default function PedidosList() {
                     <i className="pi pi-exclamation-triangle mr-3" style={{ fontSize: '2rem' }} />
                     {order && (
                         <span>
-                            Are you sure you want to delete <b>{order.name}</b>?
+                            ¿Está seguro que desea eliminar? <b>{order.name}</b>?
                         </span>
                     )}
                 </div>
@@ -328,7 +327,7 @@ export default function PedidosList() {
             <Dialog visible={deleteordersDialog} style={{ width: '32rem' }} breakpoints={{ '960px': '75vw', '641px': '90vw' }} header="Confirm" modal footer={deleteordersDialogFooter} onHide={hideDeleteordersDialog}>
                 <div className="confirmation-content">
                     <i className="pi pi-exclamation-triangle mr-3" style={{ fontSize: '2rem' }} />
-                    {order && <span>Are you sure you want to delete the selected orders?</span>}
+                    {order && <span>¿Está seguro de eliminar el pedido seleccionado?</span>}
                 </div>
             </Dialog>
         </div>
