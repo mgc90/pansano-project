@@ -4,6 +4,7 @@ import DataProvider from './components/Context/DataContext';
 import AdminPanel from './components/AdminPanel/AdminPanel';
 import { HashRouter, Routes, Route } from 'react-router-dom';
 import ProductosDash from './components/AdminPanel/panelComponents/ProductosDash/ProductosDash';
+import PedidosDash from './components/AdminPanel/panelComponents/PedidosDash/PedidosDash';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path='/cart' element={<CartContent />} />
           <Route path='/admin' element={<AdminPanel />} />
           <Route path='/admin/productos-dash' element={<ProductosDash />} />
+          <Route path='/admin/pedidos-dash' element={<PedidosDash />} />
         </Routes>
       </HashRouter>
     </DataProvider>

@@ -1,6 +1,6 @@
 /* Componente de products extraído de primereact desde cuarta linea para abajo tal cual, cambiado el useeffect*/
 import { updateProducto, deleteProducto, createProducto, getAllProductos } from '../../../../api/productos.api';
-import "primereact/resources/themes/mdc-dark-deeppurple/theme.css"
+import "./ProductosList.css"
 import 'primeicons/primeicons.css';
 
 import React, { useState, useEffect, useRef } from 'react';
@@ -245,20 +245,20 @@ export default function ProductsDemo() {
     );
 
     return (
-        <div>
+        <div className='totalComponent'>
             <Toast ref={toast} />
             <div className="card">
                 <Toolbar className="mb-4" left={leftToolbarTemplate} right={rightToolbarTemplate}></Toolbar>
 
                 <DataTable ref={dt} value={products} selection={selectedProducts} onSelectionChange={(e) => setSelectedProducts(e.value) }
-                        dataKey="id"  paginator rows={10} rowsPerPageOptions={[5, 10, 25]} key={product.id}
+                        dataKey="id"  paginator rows={25} rowsPerPageOptions={[5, 10, 25, 50]} key={product.id}
                         paginatorTemplate="FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink CurrentPageReport RowsPerPageDropdown"
                         currentPageReportTemplate="Showing {first} to {last} of {totalRecords} products" globalFilter={globalFilter} header={header} >
                     <Column selectionMode="multiple" exportable={false}></Column>
-                    <Column field="id" header="Code" sortable style={{ minWidth: '5rem' }}></Column>
-                    <Column field="name" header="Name" sortable style={{ minWidth: '20rem' }}></Column>
-                    <Column field="img" header="Image" body={imageBodyTemplate}></Column>
-                    <Column field="price" header="Price" body={priceBodyTemplate} sortable style={{ minWidth: '8rem' }}></Column>
+                    <Column field="id" header="ID" sortable ></Column>
+                    <Column field="name" header="Nombre" sortable ></Column>
+                    <Column field="img" header="Imagen" body={imageBodyTemplate}  ></Column>
+                    <Column field="price" header="Precio" body={priceBodyTemplate} sortable ></Column>
                     
                     <Column body={actionBodyTemplate} exportable={false} style={{ minWidth: '12rem' }}></Column>
                 </DataTable>

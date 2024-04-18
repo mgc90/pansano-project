@@ -1,8 +1,9 @@
 import { useContext, useState, useEffect } from "react";
 import { dataContext } from "../Context/DataContext";
-import { getAllProductos } from "../../api/productos.api";
 
+/*import { getAllProductos } from "../../api/productos.api";*/
 
+import axios from "axios";
 import styles from "./Products.module.css"
 
 const Products = () => {
@@ -13,11 +14,15 @@ const Products = () => {
   const { cart } = useContext(dataContext);
 
   
-
+  /*ESTA FUNCIÓN LLAMA A LOS PRODUCTOS DESDE ARCHIVO JSON */
   useEffect(() => {
-    getAllProductos().then((res) => setData(res.data));
+    axios("data.json").then((res) => setData(res.data));
   }, []);
 
+  /*useEffect(() => {
+    getAllProductos().then((res) => setData(res.data));
+  }, []);*/
+    /*ESTA FUNCIÓN LLAMA A LOS PRODUCTOS DESDE EL SERVER*/ 
   /*console.log(data)*/
 
   return data.map((product) => {

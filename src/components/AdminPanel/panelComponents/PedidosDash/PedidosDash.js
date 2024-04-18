@@ -2,11 +2,10 @@ import Header from "../Header/Header"
 import Sidebar from "../Sidebar/Sidebar"
 import { useState } from "react"
 
-import ProductosList from "../ProductosList/ProductosList"
-import "./ProductosDash.css"
+import PedidosList from "../PedidosList/PedidosList"
 
 
-const ProductosDash = () => {
+const PedidosDash = () => {
 
   const [openSidebarToggle, setOpenSidebarToggle] = useState(false);
 
@@ -18,9 +17,9 @@ const ProductosDash = () => {
     <div className='grid-container'>
       <Header OpenSidebar={OpenSidebar} />
       <Sidebar openSidebarToggle={openSidebarToggle} OpenSidebar={OpenSidebar} />
-      <ProductosList />
+      <PedidosList />
     </div>
   )
 }
 
-export default ProductosDash
+export default PedidosDash

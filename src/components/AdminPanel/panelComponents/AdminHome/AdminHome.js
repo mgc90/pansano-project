@@ -1,5 +1,5 @@
-import {BsFillArchiveFill, BsFillBellFill, BsFillGrid3X3GapFill, BsPeopleFill} 
-from 'react-icons/bs';
+import {BsFillArchiveFill, BsFillBellFill, BsFillGrid3X3GapFill, BsPeopleFill} from 'react-icons/bs';
+import { Link } from 'react-router-dom';
 
 import SimpleBarChart from '../Charts/SimpleBarChart/SimpleBarChart';
 import SimpleLineChart from '../Charts/SimpleLineChart/SimpleLineChart';
@@ -22,13 +22,15 @@ const AdminHome = () => {
                 </div>
                 <h1>10</h1>
             </div>
+            <Link to={"/admin/pedidos-dash"} >
             <div className='categories' id='card'>
-                <div className='card-inner' >
-                    <h3>CATEGORÍAS</h3>
-                    <BsFillGrid3X3GapFill className='card-icon' />
-                </div>
+                    <div className='card-inner' >
+                        <h3>PEDIDOS</h3>
+                        <BsFillGrid3X3GapFill className='card-icon' />
+                    </div>
                 <h1>1500</h1>
             </div>
+            </Link>
             <div className='customers' id='card'>
                 <div className='card-inner'>
                     <h3>CLIENTES</h3>

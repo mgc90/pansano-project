@@ -26,6 +26,11 @@ const Sidebar = ({openSidebarToggle, OpenSidebar}) => {
                 </Link>
             </li>
             <li className='sidebar-list-item'>
+                <Link to={"/admin/pedidos-dash"} >
+                    <BsListCheck className='icon'/> Pedidos
+                </Link>
+            </li>
+            <li className='sidebar-list-item'>
                 <a href='c'>
                     <BsFillGrid3X3GapFill className='icon'/> Categorías
                 </a>
@@ -33,11 +38,6 @@ const Sidebar = ({openSidebarToggle, OpenSidebar}) => {
             <li className='sidebar-list-item'>
                 <a href='d'>
                     <BsPeopleFill className='icon'/> Clientes
-                </a>
-            </li>
-            <li className='sidebar-list-item'>
-                <a href='e'>
-                    <BsListCheck className='icon'/> Inventario
                 </a>
             </li>
             <li className='sidebar-list-item'>
