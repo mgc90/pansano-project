@@ -14,7 +14,7 @@ const AdminHome = () => {
         </div>
 
         <div className='main-cards'>
-            <Link to={"admin/productos-dash"} >
+            <Link to={"admin/productos-dash"} className='link' >
             <div className='productsCard' id='card'>
                 <div className='card-inner'>
                     <h3>PRODUCTOS</h3>
@@ -24,7 +24,7 @@ const AdminHome = () => {
             </div>
             </Link>
             
-            <Link to={"/admin/pedidos-dash"} >
+            <Link to={"/admin/pedidos-dash"} className='link' >
             <div className='categories' id='card'>
                     <div className='card-inner' >
                         <h3>PEDIDOS</h3>

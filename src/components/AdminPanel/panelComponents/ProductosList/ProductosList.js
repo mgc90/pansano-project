@@ -1,5 +1,5 @@
 /* Componente de products extraído de primereact desde cuarta linea para abajo tal cual, cambiado el useeffect*/
-import { updateProducto, deleteProducto, createProducto, getAllProductos } from '../../../../api/productos.api';
+import { updateProducto, deleteProducto, createProducto/*, getAllProductos*/ } from '../../../../api/productos.api';
 import "./ProductosList.css"
 import 'primeicons/primeicons.css';
 import '/node_modules/primeflex/primeflex.css'
