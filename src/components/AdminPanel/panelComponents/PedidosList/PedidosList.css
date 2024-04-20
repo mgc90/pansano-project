@@ -1,7 +1,60 @@
-.totalComponent {
-    grid-area: main;
-}
+/* PrimeReact Responsive CSS */
+.p-datatable .p-datatable-tbody > tr > td > .p-column-title {
+    display: none;
+    font-weight: 600;
+  }
+  
+  @media screen and (max-width: 700px) {
+    .p-datatable .p-datatable-thead > tr > th,
+    .p-datatable .p-datatable-tfoot > tr > td {
+      display: inline-block;
+      padding: 4px;
+    }
+  
+    .p-datatable .p-datatable-tbody > tr > td:not(:last-child) {
+      padding: 0.5rem;
+      border: 0.2px black solid;
+    }
+  
+    .p-datatable .p-datatable-tbody > tr > td {
+      display: flex;
+      width: 100% !important;
+      align-items: center;
+      justify-content: space-between !important;
+      
+    }
+  
+    .p-datatable .p-datatable-tbody > tr > td > .p-column-title {
+      display: block;
+      
+    }
 
-.grid-container {
-    margin: 0;
+    .p-button-help, .new, .delete {
+      display: flex;
+      width: 6rem;
+      padding: 0.7rem 0;
+    }
+
+    .search-bar {
+      margin-top: -2rem;
+    }
+
+    .p-input-icon-left {
+      margin-top: -5px;
+    }
+
+    .moverColumn {
+      display: none;
+    }
+
+    .delete-col-button, .edit-col-button {
+      width: 2rem;
+      height: 1rem;
+    }
+
+    .hidden-header {
+      display: grid;
+      position: fixed;
+      visibility: hidden;
+    }
 }

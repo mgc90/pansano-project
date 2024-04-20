@@ -39,7 +39,7 @@ export default function PedidosList() {
         axios("pedidosData.json").then((res) => setorders(res.data));
     }, []);
 
-    console.log(orders)
+    
 
     const formatCurrency = (value) => {
         return value.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
@@ -171,22 +171,19 @@ export default function PedidosList() {
 
     const leftToolbarTemplate = () => {
         return (
-            <div className="flex flex-wrap gap-2">
-                <Button label="Nuevo" icon="pi pi-plus" severity="success" onClick={openNew} />
-                <Button label="Borrar" icon="pi pi-trash" severity="danger" onClick={confirmDeleteSelected} disabled={!selectedorders || !selectedorders.length} />
+            <div className="flex flex-wrap gap-2 ">
+                <Button label="Nuevo" icon="pi pi-plus" severity="success" onClick={openNew} className="new" />
+                <Button label="Borrar" icon="pi pi-trash" severity="danger" onClick={confirmDeleteSelected} className="delete" disabled={!selectedorders || !selectedorders.length} />
             </div>
         );
     };
 
     const rightToolbarTemplate = () => {
-        return <Button label="Exportar" icon="pi pi-upload" className="p-button-help" onClick={exportCSV} />;
+        return <Button label="Exportar" icon="pi pi-upload" className="p-button-help" onClick={exportCSV}  />;
     };
 
 
-    const totalBodyTemplate = (rowData) => {
-        return formatCurrency(rowData.total);
-    };
-
+    
    
 
     const receptionStatusBodyTemplate = (rowData) => {
@@ -200,8 +197,8 @@ export default function PedidosList() {
     const actionBodyTemplate = (rowData) => {
         return (
             <React.Fragment>
-                <Button icon="pi pi-pencil" rounded outlined className="mr-2" onClick={() => editorder(rowData)} />
-                <Button icon="pi pi-trash" rounded outlined severity="danger" onClick={() => confirmDeleteorder(rowData)} />
+                <Button icon="pi pi-pencil" rounded outlined className="mr-2 edit-col-button" onClick={() => editorder(rowData)} />
+                <Button icon="pi pi-trash" rounded outlined severity="danger" className="delete-col-button" onClick={() => confirmDeleteorder(rowData)} />
             </React.Fragment>
         );
     };
@@ -239,7 +236,7 @@ export default function PedidosList() {
     };
 
     const header = (
-        <div className="flex flex-wrap gap-2 align-items-center justify-content-between">
+        <div className="flex flex-wrap gap-2 align-items-center justify-content-between search-bar">
             <h4 className="m-0">Administrar Pedidos</h4>
             <span className="p-input-icon-left">
                 <i className="pi pi-search" />
@@ -266,26 +263,82 @@ export default function PedidosList() {
         </React.Fragment>
     );
 
+    /*const totalBodyTemplate = (rowData) => {
+        return formatCurrency(rowData.total);
+    };*/
+
+
+    /* Get the column value.
+    */
+   const getValue = (row, field) =>
+   field.split(/\./u).reduce((acc, curr) => {
+     if (acc?.[curr]) {
+       return acc[curr];
+     }
+ 
+     return undefined;
+   }, row);
+
+   const columnValue = (value) => {
+      return (row, { field }) => (
+          <>
+            <span className="p-column-title">{value}</span>
+            {getValue(row, field)}
+          </>
+        )
+   }
+
+   const totalAndCurrencyTemplate = (rowData) => (
+    <>
+      {columnValue("Total")(rowData.total, { field: "total" })}  
+      {formatCurrency(rowData.total)}
+    </>
+  );
+
+  const receptionStatusAndHeaderTemplate =(rowData) => (
+    <>
+      {columnValue("Estado Entrega")(rowData.entrega, { field: "receptionStatus" })}
+      {receptionStatusBodyTemplate(rowData)}  
+    </>
+  )
+
+  const payStatusAndHeaderTemplate = (rowData) => (
+    <>
+      {columnValue("Estado Pago")(rowData.pago, { field: "payStatus" })}
+      {payStatusBodyTemplate(rowData)}
+    </>
+  )
+
+  const editAndHeaderTemplate = (rowData) => (
+    <>
+      {columnValue("Editar")(rowData, { field: "editNoField" })}
+      {actionBodyTemplate(rowData)}
+    </>
+  )
+
+
+
     return (
         <div className='totalComponent'>
             <Toast ref={toast} />
             <div className="card">
                 <Toolbar className="mb-4" left={leftToolbarTemplate} right={rightToolbarTemplate}></Toolbar>
 
-                <DataTable ref={dt} value={orders} selection={selectedorders} onSelectionChange={(e) => setSelectedorders(e.value)} fit
-                        dataKey="id"  paginator rows={10} rowsPerPageOptions={[5, 10, 25]} responsiveLayout="stack" breakpoint='750px' 
+                <DataTable ref={dt} value={orders} selection={selectedorders} onSelectionChange={(e) => setSelectedorders(e.value)} fit="true"
+                        dataKey="id"  paginator rows={10} rowsPerPageOptions={[5, 10, 25]} //responsiveLayout="stack" breakpoint='750px' 
                         reorderableColumns reorderableRows onRowReorder={(e) => setorders(e.value)}
                         paginatorTemplate="FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink CurrentPageReport RowsPerPageDropdown"
                         currentPageReportTemplate="Mostrando {first} de {last} de {totalRecords} pedidos" globalFilter={globalFilter} header={header}>
-                    <Column selectionMode="multiple" exportable={false}></Column>
-                    <Column  field="id" header="ID" sortable ></Column>
-                    <Column  field="zone" header="Zona" sortable ></Column>
-                    <Column  field="customer-name" header="Cliente" sortable ></Column>
-                    <Column  field="total" header="Total" body={totalBodyTemplate} sortable ></Column>
-                    <Column  field="receptionStatus" header="Enterga" body={receptionStatusBodyTemplate} sortable ></Column>
-                    <Column  field="pay-status" header="Pago" body={payStatusBodyTemplate} sortable ></Column>
-                    <Column  body={actionBodyTemplate} exportable={false} ></Column>
-                    <Column header="Mover" key="mover" columnKey='mover' rowReorder style={{ minWidth: '3rem' }} />
+                    <Column headerClassName="hidden-header" selectionMode="multiple" exportable={false}></Column>
+                    <Column  field="id" header="ID" headerClassName="hidden-header" sortable body={columnValue("ID")} ></Column>
+                    <Column  field="zone" header="Zona" sortable body={columnValue("Zona")} ></Column>
+                    <Column  field="customer-name" headerClassName="hidden-header" header="Cliente" sortable body={columnValue("Cliente")} ></Column>
+                    <Column  field="total" header="Total" body={totalAndCurrencyTemplate} sortable ></Column>
+                    <Column  field="receptionStatus" header="Entrega" body={receptionStatusAndHeaderTemplate} sortable ></Column>
+                    <Column  field="payStatus" header="Pago" body={payStatusAndHeaderTemplate} sortable={true} ></Column>
+                    <Column  field="editNoField"  body={editAndHeaderTemplate} exportable={false} ></Column>
+                    <Column  field="moveNoField" body={columnValue("Mover")} key="mover" columnKey='mover' rowReorder className="moverColumn" />
+                    
                 </DataTable>
             </div>
 

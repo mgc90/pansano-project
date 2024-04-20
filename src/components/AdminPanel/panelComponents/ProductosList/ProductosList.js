@@ -258,8 +258,8 @@ export default function ProductsDemo() {
                 <Toolbar className="mb-4" left={leftToolbarTemplate} right={rightToolbarTemplate}></Toolbar>
 
                 <DataTable ref={dt} value={products} selection={selectedProducts} onSelectionChange={(e) => setSelectedProducts(e.value) } 
-                        reorderableColumns reorderableRows onRowReorder={(e) => setProducts(e.value)}  responsiveLayout="stack" breakpoint='600px'
-                        dataKey="id"  paginator rows={25} rowsPerPageOptions={[5, 10, 25, 50]} key={product.id} fit={true} showGridlines={true}
+                        reorderableColumns reorderableRows onRowReorder={(e) => setProducts(e.value)}  //responsiveLayout="stack" breakpoint='600px'
+                        dataKey="id"  paginator rows={25} rowsPerPageOptions={[5, 10, 25, 50]} key={product.id} fit="true" showGridlines="true"
                         paginatorTemplate="FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink CurrentPageReport RowsPerPageDropdown" 
                         currentPageReportTemplate="Mostrando {first} a {last} de {totalRecords} productos" globalFilter={globalFilter} header={header} >
                     
@@ -281,8 +281,8 @@ export default function ProductsDemo() {
                     </label>
                     {product.img && <img src={`${product.img}`} style={{ width: '15rem', height: '15rem' }} alt={product.img} className="product-image block m-auto pb-3" />}
                     <div style={{display: 'flex'}}>
-                    <InputText id="img" value={product.img} onChange={(e) => onInputChange(e, 'img')} required autoFocus className={classNames({ 'p-invalid': submitted && !product.img })} style={{ width: '20rem'}} />
-                    <FileUpload  FileNameElement={product.img} mode="basic" name="demo[]" url="/public/imgs" accept="image/*" maxFileSize={1000000} /> 
+                        <input type="hidden" id="img" value={product.img} onChange={(e) => onInputChange(e, 'img')} required autoFocus className={classNames({ 'p-invalid': submitted && !product.img })} style={{ width: '20rem'}} />
+                        <FileUpload  FileNameElement={product.img} mode="basic" name="demo[]" url="/public/imgs" accept="image/*" maxFileSize={1000000} /> 
                     </div>
                     
                     
