@@ -251,27 +251,59 @@ export default function ProductsDemo() {
         </React.Fragment>
     );
 
+
+    const DataTableWithHeaders = ({ children }) => {
+        useEffect(() => {
+          const tbody = document.querySelector('.p-datatable .p-datatable-tbody');
+          const headerCells = document.querySelectorAll('.p-datatable .p-datatable-thead > tr > th');
+      
+          if (!tbody || !headerCells) return; // Verificar si los elementos existen antes de continuar
+      
+          tbody.querySelectorAll('tr').forEach(row => {
+            const cells = row.querySelectorAll('td');
+            if (!cells) return; // Verificar si hay celdas en la fila antes de continuar
+      
+            cells.forEach((cell, index) => {
+              const headerCell = headerCells[index];
+              if (!headerCell) return; // Verificar si existe un encabezado correspondiente antes de continuar
+      
+              const headerText = headerCell.innerText;
+              if (!cell.dataset.header) { // Asegurarse de que no se agregue el atributo de datos si ya está presente
+                cell.dataset.header = headerText;
+              }
+            });
+          });
+        }, []); // Ejecutar una sola vez al montar el componente
+      
+        return (
+          <DataTable ref={dt} value={products} selection={selectedProducts} onSelectionChange={(e) => setSelectedProducts(e.value) } 
+          reorderableColumns reorderableRows onRowReorder={(e) => setProducts(e.value)}  //responsiveLayout="stack" breakpoint='600px'
+          dataKey="id"  paginator rows={25} rowsPerPageOptions={[5, 10, 25, 50]} key={product.id} fit="true" showGridlines="true"
+          paginatorTemplate="FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink CurrentPageReport RowsPerPageDropdown" 
+          currentPageReportTemplate="Mostrando {first} a {last} de {totalRecords} productos" globalFilter={globalFilter} header={header}>
+            {children}
+          </DataTable>
+        );
+      };
+
+
     return (
         <div className='totalComponent'>
             <Toast ref={toast} />
             <div className="card" >
                 <Toolbar className="mb-4" left={leftToolbarTemplate} right={rightToolbarTemplate}></Toolbar>
 
-                <DataTable ref={dt} value={products} selection={selectedProducts} onSelectionChange={(e) => setSelectedProducts(e.value) } 
-                        reorderableColumns reorderableRows onRowReorder={(e) => setProducts(e.value)}  //responsiveLayout="stack" breakpoint='600px'
-                        dataKey="id"  paginator rows={25} rowsPerPageOptions={[5, 10, 25, 50]} key={product.id} fit="true" showGridlines="true"
-                        paginatorTemplate="FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink CurrentPageReport RowsPerPageDropdown" 
-                        currentPageReportTemplate="Mostrando {first} a {last} de {totalRecords} productos" globalFilter={globalFilter} header={header} >
+                <DataTableWithHeaders  >
                     
                     
                     <Column  key="seleccionar" columnKey='seleccionar' selectionMode="multiple" exportable={false}  ></Column>
-                    <Column field="id" header="ID" sortable key="id" columnKey="id" ></Column>
+                    <Column field="id" header="ID" sortable key="id" headerClassName="id-header" columnKey="id" ></Column>
                     <Column field="name" header="Nombre" sortable key="name" columnKey="name" ></Column>
                     <Column field="img" header="Imagen" body={imageBodyTemplate} ></Column>
                     <Column field="price" header="Precio" body={priceBodyTemplate} sortable ></Column>
-                    <Column header="Edit" key="editar" columnKey='editar' body={actionBodyTemplate} exportable={false} ></Column>
-                    <Column header="Mover" key="mover" columnKey='mover' rowReorder style={{ minWidth: '3rem' }} />
-                </DataTable>
+                    <Column  columnKey='editar' body={actionBodyTemplate} exportable={false} ></Column>
+                    <Column columnKey='mover' rowReorder style={{ minWidth: '3rem' }} />
+                </DataTableWithHeaders>
             </div>
 
             <Dialog visible={productDialog} style={{ width: '30rem' }} breakpoints={{ '960px': '75vw', '641px': '90vw' }} header="Product Details" modal className="p-fluid" footer={productDialogFooter} onHide={hideDialog}>

@@ -57,4 +57,10 @@
       position: fixed;
       visibility: hidden;
     }
+
+    .p-datatable .p-datatable-tbody > tr > td::before {
+      content: attr(data-header);
+    }
+
+    
 }

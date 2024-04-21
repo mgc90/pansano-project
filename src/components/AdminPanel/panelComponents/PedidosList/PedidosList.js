@@ -326,12 +326,13 @@ export default function PedidosList() {
 
                 <DataTable ref={dt} value={orders} selection={selectedorders} onSelectionChange={(e) => setSelectedorders(e.value)} fit="true"
                         dataKey="id"  paginator rows={10} rowsPerPageOptions={[5, 10, 25]} //responsiveLayout="stack" breakpoint='750px' 
-                        reorderableColumns reorderableRows onRowReorder={(e) => setorders(e.value)}
+                        reorderableColumns reorderableRows onRowReorder={(e) => setorders(e.value)}  className="custom-datatable"
                         paginatorTemplate="FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink CurrentPageReport RowsPerPageDropdown"
                         currentPageReportTemplate="Mostrando {first} de {last} de {totalRecords} pedidos" globalFilter={globalFilter} header={header}>
                     <Column headerClassName="hidden-header" selectionMode="multiple" exportable={false}></Column>
                     <Column  field="id" header="ID" headerClassName="hidden-header" sortable body={columnValue("ID")} ></Column>
                     <Column  field="zone" header="Zona" sortable body={columnValue("Zona")} ></Column>
+                    <Column field="ubication" header="Ubicación" body={columnValue("Ubicación")} ></Column>
                     <Column  field="customer-name" headerClassName="hidden-header" header="Cliente" sortable body={columnValue("Cliente")} ></Column>
                     <Column  field="total" header="Total" body={totalAndCurrencyTemplate} sortable ></Column>
                     <Column  field="receptionStatus" header="Entrega" body={receptionStatusAndHeaderTemplate} sortable ></Column>
