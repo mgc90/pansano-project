@@ -44,7 +44,7 @@
         "total": 10000,
         "receptionStatus": "PENDIENTE",
         "payMethod": "MercadoPago",
-        "payStatus": "IMPAGO",
+        "payStatus": "PAGADO",
         "shipment": true,
         "ubication": "https://maps.app.goo.gl/hpC1Q3cmRg7cus3z8",
         "observations": ""
