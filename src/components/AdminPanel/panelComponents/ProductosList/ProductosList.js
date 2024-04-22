@@ -23,6 +23,8 @@ import axios from 'axios';
 
 
 
+
+
 export default function ProductsDemo() {
     let emptyProduct = {
         
@@ -191,8 +193,8 @@ export default function ProductsDemo() {
     const leftToolbarTemplate = () => {
         return (
             <div className="flex flex-wrap gap-2">
-                <Button label="Nuevo" icon="pi pi-plus" severity="success" onClick={openNew} />
-                <Button label="Borrar" icon="pi pi-trash" severity="danger" onClick={confirmDeleteSelected} disabled={!selectedProducts || !selectedProducts.length} />
+                <Button label="Nuevo" icon="pi pi-plus" severity="success" onClick={openNew} className="new" />
+                <Button label="Borrar" icon="pi pi-trash" severity="danger" onClick={confirmDeleteSelected} className="delete" disabled={!selectedProducts || !selectedProducts.length} />
             </div>
         );
     };
@@ -251,59 +253,30 @@ export default function ProductsDemo() {
         </React.Fragment>
     );
 
-
-    const DataTableWithHeaders = ({ children }) => {
-        useEffect(() => {
-          const tbody = document.querySelector('.p-datatable .p-datatable-tbody');
-          const headerCells = document.querySelectorAll('.p-datatable .p-datatable-thead > tr > th');
-      
-          if (!tbody || !headerCells) return; // Verificar si los elementos existen antes de continuar
-      
-          tbody.querySelectorAll('tr').forEach(row => {
-            const cells = row.querySelectorAll('td');
-            if (!cells) return; // Verificar si hay celdas en la fila antes de continuar
-      
-            cells.forEach((cell, index) => {
-              const headerCell = headerCells[index];
-              if (!headerCell) return; // Verificar si existe un encabezado correspondiente antes de continuar
-      
-              const headerText = headerCell.innerText;
-              if (!cell.dataset.header) { // Asegurarse de que no se agregue el atributo de datos si ya está presente
-                cell.dataset.header = headerText;
-              }
-            });
-          });
-        }, []); // Ejecutar una sola vez al montar el componente
-      
-        return (
-          <DataTable ref={dt} value={products} selection={selectedProducts} onSelectionChange={(e) => setSelectedProducts(e.value) } 
-          reorderableColumns reorderableRows onRowReorder={(e) => setProducts(e.value)}  //responsiveLayout="stack" breakpoint='600px'
-          dataKey="id"  paginator rows={25} rowsPerPageOptions={[5, 10, 25, 50]} key={product.id} fit="true" showGridlines="true"
-          paginatorTemplate="FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink CurrentPageReport RowsPerPageDropdown" 
-          currentPageReportTemplate="Mostrando {first} a {last} de {totalRecords} productos" globalFilter={globalFilter} header={header}>
-            {children}
-          </DataTable>
-        );
-      };
-
-
     return (
-        <div className='totalComponent'>
+        <div className="totalComponent">
             <Toast ref={toast} />
             <div className="card" >
                 <Toolbar className="mb-4" left={leftToolbarTemplate} right={rightToolbarTemplate}></Toolbar>
 
-                <DataTableWithHeaders  >
+                <DataTable ref={dt} value={products} selection={selectedProducts} onSelectionChange={(e) => setSelectedProducts(e.value) } 
+                        reorderableColumns reorderableRows onRowReorder={(e) => setProducts(e.value)}  //responsiveLayout="stack" breakpoint='600px'
+                        dataKey="id"  paginator rows={25} rowsPerPageOptions={[5, 10, 25, 50]} key={product.id} fit="true" showGridlines="true"
+                        paginatorTemplate="FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink CurrentPageReport RowsPerPageDropdown" 
+                        currentPageReportTemplate="Mostrando {first} a {last} de {totalRecords} productos" globalFilter={globalFilter} header={header} 
+                        className={"responsiveHeaders"}
+                        >
+                            
                     
+                    <Column  key="seleccionar" columnKey='seleccionar' headerClassName="hidden-header" selectionMode="multiple" exportable={false} className='Seleccionar' ></Column>
+                    <Column field="id"  header="ID" sortable key="id" className="ID" columnKey="id" ></Column>
+                    <Column field="name" header="Nombre" sortable key="name" className="Nombre" columnKey="name" ></Column>
+                    <Column field="img" columnKey='imagen' header="Imagen" key="imagen" headerClassName="hidden-header" className="Imagen" body={imageBodyTemplate} ></Column>
+                    <Column field="price" columnKey='precio' className="Precio" key="precio" header="Precio" body={priceBodyTemplate} sortable ></Column>
+                    <Column className="Editar" headerClassName="hidden-header" header="Editar" key="editar" columnKey='editar' body={actionBodyTemplate} exportable={false} ></Column>
+                    <Column headerClassName="hidden-header" header="Mover"   columnKey='mover' rowReorder className='Mover' > </Column>
                     
-                    <Column  key="seleccionar" columnKey='seleccionar' selectionMode="multiple" exportable={false}  ></Column>
-                    <Column field="id" header="ID" sortable key="id" headerClassName="id-header" columnKey="id" ></Column>
-                    <Column field="name" header="Nombre" sortable key="name" columnKey="name" ></Column>
-                    <Column field="img" header="Imagen" body={imageBodyTemplate} ></Column>
-                    <Column field="price" header="Precio" body={priceBodyTemplate} sortable ></Column>
-                    <Column  columnKey='editar' body={actionBodyTemplate} exportable={false} ></Column>
-                    <Column columnKey='mover' rowReorder style={{ minWidth: '3rem' }} />
-                </DataTableWithHeaders>
+                </DataTable>
             </div>
 
             <Dialog visible={productDialog} style={{ width: '30rem' }} breakpoints={{ '960px': '75vw', '641px': '90vw' }} header="Product Details" modal className="p-fluid" footer={productDialogFooter} onHide={hideDialog}>

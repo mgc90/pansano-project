@@ -263,60 +263,12 @@ export default function PedidosList() {
         </React.Fragment>
     );
 
-    /*const totalBodyTemplate = (rowData) => {
+    const totalBodyTemplate = (rowData) => {
         return formatCurrency(rowData.total);
-    };*/
+    };
 
 
-    /* Get the column value.
-    */
-   const getValue = (row, field) =>
-   field.split(/\./u).reduce((acc, curr) => {
-     if (acc?.[curr]) {
-       return acc[curr];
-     }
- 
-     return undefined;
-   }, row);
-
-   const columnValue = (value) => {
-      return (row, { field }) => (
-          <>
-            <span className="p-column-title">{value}</span>
-            {getValue(row, field)}
-          </>
-        )
-   }
-
-   const totalAndCurrencyTemplate = (rowData) => (
-    <>
-      {columnValue("Total")(rowData.total, { field: "total" })}  
-      {formatCurrency(rowData.total)}
-    </>
-  );
-
-  const receptionStatusAndHeaderTemplate =(rowData) => (
-    <>
-      {columnValue("Estado Entrega")(rowData.entrega, { field: "receptionStatus" })}
-      {receptionStatusBodyTemplate(rowData)}  
-    </>
-  )
-
-  const payStatusAndHeaderTemplate = (rowData) => (
-    <>
-      {columnValue("Estado Pago")(rowData.pago, { field: "payStatus" })}
-      {payStatusBodyTemplate(rowData)}
-    </>
-  )
-
-  const editAndHeaderTemplate = (rowData) => (
-    <>
-      {columnValue("Editar")(rowData, { field: "editNoField" })}
-      {actionBodyTemplate(rowData)}
-    </>
-  )
-
-
+    
 
     return (
         <div className='totalComponent'>
@@ -326,19 +278,21 @@ export default function PedidosList() {
 
                 <DataTable ref={dt} value={orders} selection={selectedorders} onSelectionChange={(e) => setSelectedorders(e.value)} fit="true"
                         dataKey="id"  paginator rows={10} rowsPerPageOptions={[5, 10, 25]} //responsiveLayout="stack" breakpoint='750px' 
-                        reorderableColumns reorderableRows onRowReorder={(e) => setorders(e.value)}  className="custom-datatable"
+                        reorderableColumns reorderableRows onRowReorder={(e) => setorders(e.value)} 
                         paginatorTemplate="FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink CurrentPageReport RowsPerPageDropdown"
-                        currentPageReportTemplate="Mostrando {first} de {last} de {totalRecords} pedidos" globalFilter={globalFilter} header={header}>
-                    <Column headerClassName="hidden-header" selectionMode="multiple" exportable={false}></Column>
-                    <Column  field="id" header="ID" headerClassName="hidden-header" sortable body={columnValue("ID")} ></Column>
-                    <Column  field="zone" header="Zona" sortable body={columnValue("Zona")} ></Column>
-                    <Column field="ubication" header="Ubicación" body={columnValue("Ubicación")} ></Column>
-                    <Column  field="customer-name" headerClassName="hidden-header" header="Cliente" sortable body={columnValue("Cliente")} ></Column>
-                    <Column  field="total" header="Total" body={totalAndCurrencyTemplate} sortable ></Column>
-                    <Column  field="receptionStatus" header="Entrega" body={receptionStatusAndHeaderTemplate} sortable ></Column>
-                    <Column  field="payStatus" header="Pago" body={payStatusAndHeaderTemplate} sortable={true} ></Column>
-                    <Column  field="editNoField"  body={editAndHeaderTemplate} exportable={false} ></Column>
-                    <Column  field="moveNoField" body={columnValue("Mover")} key="mover" columnKey='mover' rowReorder className="moverColumn" />
+                        currentPageReportTemplate="Mostrando {first} de {last} de {totalRecords} pedidos" globalFilter={globalFilter} header={header}
+                        className={"headersPedidos"}
+                        >
+                    <Column headerClassName="hidden-header" key="Seleccionar" selectionMode="multiple" exportable={false}  ></Column>
+                    <Column  field="id" header="ID" headerClassName="hidden-header" className="ID" sortable  ></Column>
+                    <Column  field="zone" header="Zona" sortable className="Zona" ></Column>
+                    <Column field="ubication" header="Ubicación" className="Ubicación" headerClassName="hidden-header" ></Column>
+                    <Column  field="customer-name" headerClassName="hidden-header" className="Cliente" header="Cliente" sortable ></Column>
+                    <Column  field="total" header="Total" body={totalBodyTemplate} sortable className="Total" ></Column>
+                    <Column  field="receptionStatus" header="Entrega" body={receptionStatusBodyTemplate} className="Entrega" sortable ></Column>
+                    <Column  field="payStatus" header="Pago" body={payStatusBodyTemplate} sortable={true} className="Pago" ></Column>
+                    <Column  field="editNoField"  body={actionBodyTemplate} exportable={false} className="Editar" ></Column>
+                    <Column  field="moveNoField" key="mover" columnKey='mover' className="Mover" rowReorder  > </Column>
                     
                 </DataTable>
             </div>

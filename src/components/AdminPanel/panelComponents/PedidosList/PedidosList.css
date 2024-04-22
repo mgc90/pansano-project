@@ -3,6 +3,7 @@
     display: none;
     font-weight: 600;
   }
+
   
   @media screen and (max-width: 700px) {
     .p-datatable .p-datatable-thead > tr > th,
@@ -43,10 +44,6 @@
       margin-top: -5px;
     }
 
-    .moverColumn {
-      display: none;
-    }
-
     .delete-col-button, .edit-col-button {
       width: 2rem;
       height: 1rem;
@@ -58,9 +55,35 @@
       visibility: hidden;
     }
 
-    .p-datatable .p-datatable-tbody > tr > td::before {
-      content: attr(data-header);
+    .Ubicación {
+      word-break: break-all;
     }
 
+    .p-selection-column {
+      border-top: 1rem black solid !important;
+    }
+
+    .Mover {
+      border-left: 1px black solid;
+      border-right: 1px black solid;
+      border-bottom: 1px black solid;
+    }
+
+
+    /*primero llamo al atributo clase para renderizar el contenido del className de mi jsx reenderizado como class html*/
+    td::before {
+      content: attr(class)"";
+      padding-right: 4rem;
+
+    }
+
+    /*aca especifico que la primera diga eso porque si lo pongo por classname me agarra otra cosa*/
+    td:nth-of-type(1):before {
+       content: "Seleccionar"; 
+      }
     
+      td:nth-of-type(4):before {
+        word-break: normal;
+      }  
+
 }
