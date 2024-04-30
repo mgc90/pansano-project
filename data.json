@@ -54,5 +54,13 @@
         "price": 6500,
         "img": "imgs/pastafrola.jpg",
         "quanty": 1
+    },
+    {
+        "id": 9,
+        "name": "LEAN CAPO",
+        "price": 3000,
+        "img": "",
+        "quanty": 1
     }
 ]
+
