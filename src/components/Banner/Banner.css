@@ -1,7 +1,7 @@
 .banner {
     background-size: cover;
     background-position: center;
-    height: 65rem;
+    height: 70%;
     
     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
     url("../../../public/imgs/pansanoBanner.jpg");

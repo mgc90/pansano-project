@@ -27,7 +27,8 @@ import axios from 'axios';
 
 export default function ProductsDemo() {
     let emptyProduct = {
-        
+        id: null,
+        creationDate: "",
         name: '',
         price: 0,
         img: "",
@@ -89,7 +90,7 @@ export default function ProductsDemo() {
 
             if (product.id) {
                 const index = findIndexById(product.id);
-                /* HER IS API FUNCTION TO UPDATE PRODUCT */
+                /* HERE IS THE API FUNCTION TO UPDATE PRODUCT */
                 updateProducto(product.id, product)
                 console.log(product)
                 _products[index] = _product;
@@ -213,7 +214,6 @@ export default function ProductsDemo() {
 
  
    
-
     const actionBodyTemplate = (rowData) => {
         return (
             <React.Fragment>

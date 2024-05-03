@@ -4,8 +4,11 @@
     font-weight: 600;
   }
 
+  .Ubicación {
+    word-break: break-all;
+  }
   
-  @media screen and (max-width: 700px) {
+  @media screen and (max-width: 900px) {
     .p-datatable .p-datatable-thead > tr > th,
     .p-datatable .p-datatable-tfoot > tr > td {
       display: inline-block;
@@ -44,10 +47,10 @@
       margin-top: -5px;
     }
 
-    .delete-col-button, .edit-col-button {
+    /*.delete-col-button, .edit-col-button {
       width: 2rem;
       height: 1rem;
-    }
+    }*/
 
     .hidden-header {
       display: grid;
@@ -55,18 +58,15 @@
       visibility: hidden;
     }
 
-    .Ubicación {
-      word-break: break-all;
-    }
 
     .p-selection-column {
-      border-top: 1rem black solid !important;
+      border-top: 1rem #000029 solid !important;
     }
 
     .Mover {
       border-left: 1px black solid;
       border-right: 1px black solid;
-      border-bottom: 1px black solid;
+      
     }
 
 

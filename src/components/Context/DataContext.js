@@ -11,7 +11,7 @@ const DataProvider = ({children}) => {
         localStorage.setItem("cart", JSON.stringify(cart));
     }, [cart]);
 
-    /*console.log(JSON.stringify(cart))*/
+    //console.log(JSON.stringify(cart))
 
     const buyProducts = (product) => {
         const repeatedProduct = cart.find((item) => item.id === product.id);

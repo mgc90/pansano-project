@@ -10,7 +10,7 @@
     height: 7rem;
     background-color: white;
     border: 0.5rem groove grey; 
-    width: auto;
+    width: 100%;
     align-items: center;
 }
 
