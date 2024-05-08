@@ -31,13 +31,13 @@ const Sidebar = ({openSidebarToggle, OpenSidebar}) => {
                 </Link>
             </li>
             <li className='sidebar-list-item'>
-                <a href='c'>
-                    <BsFillGrid3X3GapFill className='icon'/> Categorías
-                </a>
+                <Link to={"/admin/clientes-dash"}>
+                    <BsPeopleFill className='icon'/> Clientes
+                </Link>
             </li>
             <li className='sidebar-list-item'>
-                <a href='d'>
-                    <BsPeopleFill className='icon'/> Clientes
+                <a href='c'>
+                    <BsFillGrid3X3GapFill className='icon'/> Categorías
                 </a>
             </li>
             <li className='sidebar-list-item'>

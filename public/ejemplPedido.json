@@ -1,4 +1,4 @@
-[
+[[
     {
         "id":2,
         "name":"Pan de Campo Integral",
@@ -22,4 +22,17 @@
         "img":"imgs/campoSarraceno.jpg",
         "quanty":1
     }
+],
+[
+    {
+        "id":2,
+        "name":"Pan de Campo Integral",
+        "price":1800,"img":"imgs/campoIntegral.jpg",
+        "quanty":2},
+        {"id":1,"name":"Pan Clásico de Masa Madre",
+        "price":1800,
+        "img":"imgs/clasicoMasaMadre.jpg",
+        "quanty":2
+    }
+]
 ]

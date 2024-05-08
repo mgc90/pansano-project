@@ -29,7 +29,8 @@ const Products = () => {
     return (
         <div className={styles["product-card"]} key={product.id}>
             <img src={product.img} alt="imgProductCard" className={styles.imgCard} />
-            <h3 title="Nombre del producto">{product.name}</h3>
+            <h2 title="Nombre del producto">{product.name}</h2>
+            <h3 title="Descripción del producto">{product.description}</h3>
             <h4 className={styles.price} title="Precio en pesos argentinos">${product.price},00</h4>
             { cart.some((item) => item.id === product.id) ? 
             (<button onClick={() => buyProducts(product)} className={styles.yaAgregado} title="Producto ya agregado al carrito">

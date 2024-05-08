@@ -271,6 +271,8 @@ export default function ProductsDemo() {
                     <Column  key="seleccionar" columnKey='seleccionar' headerClassName="hidden-header" selectionMode="multiple" exportable={false} className='Seleccionar' ></Column>
                     <Column field="id"  header="ID" sortable key="id" className="ID" columnKey="id" ></Column>
                     <Column field="name" header="Nombre" sortable key="name" className="Nombre" columnKey="name" ></Column>
+                    <Column field='description' header="Descripción" sorteable key="description" className='Descripción' columnKey='description' ></Column>
+                    <Column field='category' header="Categpría" sorteable key="category" className='Categoría' columnKey='category' ></Column>
                     <Column field="img" columnKey='imagen' header="Imagen" key="imagen" headerClassName="hidden-header" className="Imagen" body={imageBodyTemplate} ></Column>
                     <Column field="price" columnKey='precio' className="Precio" key="precio" header="Precio" body={priceBodyTemplate} sortable ></Column>
                     <Column className="Editar" headerClassName="hidden-header" header="Editar" key="editar" columnKey='editar' body={actionBodyTemplate} exportable={false} ></Column>
@@ -287,7 +289,7 @@ export default function ProductsDemo() {
                     {product.img && <img src={`${product.img}`} style={{ width: '15rem', height: '15rem' }} alt={product.img} className="product-image block m-auto pb-3" />}
                     <div style={{display: 'flex'}}>
                         <input type="hidden" id="img" value={product.img} onChange={(e) => onInputChange(e, 'img')} required autoFocus className={classNames({ 'p-invalid': submitted && !product.img })} style={{ width: '20rem'}} />
-                        <FileUpload  FileNameElement={product.img} mode="basic" name="demo[]" url="/public/imgs" accept="image/*" maxFileSize={1000000} /> 
+                        <FileUpload  filenameelement={product.img} mode="basic" name="demo[]" url="/public/imgs" accept="image/*" maxFileSize={1000000} /> 
                     </div>
                     
                     

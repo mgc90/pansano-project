@@ -15,7 +15,7 @@
       padding: 4px;
     }
   
-    .p-datatable .p-datatable-tbody > tr > td:not(:last-child) {
+    .p-datatable .p-datatable-tbody > tr > td {
       padding: 0.5rem;
       border: 0.2px black solid;
     }
@@ -69,11 +69,15 @@
       
     }
 
+    .Detalle {
+      text-align: end;
+      
+    }
 
     /*primero llamo al atributo clase para renderizar el contenido del className de mi jsx reenderizado como class html*/
     td::before {
       content: attr(class)"";
-      padding-right: 4rem;
+      padding-right: 7rem;
 
     }
 

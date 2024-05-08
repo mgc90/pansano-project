@@ -13,6 +13,7 @@ import { InputText } from 'primereact/inputtext';
 import { Tag } from 'primereact/tag';
 import { Dropdown } from "primereact/dropdown";
 import { InputTextarea } from "primereact/inputtextarea";
+import { Calendar } from 'primereact/calendar';
 
 import axios from 'axios';
 
@@ -38,6 +39,12 @@ export default function PedidosList() {
     const [payStatus, setPayStatus] = useState(null);
     const toast = useRef(null);
     const dt = useRef(null);
+
+    const [deliveredDate, setdeliveredDate] = useState(null);
+    const [payDate, setpayDate] = useState(null);
+
+    
+
 
     useEffect(() => {
         axios("pedidosData.json").then((res) => setorders(res.data));
@@ -294,20 +301,25 @@ export default function PedidosList() {
                         reorderableColumns reorderableRows onRowReorder={(e) => setorders(e.value)} 
                         paginatorTemplate="FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink CurrentPageReport RowsPerPageDropdown"
                         currentPageReportTemplate="Mostrando {first} de {last} de {totalRecords} pedidos" globalFilter={globalFilter} header={header}
-                        className={"headersPedidos"}
+                        className={"headersPedidos"} 
                         >
                     <Column headerClassName="hidden-header" key="Seleccionar" selectionMode="multiple" exportable={false}  ></Column>
-                    <Column  field="id" header="N°" headerClassName="hidden-header" className="ID" sortable  ></Column>
-                    <Column  field="zone" header="Zona" sortable className="Zona" ></Column>
+                    <Column field="id" header="N°" headerClassName="hidden-header" className="ID" sortable  ></Column>
+                    <Column field="creationDate" header="Fecha Creado" className="Fecha Creado" sortable ></Column>
+                    <Column field="zone" header="Zona" sortable className="Zona" ></Column>
                     <Column field="ubication" header="Ubicación" className="Ubicación" headerClassName="hidden-header" ></Column>
-                    <Column  field="customerName" headerClassName="hidden-header" className="Cliente" header="Cliente" sortable ></Column>
-                    <Column field="detail" header="Detalle Pedido" className="Detalle Pedido" headerClassName="hidden-header" ></Column>
+                    <Column field="customerName" headerClassName="hidden-header" className="Cliente" header="Cliente" sortable ></Column>
+                    <Column field="customerTel" className="Teléfono" header="Teléfono" sortable ></Column>
+                    <Column field="detail" header="Detalle" className="Detalle" headerClassName="hidden-header" ></Column>
                     <Column field="observations" header="Observaciones" className="Observaciones" headerClassName="hidden-header" ></Column>
-                    <Column  field="total" header="Total" body={totalBodyTemplate} sortable className="Total" ></Column>
-                    <Column  field="receptionStatus" header="Entrega" body={receptionStatusBodyTemplate} className="Entrega" sortable ></Column>
-                    <Column  field="payStatus" header="Pago" body={payStatusBodyTemplate} sortable={true} className="Pago" ></Column>
-                    <Column  field="editNoField"  body={actionBodyTemplate} exportable={false} className="Editar" ></Column>
-                    <Column  field="moveNoField" key="mover" columnKey='mover' className="Mover" rowReorder  > </Column>
+                    <Column field="total" header="Total" body={totalBodyTemplate} sortable className="Total" ></Column>
+                    <Column field="receptionStatus" header="Entrega" body={receptionStatusBodyTemplate} className="Entrega" sortable ></Column>
+                    <Column field="deliveredDate" header="Fecha Entregado" className="Fecha Entregado" sortable ></Column>
+                    <Column field="payStatus" header="Pago" body={payStatusBodyTemplate} sortable className="Pago" ></Column>
+                    <Column field="payDate" header="Fecha Pagado" className="Fecha Pagado" sortable ></Column>
+                    <Column field="payMethod" header="Medio" className="Medio" sortable  ></Column>                     
+                    <Column field="editNoField"  body={actionBodyTemplate} exportable={false} className="Editar" ></Column>
+                    {/*<Column field="moveNoField" key="mover" columnKey='mover' className="Mover" rowReorder  > </Column>*/}
                     
                 </DataTable>
             </div>
@@ -368,6 +380,30 @@ export default function PedidosList() {
                         Entrega
                     </label>
                     <Dropdown value={receptionStatus} onChange={(e) => setReceptionStatus(e.value)} options={receptionStatusOptions} optionLabel="name" placeholder={order.receptionStatus} className="w-full md:w-14rem" />
+                    
+                </div>
+
+                <div className="field">
+                    <label htmlFor="creationDate" className="font-bold">
+                        Fecha Creado
+                    </label>
+                    <InputText id="creationDate" disabled placeholder={order.creationDate}  />
+                   
+                </div>
+
+                <div className="field">
+                    <label htmlFor="deliveredDate" className="font-bold">
+                        Fecha Entregado
+                    </label>
+                    <Calendar value={deliveredDate} onChange={(e) => setdeliveredDate(e.value)} id="deliveredDate" placeholder={order.deliveredDate} className={classNames({ 'p-invalid': submitted && !order.deliveredDate })} dateFormat="dd/mm/yy" />
+                    
+                </div>
+
+                <div className="field">
+                    <label htmlFor="payDate" className="font-bold">
+                        Fecha Pagado
+                    </label>
+                    <Calendar value={payDate} onChange={(e) => setpayDate(e.value)} id="deliveredDate" placeholder={order.payDate} className={classNames({ 'p-invalid': submitted && !order.payDate })} dateFormat="dd/mm/yy" />
                     
                 </div>
 
