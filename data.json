@@ -2,6 +2,8 @@
     {
         "id": 1,
         "name": "Pan Clásico de Masa Madre",
+        "description": "Un pan tradicional que se lleva bien con todo por su rica textura y sabor. La fermentación natural en frío evita la inflamación intestinal.",
+        "category": "Elaboración Propia",
         "price": 1800,
         "img": "imgs/clasicoMasaMadre.jpg",
         "quanty": 1
@@ -9,6 +11,8 @@
     {
         "id": 2,
         "name": "Pan de Campo Integral",
+        "description": "Pan de campo 100% integral con masa madre de centeno y semillas.",
+        "category": "Elaboración Propia",
         "price": 1800,
         "img": "imgs/campoIntegral.jpg",
         "quanty": 1
@@ -16,6 +20,8 @@
     {
         "id": 3, 
         "name": "Pan de Campo Sarraceno",
+        "description": "Disruptivo y semi integral. Su color grisáceo y su textura particular y sabrosa es proporcionado por el Sarraceno.",
+        "category": "Elaboración Propia",
         "price": 1800,
         "img":"imgs/campoSarraceno.jpg",
         "quanty": 1
@@ -23,6 +29,8 @@
     {
         "id": 4,
         "name": "Pan Alemán de Centeno",
+        "description": "Especiado con comino, miel y harina de arroz. El centeno contiene vitaminas del complejo B que brindan múltiples beneficios.",
+        "category": "Elaboración Propia",
         "price": 1900,
         "img": "imgs/alemanCenteno.jpg",
         "quanty": 1
@@ -30,6 +38,8 @@
     {
         "id": 5,
         "name": "Pan de Calabaza Asada",
+        "description": "Condimentado con cúrcuma, pizca de pimienta negra, tomillo y romero. Ideal para acompañar vinos, quesos o Bruschettas.",
+        "category": "Elaboración Propia",
         "price": 2200,
         "img": "imgs/calabazaAsada.jpg",
         "quanty": 1
@@ -37,6 +47,8 @@
     {
         "id": 6,
         "name": "Focaccia",
+        "description": "Con tomates cherry, aceitunas, oliva extra virgen, romero, tomillo y orégano.",
+        "category": "Elaboración Propia",
         "price": 2500,
         "img": "imgs/focaccia.jpg",
         "quanty": 1
@@ -44,6 +56,8 @@
     {
         "id": 7,
         "name": "Prepizzas de Masa Madre de Centeno",
+        "description": "Con aceite de oliva extra virgen, semolín y salsa natural de tomates.",
+        "category": "Elaboración Propia",
         "price": 1300,
         "img": "imgs/prepizza.jpg",
         "quanty": 1
@@ -51,6 +65,8 @@
     {
         "id": 8,
         "name": "Pastafrola Integral de Peras y Manzanas",
+        "description": "100% integral y agroecológica de peras y manzanas. Contiene azúcar mascabo, manteca y huevo.",
+        "category": "Elaboración Propia",
         "price": 6500,
         "img": "imgs/pastafrola.jpg",
         "quanty": 1
