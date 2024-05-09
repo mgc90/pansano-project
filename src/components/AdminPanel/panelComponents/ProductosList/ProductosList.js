@@ -272,7 +272,7 @@ export default function ProductsDemo() {
                     <Column field="id"  header="ID" sortable key="id" className="ID" columnKey="id" ></Column>
                     <Column field="name" header="Nombre" sortable key="name" className="Nombre" columnKey="name" ></Column>
                     <Column field='description' header="Descripción" sorteable key="description" className='Descripción' columnKey='description' ></Column>
-                    <Column field='category' header="Categpría" sorteable key="category" className='Categoría' columnKey='category' ></Column>
+                    <Column field='category' header="Categoría" sorteable key="category" className='Categoría' columnKey='category' ></Column>
                     <Column field="img" columnKey='imagen' header="Imagen" key="imagen" headerClassName="hidden-header" className="Imagen" body={imageBodyTemplate} ></Column>
                     <Column field="price" columnKey='precio' className="Precio" key="precio" header="Precio" body={priceBodyTemplate} sortable ></Column>
                     <Column className="Editar" headerClassName="hidden-header" header="Editar" key="editar" columnKey='editar' body={actionBodyTemplate} exportable={false} ></Column>

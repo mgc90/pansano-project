@@ -18,24 +18,6 @@
         "observations": "Entregar antes de las 15hs"
     },
     {
-        "id": 2,
-        "creationDate": "17/04/2024",
-        "deliveredDate": "17/04/2024",
-        "payDate": "18/04/2024",
-        "zone": "El Volcán",
-        "customerId": 1,
-        "customerName": "Mati Correa",
-        "customerTel": "2665054558",
-        "detail": ["Calabaza(2) ", "Focaccia(2) ", "Pastafrola(1) "],
-        "total": 14600,
-        "receptionStatus": "ENTREGADO",
-        "payMethod": "MercadoPago",
-        "payStatus": "PAGADO",
-        "shipment": false,
-        "ubication": "Local",
-        "observations": ""
-    },
-    {
         "id": 3,
         "creationDate": "16/04/2024",
         "deliveredDate": "",

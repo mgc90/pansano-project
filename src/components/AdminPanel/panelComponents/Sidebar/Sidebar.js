@@ -1,4 +1,4 @@
-import {BsCart3, BsFillArchiveFill, BsFillGearFill, BsFillGrid3X3GapFill, BsGrid1X2Fill, BsListCheck, BsMenuButtonWideFill, BsPeopleFill} 
+import {BsCart3, BsFillArchiveFill, BsFillGearFill, BsFillGrid3X3GapFill, BsGrid1X2Fill, BsListCheck, BsTruck, BsPeopleFill} 
 from 'react-icons/bs';
 import "./Sidebar.css";
 import { Link } from 'react-router-dom';
@@ -36,13 +36,13 @@ const Sidebar = ({openSidebarToggle, OpenSidebar}) => {
                 </Link>
             </li>
             <li className='sidebar-list-item'>
-                <a href='c'>
-                    <BsFillGrid3X3GapFill className='icon'/> Categorías
-                </a>
+                <Link to={"/admin/envios-dash"}>
+                    <BsTruck className='icon'/> Envíos
+                </Link>
             </li>
             <li className='sidebar-list-item'>
-                <a href='f'>
-                    <BsMenuButtonWideFill className='icon'/> Reportes
+                <a href='c'>
+                    <BsFillGrid3X3GapFill className='icon'/> Categorías
                 </a>
             </li>
             <li className='sidebar-list-item'>

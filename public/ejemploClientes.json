@@ -7,7 +7,40 @@
         "adress": "",
         "location": "",
         "ubication": "",
-        "email": "",
+        "email": "matigc90@gmail.com",
+        "password": "********"
+    },
+    {
+        "id": "2",
+        "name": "Roxana",
+        "lastName": "Guerrero",
+        "tel": "2664897456",
+        "adress": "Barrio Último, Manzana 14, Casa 16",
+        "location": "La Punta",
+        "ubication": "https://maps.app.goo.gl/hpC1Q3cmRg7cus3z8",
+        "email": "roxyguerrerolapunta@gmail.com",
+        "password": "********"
+    },
+    {
+        "id": "3",
+        "name": "Viviana",
+        "lastName": "Platineti",
+        "tel": "2665543248",
+        "adress": "Lavalle 553",
+        "location": "Ciudad San Luis",
+        "ubication": "https://maps.app.goo.gl/ffXLAquCrHiJSpyd7",
+        "email": "viviplatiniti@yahoo.com.ar",
+        "password": "********"
+    },
+    {
+        "id": "4",
+        "name": "Mayra",
+        "lastName": "Gonzalez",
+        "tel": "2664987523",
+        "adress": "Av. Viento Chorrillero 334",
+        "location": "Juana Koslay",
+        "ubication": "https://maps.app.goo.gl/ffXLAquCrHiJSpyd7",
+        "email": "viviplatiniti@yahoo.com.ar",
         "password": "********"
     }
 ]

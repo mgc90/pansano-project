@@ -1,4 +1,4 @@
-/* PrimeReact Responsive CSS */
+/* PrimeReact Responsive CSS PEDIDOS LIST.CSS INFLUYE EN PRODUCTOSLIST.CSS Y EN CLIENTESLIST.CSS*/
 .p-datatable .p-datatable-tbody > tr > td > .p-column-title {
     display: none;
     font-weight: 600;
@@ -77,7 +77,7 @@
     /*primero llamo al atributo clase para renderizar el contenido del className de mi jsx reenderizado como class html*/
     td::before {
       content: attr(class)"";
-      padding-right: 7rem;
+      padding-right: 5rem;
 
     }
 
@@ -86,7 +86,7 @@
        content: "Seleccionar"; 
       }
     
-      td:nth-of-type(4):before {
+      td:nth-of-type(5):before {
         word-break: normal;
       }  
 
