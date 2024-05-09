@@ -1,38 +1,57 @@
-[[
-    {
-        "id":2,
-        "name":"Pan de Campo Integral",
-        "price":1800,"img":"imgs/campoIntegral.jpg",
-        "quanty":2},{"id":1,"name":"Pan Clásico de Masa Madre",
-        "price":1800,
-        "img":"imgs/clasicoMasaMadre.jpg",
-        "quanty":2
-    },
-    {
-        "id":6,
-        "name":"Focaccia",
-        "price":2500,
-        "img":"imgs/focaccia.jpg",
-        "quanty":2
-    },
-    {
-        "id":3,
-        "name":"Pan de Campo Sarraceno",
-        "price":1800,
-        "img":"imgs/campoSarraceno.jpg",
-        "quanty":1
-    }
-],
 [
     {
-        "id":2,
-        "name":"Pan de Campo Integral",
-        "price":1800,"img":"imgs/campoIntegral.jpg",
-        "quanty":2},
-        {"id":1,"name":"Pan Clásico de Masa Madre",
-        "price":1800,
-        "img":"imgs/clasicoMasaMadre.jpg",
-        "quanty":2
+        "id": 1,
+        "creationDate": "17/04/2024",
+        "deliveredDate": "",
+        "payDate": "",
+        "zone": "Ciudad San Luis",
+        "customerId": 2,
+        "customerName": "Viviana Platineti",
+        "customerTel": "2665543248",
+        "detail": ["Campo Integral(1) ", "Pastafrola(1) ", "Focaccia(2)"],
+        "total": 12800,
+        "receptionStatus": "PENDIENTE",
+        "payMethod": "Efectivo",
+        "payStatus": "IMPAGO",
+        "shipment": true,
+        "ubication": "https://maps.app.goo.gl/ffXLAquCrHiJSpyd7",
+        "observations": "Entregar antes de las 15hs"
+    },
+    {
+        "id": 3,
+        "creationDate": "16/04/2024",
+        "deliveredDate": "",
+        "payDate": "18/04/2024",
+        "zone": "La Punta",
+        "customerId": 3,
+        "customerName": "Roxana Guerrero",
+        "customerTel": "2664897456",
+        "detail": ["Campo Integral(1) ", "Calabaza(2) ", "Focaccia(2) ", "Pastafrola(1) ", "Clásico(1) ", "Campo Sarraceno(1) ", "Prepizza(2) ", "Alemán Centeno(1) "],
+        "total": 52500,
+        "receptionStatus": "PENDIENTE",
+        "payMethod": "MercadoPago",
+        "payStatus": "PAGADO",
+        "shipment": true,
+        "ubication": "https://maps.app.goo.gl/hpC1Q3cmRg7cus3z8",
+        "observations": ""
+    },
+    {
+        "id": 4,
+        "creationDate": "16/04/2024",
+        "deliveredDate": "",
+        "payDate": "",
+        "zone": "Juana Koslay",
+        "customerId": 4,
+        "customerName": "Mayra Gonzalez",
+        "customerTel": "2664987523",
+        "detail": ["Campo Sarraceno(3) ", "Pastafrola(1) "],
+        "total": 13200,
+        "receptionStatus": "CANCELADO",
+        "payMethod": "MercadoPago",
+        "payStatus": "IMPAGO",
+        "shipment": true,
+        "ubication": "https://maps.app.goo.gl/hpC1Q3cmRg7cus3z8",
+        "observations": ""
     }
-]
+
 ]
