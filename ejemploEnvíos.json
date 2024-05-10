@@ -15,6 +15,7 @@
         "payStatus": "IMPAGO",
         "shipment": true,
         "ubication": "https://maps.app.goo.gl/ffXLAquCrHiJSpyd7",
+        "adress": "Lavalle 553",
         "observations": "Entregar antes de las 15hs"
     },
     {
@@ -33,6 +34,7 @@
         "payStatus": "PAGADO",
         "shipment": true,
         "ubication": "https://maps.app.goo.gl/hpC1Q3cmRg7cus3z8",
+        "adress": "Barrio Último, Manzana 14, Casa 16",
         "observations": ""
     },
     {
@@ -51,6 +53,7 @@
         "payStatus": "IMPAGO",
         "shipment": true,
         "ubication": "https://maps.app.goo.gl/hpC1Q3cmRg7cus3z8",
+        "adress": "Av. Viento Chorrillero 334",
         "observations": ""
     }
 
