@@ -1,4 +1,9 @@
 /* PrimeReact Responsive CSS PEDIDOS LIST.CSS INFLUYE EN PRODUCTOSLIST.CSS Y EN CLIENTESLIST.CSS*/
+
+.m-0 {
+  font-size: 2rem;
+}
+
 .p-datatable .p-datatable-tbody > tr > td > .p-column-title {
     display: none;
     font-weight: 600;
@@ -86,7 +91,7 @@
        content: "Seleccionar"; 
       }
     
-      td:nth-of-type(5):before {
+      td::before {
         word-break: normal;
       }  
 

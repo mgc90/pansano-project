@@ -257,7 +257,7 @@ export default function EnviosList() {
 
     const header = (
         <div className="flex flex-wrap gap-2 align-items-center justify-content-between search-bar">
-            <h4 className="m-0">Administrar Envios</h4>
+            <h4 className="m-0">Envíos</h4>
             <span className="p-input-icon-left">
                 <i className="pi pi-search" />
                 <InputText type="search" onInput={(e) => setGlobalFilter(e.target.value)} placeholder="Buscar..." />

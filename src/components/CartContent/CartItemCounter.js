@@ -1,6 +1,8 @@
 import { useContext } from "react";
 import { dataContext } from "../Context/DataContext";
 
+import stylesy from "./CartContent.module.css"
+
 const CartItemCounter = ({ product }) => {
   const { cart, setCart, buyProducts } = useContext(dataContext);
 
@@ -13,10 +15,10 @@ const CartItemCounter = ({ product }) => {
   };
 
   return (
-    <div className="quantyCounter">
-        <button className='counterButton' title="Restar una unidad" onClick={decrease}>- </button>
-        <p className="quanty" title="Cantidad de unidades del producto"> {product.quanty} </p>
-        <button className='counterButton' title="Sumar una unidad" onClick={() => buyProducts(product)}>+</button>
+    <div className={stylesy["quantyCounter"]}>
+        <button className={stylesy['counterButton']} title="Restar una unidad" onClick={decrease}>- </button>
+        <p className={stylesy["quanty"]} title="Cantidad de unidades del producto"> {product.quanty} </p>
+        <button className={stylesy['counterButton']} title="Sumar una unidad" onClick={() => buyProducts(product)}>+</button>
     </div>
   )
 }

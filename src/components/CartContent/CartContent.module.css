@@ -5,6 +5,7 @@
     flex-direction: row;
     margin: auto;
     background-color: white;
+    min-height: 90vh;
     color: black;
 }
 
@@ -16,6 +17,7 @@
     border: 5px solid black;
     margin: 0.1rem;
     width: 70rem;
+    max-height: 12.65rem;
 }
 
 .cartContent > img {

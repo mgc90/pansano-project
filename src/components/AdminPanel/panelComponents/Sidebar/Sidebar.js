@@ -8,7 +8,7 @@ const Sidebar = ({openSidebarToggle, OpenSidebar}) => {
     <aside id='sidebar' className={openSidebarToggle ? "sidebar-responsive" : ""}>
         <div className='sidebar-title'>
             <div className='sidebar-brand'>
-                <BsCart3 className='icon-header'/> ADMIN
+                <BsCart3 className='icon-header'/> Admin Panel
             </div>
             <span className='icon close-icon' onClick={OpenSidebar}>X</span>
         </div>
@@ -16,7 +16,7 @@ const Sidebar = ({openSidebarToggle, OpenSidebar}) => {
         <ul className='sidebar-list'>
             <li className='sidebar-list-item'>
                 <Link to={"/admin"} title='Volver al dashboard' >
-                    <BsGrid1X2Fill className='icon'/> Dashboard
+                    <BsGrid1X2Fill className='icon'/> General
                 </Link> 
             </li>
             <li className='sidebar-list-item'>

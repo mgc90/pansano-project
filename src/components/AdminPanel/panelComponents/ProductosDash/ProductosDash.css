@@ -1,2 +1,7 @@
+
 @import url("primereact/resources/themes/lara-dark-indigo/theme.css");
 
+
+body {
+    background-color: #1d2634;;
+}
