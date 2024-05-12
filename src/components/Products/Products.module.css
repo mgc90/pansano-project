@@ -19,18 +19,9 @@
     padding: 0;
 }
 
-
-.product-card > h4 {
-    font-size: 2rem;
-    margin: auto;
-    height: auto;
-    color: black;
-    padding: 1rem;
-}
-
 .product-card > h2 {
     font-size: 2rem;
-    margin: auto;
+    margin-top: 1rem;
     height: 5rem;
     line-height: 2.2rem;
     color:black;
@@ -39,11 +30,18 @@
 
 .product-card > h3 {
     font-size: 1.4rem;
-    margin-top: 0;
-    height: 5rem;
+    height: 6rem;
     line-height: 1.5rem;
     color:black;
     padding: 0;
+}
+
+.product-card > h4 {
+    font-size: 2rem;
+    margin: auto;
+    height: auto;
+    color: black;
+    padding: 1rem;
 }
 
 .imgCard {
