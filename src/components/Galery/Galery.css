@@ -1,0 +1,20 @@
+.galery {
+    margin: auto;  
+    padding-top: 4rem;
+    max-width: 62rem;
+    
+}
+
+.galery-img {
+    width: inherit;
+    max-width: 50rem;
+    max-height: 40rem;
+    
+}
+
+.p-icon {
+    color: cornflowerblue;
+}
+
+
+

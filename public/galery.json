@@ -1,0 +1,17 @@
+[
+    {
+        "id": "1",
+        "itemImageSrc": "imgs/envios.jpg",
+        "alt": "Hacemos Envíos!"
+    },
+    {
+        "id": 2,
+        "itemImageSrc": "imgs/agroeco.jpg",
+        "alt": "Utilizamos productos agroecológicos."
+    },
+    {
+        "id": 3,
+        "itemImageSrc": "imgs/visitanos.jpg",
+        "alt": "Conocé nuestro local."
+    }
+]
