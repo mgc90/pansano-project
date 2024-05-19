@@ -17,6 +17,7 @@
     border: 5px solid black;
     margin: 0.1rem;
     width: 70rem;
+    border-radius: 1%;
 
 }
 
@@ -24,6 +25,9 @@
     margin-top: 0px;
     width: 12rem;
     height: 12rem;
+    border-right: 5px solid black;
+    border-bottom: 5px solid black;
+    border-radius: 1%;
 }
 
 .name {  
@@ -31,12 +35,14 @@
     font-size: 1.8rem;
     text-align: start;
     padding-left: 1rem;
+    
 }
 
 .price {
     font-size: 1.9rem;
     margin: auto;
-    
+    border: 5px solid black;
+    border-radius: 2%;
 }
 
 .quanty {

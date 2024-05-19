@@ -1,37 +1,89 @@
 import "./Galery.css"
 
-
-
-import React, { useState, useEffect } from 'react';
-import { Galleria } from 'primereact/galleria';
-import axios from 'axios';
+import ImageGallery from "react-image-gallery";
+import React, { useRef } from 'react';
 
 const Galery = () => {
-    const [images, setImages] = useState(null);
-   
-    
-    useEffect(() => {
-        axios("galery.json").then((res) =>  setImages(res.data)
-    );
-    }, []); 
+    const galleryRef = useRef(null);
 
+    const handleMouseEnter = () => {
+        if (galleryRef.current) {
+            galleryRef.current.pause();
+        }
+    };
 
-    
-    
-
-    const itemTemplate = (item) => {
-        return <img src={item.itemImageSrc} alt={item.alt} className="galery-img" />;
+    const handleClick = () => {
+        if (galleryRef.current) {
+            galleryRef.current.pause();
+        }
     };
 
    
+    const images = [
+        {
+            
+            original: "imgs/visitanos.jpg",
+            originalTitle: "Conocé nuestro local.",
+            description: (
+                <div>
+                    <h1>Contactanos!</h1>
+                    <div>
+                        <a href="https://wa.link/jf11ed" target="_blank" rel="noreferrer" >
+                            <h2><icon className="pi pi-whatsapp" style={{ fontSize: '2rem' }} />   2665-247404</h2>
+                        </a>
+                    
+                    </div>
+                    <div>
+                        <a href="https://www.instagram.com/pansano.sl/" target="_blank" rel="noreferrer" >
+                            <h2><icon className="pi pi-camera" style={{ fontSize: '2rem' }} />   @pansano.sl</h2>
+                        </a>
+                    
+                    </div>
+                    <div>
+                        <a href="https://www.facebook.com/profile.php?id=100072216714324" target="_blank" rel="noreferrer" >
+                            <h2><icon className="pi pi-facebook" style={{ fontSize: '2rem' }} />   PAN SANO</h2>
+                        </a>
+                    </div>
+                </div>
+            )
+        },
+        {
+            
+            original: "imgs/envios.jpg",
+            originalTitle: "Hacemos Envíos!",
+            description: ""
+        },
+        {
+            
+            original: "imgs/agroeco.jpg",
+            originalTitle: "Utilizamos productos agroecológicos.",
+            description: ""
+        }
+    ];
+
+    const renderItem = (item) => {
+        return (
+            <div style={{ position: 'relative' }}>
+                <img src={item.original} alt={item.description} style={{ width: '100%' }} 
+                 
+                />
+                {item.description && (
+                    <div className="image-gallery-description">{item.description}</div>
+                )}
+            </div>
+        );
+    };
 
     return (
         <div className='galery'>
-            <Galleria value={images}  numVisible={3} showIndicators 
-                 
-                item={itemTemplate}  autoPlay transitionInterval={5000} showThumbnails={false}
-                changeItemOnIndicatorHover showItemNavigators circular 
-                />
+            <ImageGallery items={images} ref={galleryRef}
+            showBullets={true} showFullscreenButton={false} 
+            showPlayButton={false}  slideDuration={1500}
+            slideInterval={5000} renderItem={renderItem}
+            onMouseEnter={handleMouseEnter} onClick={handleClick}  
+            autoPlay={true}
+            
+             />
         </div>
     )
 }

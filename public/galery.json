@@ -5,13 +5,13 @@
         "alt": "Hacemos Envíos!"
     },
     {
-        "id": 2,
-        "itemImageSrc": "imgs/agroeco.jpg",
-        "alt": "Utilizamos productos agroecológicos."
+        
+        "original": "imgs/agroeco.jpg",
+        "originalAlt": "Utilizamos productos agroecológicos."
     },
     {
-        "id": 3,
-        "itemImageSrc": "imgs/visitanos.jpg",
-        "alt": "Conocé nuestro local."
+        
+        "original": "imgs/visitanos.jpg",
+        "originalAlt": "Conocé nuestro local."
     }
 ]

@@ -47,6 +47,8 @@
 .imgCard {
     width: 100%;
     height: 18rem;
+    border-bottom: 5px solid black;
+    margin: auto;
 }
 
 .product-card button {

@@ -1,20 +1,50 @@
+@import "~react-image-gallery/styles/css/image-gallery.css";
+
 .galery {
     margin: auto;  
-    padding-top: 4rem;
-    max-width: 62rem;
-    
+    padding: 3rem;
+    max-width: 50rem;
 }
 
 .galery-img {
     width: inherit;
     max-width: 50rem;
     max-height: 40rem;
-    
 }
 
-.p-icon {
+.image-gallery-slide .image-gallery-description {
+    background: rgba(0, 0, 0, .7);
+    bottom: 2rem;
+    color: #bbb;
+    left: inherit; 
+    right: 2rem;
+    line-height: 1;
+    padding: 10px 20px;
+    position: absolute;
+    white-space: normal;
+    border-radius: 7%;
+    text-align: start;
+}
+
+a {
+    text-decoration: none;
+    color: #bbb;
+}
+
+a>h2:hover {
     color: cornflowerblue;
+    transform: scale(1.2, 1.2);
+    transition: 0.7s;
 }
 
+.pi-whatsapp {
+    color: green;
+}
 
+.pi-facebook {
+    color: blue;
+}
 
+.pi-camera {
+    color: purple;
+}
