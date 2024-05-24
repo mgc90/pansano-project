@@ -4,9 +4,13 @@
     flex-wrap: wrap;
     flex-direction: row;
     margin: auto;
-    background-color: white;
-    
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("../../../public/imgs/carrito fondo.jpg");
     color: black;
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    width: 100%;
 }
 
 .cartContent {
@@ -15,19 +19,18 @@
     text-align: center;
     align-items: center;
     border: 5px solid black;
-    margin: 0.1rem;
     width: 70rem;
-    border-radius: 1%;
-
+    margin-bottom: 0.1rem;
+    background-color: rgba(250, 250, 250, 0.7);
+    text-shadow: 1px 1px 3px white;
 }
 
 .cartContent > img {
-    margin-top: 0px;
-    width: 12rem;
+    margin-top: 0;
+    width: 11rem;
     height: 12rem;
     border-right: 5px solid black;
     border-bottom: 5px solid black;
-    border-radius: 1%;
 }
 
 .name {  
@@ -35,14 +38,14 @@
     font-size: 1.8rem;
     text-align: start;
     padding-left: 1rem;
-    
 }
 
 .price {
     font-size: 1.9rem;
     margin: auto;
-    border: 5px solid black;
-    border-radius: 2%;
+    border: 4px solid black;
+    border-radius: 1cap;
+    padding: 0.3rem;
 }
 
 .quanty {
@@ -56,12 +59,15 @@
 }
 
 .cartTotal {
-    margin: auto;
+    margin: 0 23rem;
+    padding: 0;
     font-size: 2rem;
     width: 70rem;
     border: 5px solid black;
     text-align: center;
-    
+    height: 7rem;
+    background-color: rgba(250, 250, 250, 0.7);
+    text-shadow: 1px 1px 3px white;
 }
 
 .cartMessageEmpty {
@@ -97,6 +103,16 @@
     margin-right: 1rem;
     font-size: 1.5rem;
     padding: 0 0.8rem;
+}
+
+.confirmBtn {
+    height: 5rem;
+    width: 25rem;
+    margin: 1rem 0;
+    font-size: 2rem;
+    text-shadow: 1px 1px 3px black;
+    color: white;
+    border: 2px solid black;
 }
 
 @media screen and (max-width: 799px) {

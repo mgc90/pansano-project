@@ -3,6 +3,7 @@
     z-index: 3;
     top: 0;
     width: 100%;
+    
 }
 
 .navbar {
@@ -10,9 +11,10 @@
     justify-content: space-between;
     height: 7rem;
     background-color: white;
-    border: 0.5rem groove grey; 
+    border: 0.5rem double grey; 
     width: 100%;
     align-items: center;
+    border-radius: 0.5cap;
 }
 
 .navbarLogo {

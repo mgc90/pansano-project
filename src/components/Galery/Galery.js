@@ -26,22 +26,27 @@ const Galery = () => {
             originalTitle: "Conocé nuestro local.",
             description: (
                 <div>
-                    <h1>Contactanos!</h1>
+                    <div>
+                        <a href="https://maps.app.goo.gl/QZuihPry3iFSL4uD8" target="_blank" rel="noreferrer" >
+                            <h2><icon className="pi pi-map-marker" />   Ubicación</h2>
+                        </a>
+                    
+                    </div>
                     <div>
                         <a href="https://wa.link/jf11ed" target="_blank" rel="noreferrer" >
-                            <h2><icon className="pi pi-whatsapp" style={{ fontSize: '2rem' }} />   2665-247404</h2>
+                            <h2><icon className="pi pi-whatsapp" />   2665-247404</h2>
                         </a>
                     
                     </div>
                     <div>
                         <a href="https://www.instagram.com/pansano.sl/" target="_blank" rel="noreferrer" >
-                            <h2><icon className="pi pi-camera" style={{ fontSize: '2rem' }} />   @pansano.sl</h2>
+                            <h2><icon className="pi pi-camera"  />   @pansano.sl</h2>
                         </a>
                     
                     </div>
                     <div>
                         <a href="https://www.facebook.com/profile.php?id=100072216714324" target="_blank" rel="noreferrer" >
-                            <h2><icon className="pi pi-facebook" style={{ fontSize: '2rem' }} />   PAN SANO</h2>
+                            <h2><icon className="pi pi-facebook" />   PAN SANO</h2>
                         </a>
                     </div>
                 </div>

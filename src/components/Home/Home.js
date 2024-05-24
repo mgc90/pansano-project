@@ -14,7 +14,6 @@ const Home = () => {
          <Products />
         </div>
         
-        
     </div>
     );
 };

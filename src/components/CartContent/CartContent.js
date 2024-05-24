@@ -6,6 +6,7 @@ import CartTotal from "./CartTotal";
 import Navbar from "../Navbar/Navbar";
 
 import stylesy from "./CartContent.module.css"
+import { Button } from 'primereact/button';
 
 
 const CartContent = () => {
@@ -18,6 +19,8 @@ const CartContent = () => {
         <div className={stylesy["cartContainer"]}>
           <CartElements />
           <CartTotal />
+          <Button label="Confirmar Compra" className={stylesy["confirmBtn"]} />
+             
         </div>
       ) : (
         <h2 className={stylesy["cartMessageEmpty"]}> Tu carrito está vacío! </h2>
