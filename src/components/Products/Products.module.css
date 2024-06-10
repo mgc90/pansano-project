@@ -2,14 +2,13 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    margin: 3rem;
     text-align: center;
     background: white;
     margin: 0;
     padding: 0;
-    width: 100%;
+    
     background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-    url("../../../public/imgs/productos fondo.jpg");
+    url("../../../public/imgs/carrito fondo.jpg");
     color: black;
     background-size: cover;
     background-position: center;
@@ -17,15 +16,23 @@
     width: 100%;
 }
 
+.productCardContainer > h1 {
+    font-size: 4.5rem;
+    width: 100vw;
+    color: #ccc;
+    margin: auto;
+    text-shadow: 3px 3px 4px black;
+}
+
 .product-card {
-    margin: 2rem;
-    border: 5px solid black;
-    border-radius: 1%;
-    width: 25rem;
+    margin: 1rem;
+    border: 5px solid grey;
+    border-radius: 0.5cap;
+    width: 20rem;
     height: auto;
     padding: 0;
     background-color: rgba(250, 250, 250, 0.7);
-    text-shadow: 1px 1px 3px white;
+    
 
 }
 
@@ -36,6 +43,8 @@
     line-height: 2rem;
     color:black;
     padding-top: 0;
+    text-shadow: 1px 1px 3px #444;
+    
 }
 
 .product-card > h3 {
@@ -45,6 +54,7 @@
     line-height: 1.5rem;
     color:black;
     padding-top: 1.5rem;
+    text-shadow: 1px 1px 3px #444;
 }
 
 .product-card > h4 {
@@ -54,14 +64,16 @@
     color: black;
     padding: 0;
     margin-top: 1rem;
-    border-top: 2px solid black;
-    border-bottom: 2px solid black;
+    border-top: 2px solid grey;
+    border-bottom: 2px solid grey;
+    text-shadow: 1px 1px 3px #444;
+    
 }
 
 .imgCard {
     width: 100%;
     height: 18rem;
-    border-bottom: 5px solid black;
+    border-bottom: 5px solid grey;
     margin: auto;
 }
 
@@ -76,7 +88,7 @@
     width: 100%;
     font-size: 1.5rem;
     font-weight: bold;
-
+    text-shadow: 1px 1px 3px #444;
 }
 
 .product-card button:hover {
@@ -95,4 +107,37 @@
     width: 100%;
     font-size: 1.5rem;
     font-weight: bold;
+}
+
+@media screen and (max-width: 720px) {
+    .productCardContainer {
+        margin: 0;
+    }
+
+    .product-card {
+        width: 45vw;
+        margin: 0.2rem 0.2rem;
+    }
+
+    .imgCard {
+        height: 40vw;
+    }
+
+    .product-card > h2 {
+        font-size: 6.3vw;
+        line-height: 5.5vw;
+        height: 16vw;
+        margin-bottom: 0.5rem;
+    }
+
+    .product-card > h3 {
+        font-size: 4.9vw;
+        line-height: 4.7vw;
+        height: 49vw;
+    }
+
+    .product-card > h4 {
+        font-size: 1.7rem;
+        height: inherit;
+    }
 }

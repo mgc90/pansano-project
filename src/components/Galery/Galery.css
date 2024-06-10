@@ -1,14 +1,25 @@
 @import "~react-image-gallery/styles/css/image-gallery.css";
 
+.galeryContainer {
+    background-color: black;
+    /*background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("../../../public/imgs/panaderia.jpg");*/
+    background-size: cover;
+    background-position: center;
+    
+}
+
 .galery {
     margin: auto;  
     padding: 2rem 0.5rem;
     max-width: 50rem;
 }
 
+
 .galery-img {
     width: inherit;
     max-width: 50rem;
+    border-radius: 2cap;
 }
 
 .image-gallery-slide .image-gallery-description {
@@ -58,6 +69,6 @@ a>h2:hover {
     color: purple;
 }
 
-.pi {
+.contactLink {
     font-size: 4vmin;
 }

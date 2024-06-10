@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { dataContext } from "../Context/DataContext";
+import { Link } from "react-router-dom";
 
 import CartElements from "./CartElements";
 import CartTotal from "./CartTotal";
@@ -19,7 +20,10 @@ const CartContent = () => {
         <div className={stylesy["cartContainer"]}>
           <CartElements />
           <CartTotal />
-          <Button label="Confirmar Compra" className={stylesy["confirmBtn"]} />
+          <Link to={"/BuyForm"} title="Concretar Compra">
+            <Button label="Confirmar Compra" className={stylesy["confirmBtn"]} />
+          </Link>
+          
              
         </div>
       ) : (
@@ -30,4 +34,3 @@ const CartContent = () => {
 }
 
 export default CartContent;
-

@@ -17,8 +17,14 @@ const Navbar = () => {
             </h1>
           </Link>
           <Link className="seeCart" to={"/cart"} title="Carrito de compras" >
-            🛒
+            <i className="pi pi-shopping-cart" />
             {cart.length > 0 ? <TotalItems /> : null}
+          </Link>
+          <Link className="whatsapp" to={"https://wa.link/qoythq"} target="_blank" title="Hablanos por WhatsApp!" >
+            <icon className="pi pi-whatsapp">
+            
+            </icon>
+               
           </Link>
         </nav>
     </div>

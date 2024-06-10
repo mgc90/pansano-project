@@ -8,6 +8,7 @@ import PedidosDash from './components/AdminPanel/panelComponents/PedidosDash/Ped
 import ClientesDash from './components/AdminPanel/panelComponents/ClientesDash/ClientesDash';
 import EnviosDash from './components/AdminPanel/panelComponents/EnviosDash/EnviosDash';
 import CategoriasDash from './components/AdminPanel/panelComponents/CategoriasDash/CategoriasDash';
+import BuyForm from './components/BuyForm/BuyForm';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <HashRouter>
         <Routes>
           <Route path='/' element={<Home />} />
+          <Route path='/BuyForm' element={<BuyForm />} />
           <Route path='/cart' element={<CartContent />} />
           <Route path='/admin' element={<AdminPanel />} />
           <Route path='/admin/productos-dash' element={<ProductosDash />} />
@@ -22,7 +24,7 @@ function App() {
           <Route path='/admin/clientes-dash' element={<ClientesDash />} />
           <Route path='/admin/envios-dash' element={<EnviosDash />} />
           <Route path='/admin/categorias-dash' element={<CategoriasDash />} />
-
+          
         </Routes>
       </HashRouter>
     </DataProvider>

@@ -1,22 +1,28 @@
 .banner {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
     background-size: cover;
     background-position: center;
-    height: 100vh;
-    width: 100%;
+    background-clip: content-box;
     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
     url("../../../public/imgs/pansanoBanner.jpg");
+    height: 150%;
+    width: 100%;
 }
 
-.banner-container {
-    text-align: center;
-    padding: 15% 0;
+.banner > img {
+    height: 100%;
 }
+
 
 .banner h1 {
     text-align: center;
     margin: 0;
     color: white;
-    text-shadow: 1px 1px 3px grey;
+    text-shadow: 3px 3px 5px #444;
     font-size: 1rem;
     font-weight: bold;
 }
@@ -28,16 +34,17 @@
 
 .banner h2 {
     text-align: center;
-    font-size: 2.9rem;
+    font-size: 7vw;
     color: white;
     opacity: 0.7;
-    text-shadow: 1px 1px 3px grey;
+    text-shadow: 3px 3px 5px #444;
 }
 
 .banner h3 {
+    margin: auto;
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 5vw;
     color: white;
     opacity: 0.7;
-    text-shadow: 1px 1px 3px grey;
+    text-shadow: 3px 3px 5px #444;
 }

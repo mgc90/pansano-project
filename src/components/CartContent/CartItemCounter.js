@@ -17,7 +17,7 @@ const CartItemCounter = ({ product }) => {
   return (
     <div className={stylesy["quantyCounter"]}>
         <button className={stylesy['counterButton']} title="Restar una unidad" onClick={decrease}>- </button>
-        <p className={stylesy["quanty"]} title="Cantidad de unidades del producto"> {product.quanty} </p>
+        <p className={stylesy["quanty"]} title="Cantidad de unidades del producto"> {product.quanty}u</p>
         <button className={stylesy['counterButton']} title="Sumar una unidad" onClick={() => buyProducts(product)}>+</button>
     </div>
   )

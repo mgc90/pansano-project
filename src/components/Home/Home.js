@@ -4,13 +4,17 @@ import Galery from "../Galery/Galery";
 import Products from "../Products/Products";
 import styles from "../Products/Products.module.css"
 
+
 const Home = () => {
     return (
     <div>
         <Navbar />
         <Banner /> 
-        <Galery />
+        <div className="galeryContainer">
+            <Galery />
+        </div>
         <div className={styles.productCardContainer}>
+         <h1>Nuestros Productos</h1>   
          <Products />
         </div>
         
