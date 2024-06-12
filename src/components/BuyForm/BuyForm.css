@@ -1,0 +1,32 @@
+.fields {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.buyForm {
+    justify-content: center;
+    text-align: center;
+
+    width: 100vw;
+    max-width: 500px;
+    min-width: 300px;
+    margin: auto;
+    padding-bottom: 0.5em;
+  }
+
+.formContainer {
+    justify-content: center;
+    text-align: center;
+
+}
+
+.payCheckContainer {
+    padding: 1rem;
+}
+
+#pay-label {
+    display: block;
+}

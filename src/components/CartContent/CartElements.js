@@ -27,7 +27,7 @@ function CartElements() {
         <h4 className={stylesy["price"]} title="Precio del producto en Pesos Argentinos">${product.price * product.quanty},00</h4>
         <CartItemCounter product={product} />
         <h3 className={stylesy["cartDeleteButton"]} title="Eliminar del Carrito" onClick={() => deleteProduct(product.id)}>
-          ❌
+          ❌Eliminar
           </h3>
       </div>
     );
