@@ -3,7 +3,7 @@
         "id": 1,
         "name": "Pan Clásico de Masa Madre",
         "description": "Un pan tradicional que se lleva bien con todo por su rica textura y sabor. La fermentación natural en frío evita la inflamación intestinal.",
-        "category": "Elaboración Propia",
+        "category": "Salado",
         "price": 1800,
         "img": "imgs/clasicoMasaMadre.jpg",
         "quanty": 1
@@ -12,7 +12,7 @@
         "id": 2,
         "name": "Pan de Campo Integral",
         "description": "Pan de campo 100% integral con masa madre de centeno y semillas.",
-        "category": "Elaboración Propia",
+        "category": "Salado",
         "price": 1800,
         "img": "imgs/campoIntegral.jpg",
         "quanty": 1
@@ -21,7 +21,7 @@
         "id": 3, 
         "name": "Pan de Campo Sarraceno",
         "description": "Disruptivo y semi integral. Su color grisáceo y su textura particular y sabrosa es proporcionado por el Sarraceno.",
-        "category": "Elaboración Propia",
+        "category": "Salado",
         "price": 1800,
         "img":"imgs/campoSarraceno.jpg",
         "quanty": 1
@@ -30,7 +30,7 @@
         "id": 4,
         "name": "Pan Alemán de Centeno",
         "description": "Especiado con comino, miel y harina de arroz. El centeno contiene vitaminas del complejo B que brindan múltiples beneficios.",
-        "category": "Elaboración Propia",
+        "category": "Salado",
         "price": 1900,
         "img": "imgs/alemanCenteno.jpg",
         "quanty": 1
@@ -39,7 +39,7 @@
         "id": 5,
         "name": "Pan de Calabaza Asada",
         "description": "Condimentado con cúrcuma, pizca de pimienta negra, tomillo y romero. Ideal para acompañar vinos, quesos o Bruschettas.",
-        "category": "Elaboración Propia",
+        "category": "Salado",
         "price": 2200,
         "img": "imgs/calabazaAsada.jpg",
         "quanty": 1
@@ -48,7 +48,7 @@
         "id": 6,
         "name": "Focaccia",
         "description": "Con tomates cherry, aceitunas, oliva extra virgen, romero, tomillo y orégano.",
-        "category": "Elaboración Propia",
+        "category": "Salado",
         "price": 2500,
         "img": "imgs/focaccia.jpg",
         "quanty": 1
@@ -57,7 +57,7 @@
         "id": 7,
         "name": "Prepizzas de Masa Madre de Centeno",
         "description": "Con aceite de oliva extra virgen, semolín y salsa natural de tomates.",
-        "category": "Elaboración Propia",
+        "category": "Salado",
         "price": 1300,
         "img": "imgs/prepizza.jpg",
         "quanty": 1
@@ -66,9 +66,153 @@
         "id": 8,
         "name": "Pastafrola Integral de Peras y Manzanas",
         "description": "100% integral y agroecológica de peras y manzanas. Contiene azúcar mascabo, manteca y huevo.",
-        "category": "Elaboración Propia",
-        "price": 6500,
+        "category": "Salado",
+        "price": 3000,
         "img": "imgs/pastafrola.jpg",
+        "quanty": 1
+    },
+    {
+        "id": 9,
+        "name": "Pan Andino",
+        "description": "Majestuoso, con harina de maíz morado, alimento siempre esencial en la zona cordillerana. Contiene nueces y pasas",
+        "category": "Dulce",
+        "price": 3000,
+        "img": "imgs/andino.jpeg",
+        "quanty": 1
+    },
+    {
+        "id": 10,
+        "name": "Ciabatta",
+        "description": "Adobadas en oliva extra virgen. Sale en paquetes de 500g. Contiene harina 000 agroecológica y semolín.",
+        "category": "Salado",
+        "price": 2400,
+        "img": "imgs/ciabatta.jpg",
+        "quanty": 1
+    },
+    {
+        "id": 11,
+        "name": "Cremonas",
+        "description": "Con harina 000 agroecológica. Son de manteca %100. Ideales para el mate.",
+        "category": "Salado",
+        "price": 800,
+        "img": "imgs/cremona.jpg",
+        "quanty": 1
+    },
+    {
+        "id": 12,
+        "name": "Cookies Integrales",
+        "description": "Brillan por su simpleza y dulzor. Contiene manteca, huevo y un adorno de chocolate y coco.",
+        "category": "Dulce",
+        "price": 2200,
+        "img": "imgs/cookies integrales.jpeg",
+        "quanty": 1
+    },
+    {
+        "id": 13,
+        "name": "Cookies de Pistacho",
+        "description": "Semi integral, con pistachos, chocolate blanco, azúcar mascabo y manteca. Paquete de 2 unidades.",
+        "category": "Dulce",
+        "price": 1600,
+        "img": "imgs/cookies pistacho.jpeg",
+        "quanty": 1
+    },
+    {
+        "id": 14,
+        "name": "Pepas Integrales",
+        "description": "Contiene dulce casero de membrillo y azúcar mascabo. Se venden empaquetadas por docena.",
+        "category": "Dulce",
+        "price": 3200,
+        "img": "imgs/pepas integrales.jpeg",
+        "quanty": 1
+    },
+    {
+        "id": 15,
+        "name": "Pastafrola Integral de Dulce de Membrillo",
+        "description": "100% integral y agroecológica con dulce casero de membrillo. Contiene azúcar mascabo, manteca y huevo.",
+        "category": "Dulce",
+        "price": 9000,
+        "img": "imgs/pastafrola membrillo.jpeg",
+        "quanty": 1
+    },
+    {
+        "id": 16,
+        "name": "Frolita de Membrillo",
+        "description": "Versión mini. 100% integral y agroecológica con dulce de membrillo. Contiene azúcar mascabo, manteca y huevo.",
+        "category": "Dulce",
+        "price": 3500,
+        "img": "imgs/frolita membrillo.jpg",
+        "quanty": 1
+    },
+    {
+        "id": 17,
+        "name": "Frolita de Peras y Manzanas",
+        "description": "Versión mini. 100% integral y agroecológica de peras y manzanas. Contiene azúcar mascabo, manteca y huevo.",
+        "category": "Dulce",
+        "price": 3500,
+        "img": "imgs/frolita.jpg",
+        "quanty": 1
+    },
+    {
+        "id": 18,
+        "name": "Medialunas",
+        "description": "Nuestras medialunas de manteca. Hechas con azúcas mascabo, masa madre y harinas agroecológicas. Paquete de media docena.",
+        "category": "Dulce",
+        "price": 4200,
+        "img": "imgs/medialunas.jpeg",
+        "quanty": 1
+    },
+    {
+        "id": 19,
+        "name": "Roll de Canela",
+        "description": "Muy delicioso Roll de Canela, nueces y pasas. Con azúcar mascabo. Se venden por unidad",
+        "category": "Dulce",
+        "price": 4200,
+        "img": "imgs/rolls.jpeg",
+        "quanty": 1
+    },
+    {
+        "id": 20,
+        "name": "Croissant",
+        "description": "Muy delicioso Roll de Canela, nueces y pasas. Con azúcar mascabo. Se venden por unidad",
+        "category": "Dulce",
+        "price": 3800,
+        "img": "imgs/croissant.jpeg",
+        "quanty": 1
+    },
+    {
+        "id": 21,
+        "name": "Danesa",
+        "description": "Con Manteca y Crema pastelera de Leche de Almendras. Almíbar de Azúcar Mascabo. El precio es por unidad",
+        "category": "Dulce",
+        "price": 800,
+        "img": "imgs/danesas.jpeg",
+        "quanty": 1
+    },
+    {
+        "id": 22,
+        "name": "Harina 000",
+        "description": "Harina de trigo 000 marca Don Paisa, proveniente Buenos Aires y de producción agroecológica. Paquete de 1kg",
+        "category": "Almacén",
+        "price": 2700,
+        "img": "imgs/harina 000.jpg",
+        "quanty": 1
+    },
+    {
+        "id": 23,
+        "name": "Harina Integral Superfina",
+        "description": "Harina integral superfina agroecológica marca Don Paisa. Paquete de 1kg. Proveniente de Buenos Aires",
+        "category": "Almacén",
+        "price": 2800,
+        "img": "imgs/harina integral.jpg",
+        "quanty": 1
+    },
+    {
+        "id": 24,
+        "name": "Harina de Sarraceno",
+        "description": "Harina agroecológica marca Don Paisa proveniente de Buenos Aires. En paquete de 1kg",
+        "category": "Almacén",
+        "price": 2900,
+        "img": "imgs/harina sarraceno.jpg",
         "quanty": 1
     }
 ]
