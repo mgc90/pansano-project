@@ -8,7 +8,7 @@
     background-position: center;
     background-clip: content-box;
     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url("../../../public/imgs/pansanoBanner.jpg");
+    url("../../../public/imgs/pansanoBanner.jpeg");
     height: 150%;
     width: 100%;
 }
@@ -47,4 +47,16 @@
     color: white;
     opacity: 0.7;
     text-shadow: 3px 3px 5px #444;
+}
+
+/*este a continuacion en realidad es para las preview del elemento image en products. 
+lo puse acá porque en products tengo un módulo y no reconoce el body nuevo que se 
+renderiza al momento de activarse el preview. Acá no estoy usando css module entonces 
+lo que ponga va a afectar a todo*/
+.p-image-preview {
+    transition: transform .15s;
+    max-width: 63vw;
+    max-height: 63vh;
+    width: 100%;
+    height: 100%;
 }

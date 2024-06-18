@@ -8,7 +8,7 @@
     padding: 0;
     
     background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-    url("../../../public/imgs/carrito fondo.jpg");
+    url("../../../public/imgs/carrito fondo.jpeg");
     color: black;
     background-size: cover;
     background-position: center;
@@ -28,7 +28,7 @@
     margin: 1rem;
     border: 5px solid grey;
     border-radius: 0.5cap;
-    width: 20rem;
+    width: 18rem;
     height: auto;
     padding: 0;
     background-color: rgba(250, 250, 250, 0.7);
@@ -71,8 +71,8 @@
 }
 
 .imgCard {
-    width: 100%;
-    height: 18rem;
+    width: 17.4rem;
+    height: 13rem;
     border-bottom: 5px solid grey;
     margin: auto;
 }
@@ -108,6 +108,8 @@
     font-size: 1.5rem;
     font-weight: bold;
 }
+
+
 
 @media screen and (max-width: 720px) {
     .productCardContainer {

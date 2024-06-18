@@ -86,9 +86,9 @@
 
     }
 
-    /*aca especifico que la primera diga eso porque si lo pongo por classname me agarra otra cosa*/
+    /*aca especifico que la primera diga nada porque si lo pongo por classname me agarra otra cosa*/
     td:nth-of-type(1):before {
-       content: "Seleccionar"; 
+       content: ""; 
       }
     
       td::before {

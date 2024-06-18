@@ -1,52 +1,64 @@
-import "./BuyForm.css"
-
+import styles from "./BuyForm.module.css"
 import Navbar from "../Navbar/Navbar"
 import { useState } from "react";
 
 import { InputText } from "primereact/inputtext";
-import { Checkbox } from "primereact/checkbox";
 import { SelectButton } from 'primereact/selectbutton';
+import { Link } from "react-router-dom";
+import { Button } from 'primereact/button';
+
+import Ticket from "../Ticket/Ticket";
+
 
 const BuyForm = () => {
+  
+  const optionsDelivery = ['Retira en Local', 'Envío a domicilio'];
+  const [valueDelivery, setValueDelivery] = useState(optionsDelivery[0]);
 
-  const [cashChecked, setCashChecked] = useState(false);
-  const [transChecked, setTransChecked] = useState(false);
+  const optionsPay = [ 
+    {name: 'Transferencia'},
+    {name: 'Efectivo'} ];
+  const [valuePay, setValuePay] = useState(null);
 
-  const options = ['Retira en Local', 'Envío a domicilio'];
-  const [value, setValue] = useState(options[0]);
-
-  return (
-    
-    <div className="formContainer">
+  return ( 
+    <div className={styles["formContainer"]}>
         <Navbar />
         <h1>Concretar Reserva</h1>
-        <form className="buyForm">
-          <fieldset className="fields">
-            <label id="name-label">Nombre y Apellido: <InputText placeholder="Escribí tu Nombre y Apellido" /></label>
-            <label id="num-label">Número WhatsApp: <InputText placeholder="Escribí tu Número" /></label>
-              
-              <div className="payCheckContainer">
-              <label id="pay-label">Medio de Pago:
-               
-              <label className="ml-2">TRANSFERENCIA</label>
-              <Checkbox onChange={e => setTransChecked(e.checked)} checked={transChecked}></Checkbox>
-              <label className="ml-2">EFECTIVO</label>
-              <Checkbox onChange={e => setCashChecked(e.checked)} checked={cashChecked}></Checkbox> 
-              
-            </label>
+        <form className={styles["buyForm"]}>
+          <fieldset className={styles["fields"]}>
+            <div className={styles["buttonSwitchDelivery"]}>
+              <label >Modo de Entrega: </label>
+            <SelectButton value={valueDelivery} onChange={(e) => setValueDelivery(e.value)} options={optionsDelivery} />
             </div>
-            <div className="card flex justify-content-center">
-            <SelectButton value={value} onChange={(e) => setValue(e.value)} options={options} />
+            <div className="buttonSwitchPay">
+              <label >Medio de Pago: </label>
+            <SelectButton value={valuePay} onChange={(e) => setValuePay(e.value)} optionLabel="name" options={optionsPay} multiple />
             </div>
-            {(value === "Envío a domicilio") ? 
-            (<><label id="name-label">Dirección: <InputText placeholder="Escribí tu dirección" /></label>
-            <label id="num-label">Ubicación: <InputText placeholder="Pegá el link de ubicación" /></label>
-            </>) :
-              (null)
+            <label className="name-label">Nombre y Apellido: </label>
+            <InputText placeholder="Escribí tu Nombre y Apellido" />
+            <label className="num-label">Número WhatsApp: </label> 
+            <InputText placeholder="Escribí tu Número WhatsApp" />
+    
+            {(valueDelivery === "Envío a domicilio") ? 
+            (<>
+            <label className="name-label">Dirección: </label>
+            <InputText placeholder="Escribí tu dirección" />
+            <label className="num-label">Ubicación: </label>
+            <InputText placeholder="Pegá el link de ubicación" />
+            <label className="obs-label">Observaciones:  </label> 
+            <InputText placeholder="Indicaciones, límite de tiempo" />
+            </>) : (null)
             }
           </fieldset>
-          
         </form>
+        <div>
+        <Ticket />
+        <Link to={"/BuyForm"} title="Concretar Compra">
+            <Button label="Confirmar Compra" className={styles["confirmBtn"]} />
+        </Link>
+        </div>
+        
+        
     </div>
   )
 }

@@ -21,10 +21,7 @@ const Navbar = () => {
             {cart.length > 0 ? <TotalItems /> : null}
           </Link>
           <Link className="whatsapp" to={"https://wa.link/qoythq"} target="_blank" title="Hablanos por WhatsApp!" >
-            <icon className="pi pi-whatsapp">
-            
-            </icon>
-               
+            <i className="pi pi-whatsapp" />
           </Link>
         </nav>
     </div>

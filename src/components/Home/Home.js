@@ -10,14 +10,13 @@ const Home = () => {
     <div>
         <Navbar />
         <Banner /> 
-        <div className="galeryContainer">
-            <Galery />
-        </div>
         <div className={styles.productCardContainer}>
          <h1>Nuestros Productos</h1>   
          <Products />
         </div>
-        
+        <div className="galeryContainer">
+            <Galery />
+        </div>
     </div>
     );
 };

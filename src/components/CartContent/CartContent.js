@@ -23,8 +23,6 @@ const CartContent = () => {
           <Link to={"/BuyForm"} title="Concretar Compra">
             <Button label="Confirmar Compra" className={stylesy["confirmBtn"]} />
           </Link>
-          
-             
         </div>
       ) : (
         <h2 className={stylesy["cartMessageEmpty"]}> Tu carrito está vacío! </h2>

@@ -28,25 +28,25 @@ const Galery = () => {
                 <div>
                     <div>
                         <a href="https://maps.app.goo.gl/QZuihPry3iFSL4uD8" target="_blank" rel="noreferrer" >
-                            <h2><icon className="pi pi-map-marker contactLink" />   Ubicación</h2>
+                            <h2><i className="pi pi-map-marker contactLink" />   Ubicación</h2>
                         </a>
                     
                     </div>
                     <div>
                         <a href="https://wa.link/jf11ed" target="_blank" rel="noreferrer" >
-                            <h2><icon className="pi pi-whatsapp contactLink" />   2665-247404</h2>
+                            <h2><i className="pi pi-whatsapp contactLink" />   2665-247404</h2>
                         </a>
                     
                     </div>
                     <div>
                         <a href="https://www.instagram.com/pansano.sl/" target="_blank" rel="noreferrer" >
-                            <h2><icon className="pi pi-camera contactLink"  />   @pansano.sl</h2>
+                            <h2><i className="pi pi-camera contactLink"  />   @pansano.sl</h2>
                         </a>
                     
                     </div>
                     <div>
                         <a href="https://www.facebook.com/profile.php?id=100072216714324" target="_blank" rel="noreferrer" >
-                            <h2><icon className="pi pi-facebook contactLink" />   PAN SANO</h2>
+                            <h2><i className="pi pi-facebook contactLink" />   PAN SANO</h2>
                         </a>
                     </div>
                 </div>
