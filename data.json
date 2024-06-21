@@ -92,7 +92,7 @@
     {
         "id": 11,
         "name": "Cremonas",
-        "description": "Con harina 000 agroecológica. Son de manteca %100. Ideales para el mate.",
+        "description": "Con harina 000 agroecológica. Son de manteca %100. Ideales para el mate. Se venden por unidad.  ",
         "category": "Salado",
         "price": 800,
         "img": "imgs/cremona.jpg",
@@ -213,6 +213,60 @@
         "category": "Almacén",
         "price": 2900,
         "img": "imgs/harina sarraceno.jpg",
+        "quanty": 1
+    },
+    {
+        "id": 25,
+        "name": "1Kg Miel Pura Doña Edubijes",
+        "description": "Miel artesanal y ecológica cosechada con amor ♥️ (1 kg)",
+        "category": "Almacén",
+        "price": 4700,
+        "img": "imgs/mielGrande.jpg",
+        "quanty": 1
+    },
+    {
+        "id": 26,
+        "name": "250g Miel Pura Doña Edubijes",
+        "description": "Miel artesanal y ecológica cosechada con amor ♥️ (1 kg)",
+        "category": "Almacén",
+        "price": 1900,
+        "img": "imgs/mielChica.jpg",
+        "quanty": 1
+    },
+    {
+        "id": 27,
+        "name": "Mini Crumble Integral",
+        "description": "Peras, Manzanas y Ciruelas. Masa integral con azúcar mascabo y manteca. Harinas de Sarraceno, Centeno, Avena y Lino",
+        "category": "Dulce",
+        "price": 3500,
+        "img": "imgs/minicrumble.jpeg",
+        "quanty": 1
+    },
+    {
+        "id": 28,
+        "name": "Crumble Integral Familiar",
+        "description": "Peras, Manzanas y Ciruelas. Masa integral con azúcar mascabo y manteca. Harinas de Sarraceno, Centeno, Avena y Lino",
+        "category": "Dulce",
+        "price": 15000,
+        "img": "imgs/crumblegrande.jpeg",
+        "quanty": 1
+    },
+    {
+        "id": 29,
+        "name": "Tortitas",
+        "description": "Semi Integrales, de Masa Madre con Harina Agroecológica. El precio es por 1Kg y se venden sueltas por peso.",
+        "category": "Salado",
+        "price": 3500,
+        "img": "imgs/tortitas.jpeg",
+        "quanty": 1
+    },
+    {
+        "id": 30,
+        "name": "Combo Matero",
+        "description": "Incluye 1 Danesa, 1 Croissant, 1 Medialuna, 1 Roll, 1 Alfajor Integral",
+        "category": "Dulce",
+        "price": 7500,
+        "img": "imgs/combomatero.jpg",
         "quanty": 1
     }
 ]
