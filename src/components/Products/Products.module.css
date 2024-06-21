@@ -122,7 +122,8 @@
     }
 
     .imgCard {
-        height: 40vw;
+        height: 10rem;
+        width: 42.3vw;
     }
 
     .product-card > h2 {

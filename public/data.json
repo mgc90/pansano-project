@@ -75,7 +75,7 @@
         "id": 9,
         "name": "Pan Andino",
         "description": "Majestuoso, con harina de maíz morado, alimento siempre esencial en la zona cordillerana. Contiene nueces y pasas",
-        "category": "Dulce",
+        "category": "Salado",
         "price": 3000,
         "img": "imgs/andino.jpeg",
         "quanty": 1

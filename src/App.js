@@ -9,10 +9,12 @@ import ClientesDash from './components/AdminPanel/panelComponents/ClientesDash/C
 import EnviosDash from './components/AdminPanel/panelComponents/EnviosDash/EnviosDash';
 import CategoriasDash from './components/AdminPanel/panelComponents/CategoriasDash/CategoriasDash';
 import BuyForm from './components/BuyForm/BuyForm';
+import { FiltersProvider } from './components/Context/filtersContext';
 
 function App() {
   return (
     <DataProvider>
+      <FiltersProvider>
       <HashRouter>
         <Routes>
           <Route path='/' element={<Home />} />
@@ -27,6 +29,7 @@ function App() {
           
         </Routes>
       </HashRouter>
+      </FiltersProvider>
     </DataProvider>
     
   );

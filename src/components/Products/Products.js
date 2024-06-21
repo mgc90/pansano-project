@@ -7,6 +7,12 @@ import axios from "axios";
 import styles from "./Products.module.css"
 import { Image } from 'primereact/image';
 
+import Filters from "../Filters/Filters";
+import { useFilters } from "../../hooks/useFilters";
+
+
+
+
 const Products = () => {
   const [data, setData] = useState([]);
 
@@ -14,13 +20,19 @@ const Products = () => {
 
   const { cart } = useContext(dataContext);
 
+  const { filterProducts } = useFilters()
+
+  console.log("algo")
+
+  const filteredProducts = filterProducts(data)
+
   const toast = useRef(null);
 
     const showToast = () => {
         toast.current.show({ severity: 'success', summary: 'Añadido Al Carrito!', life: 1300 });
     };
 
-  
+  console.log(filteredProducts)
   /*ESTA FUNCIÓN LLAMA A LOS PRODUCTOS DESDE ARCHIVO JSON */
   useEffect(() => {
     axios("data.json").then((res) => setData(res.data));
@@ -33,13 +45,16 @@ const Products = () => {
   /*console.log(data)*/
 
   const buyAndToast = (product) => {
-    buyProducts(product);
+    buyProducts(product); 
     showToast()
   }
 
-  return data.map((product) => {
-    return (
-        <div className={styles["product-card"]} key={product.id}>
+  return (
+    <>
+      <Filters />
+    {filteredProducts.map((product) => {
+      return (
+      <div className={styles["product-card"]} key={product.id}>
             <Image src={product.img} alt="imgProductCard" imageClassName={styles.imgCard} preview />
             <h2 title="Nombre del producto">{product.name}</h2>
             <h3 title="Descripción del producto">{product.description}</h3>
@@ -47,12 +62,17 @@ const Products = () => {
             { cart.some((item) => item.id === product.id) ? 
             (<button onClick={() => buyAndToast(product)} className={styles.yaAgregado} title="Producto ya agregado al carrito">
               En el Carrito({cart.map(item => item.id === product.id && item.quanty)})
-              </button>) : 
+             </button>) : 
             (<button onClick={() => buyAndToast(product)} title="Agregar producto al carrito" >Agregar al Carrito</button>)}
            <Toast ref={toast} position="top-center" />
         </div>
-    )
-  });
+    
+        
+    )}
+  )
+  }  </>
+  )
+
 };
 
 export default Products;

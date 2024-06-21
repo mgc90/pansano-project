@@ -35,7 +35,7 @@ const BuyForm = () => {
             <SelectButton value={valuePay} onChange={(e) => setValuePay(e.value)} optionLabel="name" options={optionsPay} multiple />
             </div>
             <label className="name-label">Nombre y Apellido: </label>
-            <InputText placeholder="Escribí tu Nombre y Apellido" />
+            <InputText placeholder="Escribí tu Nombre y Apellido" keyfilter="alpha" />
             <label className="num-label">Número WhatsApp: </label> 
             <InputText placeholder="Escribí tu Número WhatsApp" />
     
