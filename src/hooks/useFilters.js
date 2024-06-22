@@ -13,7 +13,12 @@ export function useFilters() {
           product.price >= filters.minPrice &&
           (
             filters.category === "all" ||
-            product.category === filters.category
+            product.category === filters.category 
+          ) &&
+          (
+            !filters.search ? (products) : (
+            product.name.toLowerCase().includes(filters.search.toLowerCase()) || 
+            product.description.toLowerCase().includes(filters.search.toLowerCase()))
           )
         )
       });

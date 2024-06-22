@@ -1,12 +1,14 @@
 .filters {
     display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
     align-items: center;
     justify-content: space-around;
     font-size: 1.7rem;
     font-weight: 700;
-    color: grey;
+    color:#ccc;
     width: 90vw;
-    padding: 0 0.5rem;
+    padding: 0.5rem;
     gap: 0.5rem;
     margin: 0;
 }
@@ -17,4 +19,9 @@
 
 #category {
     font-size: 1.5rem;
+}
+
+.searchFilter {
+    font-size: 1.5rem;
+    color: #ccc;
 }

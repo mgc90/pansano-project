@@ -7,7 +7,7 @@ import axios from "axios";
 import styles from "./Products.module.css"
 import { Image } from 'primereact/image';
 
-import Filters from "../Filters/Filters";
+
 import { useFilters } from "../../hooks/useFilters";
 
 
@@ -22,7 +22,6 @@ const Products = () => {
 
   const { filterProducts } = useFilters()
 
-  console.log("algo")
 
   const filteredProducts = filterProducts(data)
 
@@ -49,11 +48,8 @@ const Products = () => {
     showToast()
   }
 
-  return (
-    <>
-      <Filters />
-    {filteredProducts.map((product) => {
-      return (
+  return (filteredProducts.map((product) => {
+    return (
       <div className={styles["product-card"]} key={product.id}>
             <Image src={product.img} alt="imgProductCard" imageClassName={styles.imgCard} preview />
             <h2 title="Nombre del producto">{product.name}</h2>
@@ -65,14 +61,9 @@ const Products = () => {
              </button>) : 
             (<button onClick={() => buyAndToast(product)} title="Agregar producto al carrito" >Agregar al Carrito</button>)}
            <Toast ref={toast} position="top-center" />
-        </div>
-    
-        
-    )}
-  )
-  }  </>
-  )
-
+      </div>
+    )
+  }))
 };
 
 export default Products;
