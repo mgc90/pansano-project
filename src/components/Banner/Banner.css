@@ -13,39 +13,34 @@
     width: 100%;
 }
 
-.banner > img {
-    height: 100%;
-}
-
-
 .banner h1 {
     text-align: center;
     margin: 0;
     color: white;
-    text-shadow: 3px 3px 5px #444;
+    text-shadow: 3px 3px 3px #444;
     font-size: 1rem;
     font-weight: bold;
 }
 
 .mainLogo {
     margin-top: 2vh;
-    height: 20rem;
+    width: 34%;
 }
 
 .banner h2 {
     text-align: center;
     font-size: 7vw;
     color: white;
-    opacity: 0.7;
+    opacity: 0.9;
     text-shadow: 3px 3px 5px #444;
 }
 
 .banner h3 {
-    margin: auto;
+    margin-bottom: 1rem;
     text-align: center;
     font-size: 5vw;
     color: white;
-    opacity: 0.7;
+    opacity: 0.9;
     text-shadow: 3px 3px 5px #444;
 }
 

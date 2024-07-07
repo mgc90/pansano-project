@@ -2,9 +2,9 @@
 
 .galeryContainer {
     background-color: black;
-    /*background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-    url("../../../public/imgs/panaderia.jpg");*/
-    background-size: cover;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("../../../public/imgs/carrito fondo.jpeg");
+    background-size: contain;
     background-position: center;
     
 }
@@ -12,13 +12,13 @@
 .galery {
     margin: auto;  
     padding: 2rem 0.5rem;
-    max-width: 50rem;
+    max-width: 75%;
 }
 
 
 .galery-img {
     width: inherit;
-    max-width: 50rem;
+    
     border-radius: 2cap;
 }
 
@@ -31,8 +31,8 @@
     position: absolute;
     border-radius: 7%;
     text-align: start;
-    width: 30vmin;
-    height: 30vmin;
+    width: 45%;
+    height: 45%;
     font-size: 2vmin;
     padding: 0 0.7rem;
     margin: 0;

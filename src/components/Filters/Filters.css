@@ -6,7 +6,7 @@
     justify-content: space-around;
     font-size: 1.7rem;
     font-weight: 700;
-    color:#ccc;
+    color:#eee;
     width: 90vw;
     padding: 0.5rem;
     gap: 0.5rem;
@@ -23,5 +23,10 @@
 
 .searchFilter {
     font-size: 1.5rem;
-    color: #ccc;
+    color: #eee;
+}
+
+input, select {
+    background-color: #777;
+    color: #eee;
 }

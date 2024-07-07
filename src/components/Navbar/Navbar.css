@@ -12,8 +12,8 @@
     display: flex;
     justify-content: space-between;
     height: 5.9rem;
-    background-color: #ccc;
-    border: 0.3rem solid grey; 
+    background-color: #eee;
+    border: 0.3rem solid #ccc; 
     width: 100%;
     align-items: center;
     border-radius: 2cap;

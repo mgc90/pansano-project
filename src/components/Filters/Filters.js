@@ -26,6 +26,7 @@ const Filters = () => {
     }))
    }
       
+   
 
   return (
     <section className="filters">
