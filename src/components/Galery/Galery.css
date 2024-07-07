@@ -12,13 +12,12 @@
 .galery {
     margin: auto;  
     padding: 2rem 0.5rem;
-    max-width: 75%;
+    max-width: 97vmin;
 }
 
 
 .galery-img {
     width: inherit;
-    
     border-radius: 2cap;
 }
 
@@ -33,7 +32,7 @@
     text-align: start;
     width: 45%;
     height: 45%;
-    font-size: 2vmin;
+    font-size: 3.2vmin;
     padding: 0 0.7rem;
     margin: 0;
 }
