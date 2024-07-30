@@ -11,7 +11,7 @@ const CartTotal = () => {
 
   return (
     <div className={stylesy["cartTotal"]}>
-        <h3 title="Total a pagar en Pesos Argentinos">Total a Pagar: ${total},00 </h3>
+        <h3 title="Total a pagar en Pesos Argentinos">Total: ${total},00 </h3>
     </div>
   ) 
 }

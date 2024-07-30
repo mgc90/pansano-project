@@ -5,8 +5,8 @@
     flex-wrap: wrap;
     flex-direction: row;
     margin: auto;
-    background-image: linear-gradient(rgba(40, 199, 199, 0.1), rgba(12, 230, 230, 0.1)),
-    url("../../../public/imgs/canasto.jpeg");
+    background-image: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)),
+    url("../../../public/imgs/gondola.jpg");
     color: black;
     background-size: auto;
     background-position: center;
@@ -23,7 +23,7 @@
     width: 75rem;
     border-radius: 1cap;
     margin: 0;
-    background-color: rgba(250, 250, 250, 0.5);
+    background-color: rgba(250, 250, 250, 0.7);
     text-shadow: 1px 1px 3px white;
 }
 
@@ -71,7 +71,7 @@
     width: 70rem;
     border: 5px solid black;
     text-align: center;
-    height: 7rem;
+  
     background-color: rgba(250, 250, 250, 0.7);
     text-shadow: 1px 1px 3px white;
     border-radius: 0.5cap;

@@ -10,7 +10,7 @@ export function useFilters() {
     const filterProducts = (products) => {
       return products.filter(product => {
         return (
-          product.price >= filters.minPrice &&
+          (filters.sortByPrice === "majorToMinor" ? products.sort(function(a, b) {return b.price - a.price}) : products.sort(function(a, b) {return a.price - b.price}) ) &&
           (
             filters.category === "all" ||
             product.category === filters.category 

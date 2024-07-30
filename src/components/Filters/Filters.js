@@ -5,10 +5,10 @@ import { useFilters } from "../../hooks/useFilters";
 const Filters = () => {
     const { filters, setFilters } = useFilters();
 
-    const handleChangeMinPrice = (event) => {
+    const handleChangeSortByPrice = (event) => {
       setFilters(prevState => ({
         ...prevState,
-        minPrice: event.target.value
+        sortByPrice: event.target.value
       }))
     }
    
@@ -42,12 +42,11 @@ const Filters = () => {
     </div>
 
     <div>
-        <label htmlFor="price">Precio a partir de: </label>
-        <input type="range" id="price" min="0" max="10000"
-          onChange={handleChangeMinPrice}
-          value={filters.minPrice}
-        />
-        <span>${filters.minPrice}</span>
+        <label htmlFor="price">Precio de: </label>
+        <select id="sortByPrice" onChange={handleChangeSortByPrice} >
+          <option value="minorToMajor">Menor a Mayor</option>
+          <option value="majorToMinor">Mayor a Menor</option>
+        </select>  
     </div>
 
     <div>
