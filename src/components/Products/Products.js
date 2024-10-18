@@ -1,6 +1,7 @@
 import { useContext, useState, useEffect, useRef } from "react";
 import { dataContext } from "../Context/DataContext";
 import { Toast } from 'primereact/toast';
+import TotalItems from "../CartContent/TotalItems";
 /*import { getAllProductos } from "../../api/productos.api";*/
 
 import axios from "axios";
@@ -45,8 +46,10 @@ const Products = () => {
 
   const buyAndToast = (product) => {
     buyProducts(product); 
-    showToast()
+    showToast();
   }
+
+
 
   return (filteredProducts.map((product) => {
     return (
@@ -60,7 +63,7 @@ const Products = () => {
               En el Carrito({cart.map(item => item.id === product.id && item.quanty)})
              </button>) : 
             (<button onClick={() => buyAndToast(product)} title="Agregar producto al carrito" >Agregar al Carrito</button>)}
-           <Toast ref={toast} position="top-center" />
+           <Toast ref={toast} position="top-center" content={({ mesagge }) => (<TotalItems />)} />
       </div>
     )
   }))

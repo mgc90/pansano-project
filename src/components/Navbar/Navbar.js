@@ -20,6 +20,7 @@ const Navbar = () => {
             <i className="pi pi-shopping-cart" />
             {cart.length > 0 ? <TotalItems /> : null}
           </Link>
+          <button onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})} class="back-to-top">↑</button>
           <Link className="whatsapp" to={"https://wa.link/qoythq"} target="_blank" title="Hablanos por WhatsApp!" >
             <i className="pi pi-whatsapp" />
           </Link>

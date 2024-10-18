@@ -22,7 +22,13 @@ const Galery = () => {
     const images = [
         {
             
-            original: "imgs/visitanos.jpg",
+            original: "imgs/pansanoBanner3.jpg",
+            originalTitle: "Panadería Artesanal de Masa Madre Agroecológica",
+            description: ""
+        },
+        {
+            
+            original: "imgs/visitanos2.jpg",
             originalTitle: "Conocé nuestro local.",
             description: (
                 <div>
@@ -84,7 +90,7 @@ const Galery = () => {
             <ImageGallery items={images} ref={galleryRef}
             showBullets={true} showFullscreenButton={false} 
             showPlayButton={false}  slideDuration={1500}
-            slideInterval={5000} renderItem={renderItem}
+            slideInterval={10000} renderItem={renderItem}
             onMouseEnter={handleMouseEnter} onClick={handleClick}  
             autoPlay={true}
             
