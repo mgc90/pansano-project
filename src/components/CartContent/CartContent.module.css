@@ -29,8 +29,8 @@
 
 .cartContent > img {
     margin-top: 0;
-    width: 11rem;
-    height: 10rem;
+    width: 10rem;
+    height: 7rem;
     border-right: 5px solid black;
     border-bottom: 5px solid black;
     border-radius: 1cap;
@@ -51,7 +51,7 @@
     width: 11rem;
     border: 4px solid black;
     border-radius: 1cap;
-    padding: 0.3rem;
+    padding: 0 0.3rem;
 }
 
 .quanty {
@@ -90,8 +90,9 @@
     font-weight: bold;
     border: 2px solid black;
     border-radius: 15%;
-    width: 3rem;
+    width: 2.5rem;
     margin: auto; 
+    background-color: cadetblue;
 }
 
 .counterButton:hover {
@@ -107,11 +108,14 @@
     padding: 0;
 }
 
-.cartDeleteButton {
+.deleteButton {
     cursor: pointer;
-    margin: 1rem;
-    font-size: 1.5rem;
-    padding: 0 0.8rem;
+    margin: auto;
+    font-size: 1.4rem;
+    padding: 0.1rem 0;
+    border-radius: 15%;
+    border: 2px solid black;
+    width: 2.5rem;
 }
 
 .confirmBtn {
@@ -128,8 +132,10 @@
 @media screen and (max-width: 799px) {
     .name {
         width: 10rem;
-        line-height: 2rem;
-        margin-top: -2rem;
+        line-height: 1.777rem;
+        margin: 0;
+        margin-top: -4.5rem;
+        padding: 0 0.3rem;
     }
 
     .cartContent {

@@ -45,7 +45,7 @@
     line-height: 1.5rem;
     color:black;
     padding-top: 1.5rem;
-    text-shadow: 1px 1px 3px #444;
+    text-shadow: 1px 1px 2px #444;
 }
 
 .product-card > h4 {
@@ -68,10 +68,10 @@
     margin: auto;
 }
 
-.product-card button {
+.product-card .addButton {
     border: black;
     outline: 0;
-    padding: 1vh;
+    padding: 0.6rem;
     color: white;
     background-color: cadetblue;
     text-align: center;
@@ -80,6 +80,7 @@
     font-size: 1.5rem;
     font-weight: bold;
     text-shadow: 1px 1px 3px #444;
+    min-height: 4.7rem;
 }
 
 .product-card button:hover {
@@ -90,14 +91,27 @@
 .product-card .yaAgregado {
     border: black;
     outline: 0;
-    padding: 1vh;
+    padding: 0.1rem 1rem;
     color: white;
     background-color:cornflowerblue;
     text-align: center;
-    cursor: pointer;
+    min-height: 4rem;
     width: 100%;
     font-size: 1.5rem;
     font-weight: bold;
+    justify-content: center;
+    align-items: center;
+    display: flex-start;
+    text-shadow: 1px 1px 3px #444;
+}
+
+.yaAgregado button p {
+    width: 1.8rem;
+}
+
+.yaAgregado p {
+    width: 4rem;
+    padding: 0;
 }
 
 .stickear {
@@ -142,7 +156,7 @@
     .product-card > h2 {
         font-size: 5.2vw;
         line-height: 5vw;
-        height: 15vw;
+        height: 10vw;
         margin-bottom: 0.5rem;
     }
 
@@ -150,6 +164,7 @@
         font-size: 4.3vw;
         line-height: 4.2vw;
         height: 35vw;
+        margin-bottom: 1.2rem;
     }
 
     .product-card > h4 {

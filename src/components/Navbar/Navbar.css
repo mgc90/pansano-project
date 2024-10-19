@@ -108,15 +108,16 @@
 
 .back-to-top {
     position: fixed;
-    bottom: 4rem;
-    right: 0rem;
+    bottom: 4.5rem;
+    right: -0.5rem;
     color: #007BFF;
     background: none;
     padding: 10px 15px;
     font-size: 4rem;
     font-weight: bolder;
     z-index: 1000;
-    text-decoration: none;
+    text-decoration: dashed;
+    text-shadow: -2px 2px 2px black;
     border: none;
   }
 

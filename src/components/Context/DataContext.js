@@ -17,7 +17,7 @@ const DataProvider = ({children}) => {
         const repeatedProduct = cart.find((item) => item.id === product.id);
   
         if(repeatedProduct) {
-          setCart(cart.map((item) => item.id === product.id ? {...product, quanty: 
+          setCart(cart.map((item) => (item.id === product.id) && item.quanty < 10 ? {...product, quanty: 
             repeatedProduct.quanty + 1} : item))
         } else {
             setCart([...cart, product]);

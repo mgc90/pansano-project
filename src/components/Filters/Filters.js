@@ -42,7 +42,7 @@ const Filters = () => {
     </div>
 
     <div>
-        <label htmlFor="price">Precio de: </label>
+        <label htmlFor="price">Precio: </label>
         <select id="sortByPrice" onChange={handleChangeSortByPrice} >
           <option value="minorToMajor">Menor a Mayor</option>
           <option value="majorToMinor">Mayor a Menor</option>
