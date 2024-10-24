@@ -24,8 +24,16 @@ const DataProvider = ({children}) => {
         }
       };
 
+      const deleteProduct = (product) => {
+        const foundId = cart.find((elem) => elem.id === product.id);
+        const newCart = cart.filter((elem) => {
+          return elem !== foundId;
+        });
+        setCart(newCart);
+      };
+
     return (
-        <dataContext.Provider value={{ cart, setCart, buyProducts }}>
+        <dataContext.Provider value={{ cart, setCart, buyProducts, deleteProduct }}>
             {children}
         </dataContext.Provider>
     )

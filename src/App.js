@@ -10,10 +10,13 @@ import EnviosDash from './components/AdminPanel/panelComponents/EnviosDash/Envio
 import CategoriasDash from './components/AdminPanel/panelComponents/CategoriasDash/CategoriasDash';
 import BuyForm from './components/BuyForm/BuyForm';
 import { FiltersProvider } from './components/Context/filtersContext';
+import { ToastProvider } from './components/Context/ToastContext';
 
 function App() {
   return (
+    <ToastProvider>
     <DataProvider>
+      
       <FiltersProvider>
       <HashRouter>
         <Routes>
@@ -30,8 +33,9 @@ function App() {
         </Routes>
       </HashRouter>
       </FiltersProvider>
+      
     </DataProvider>
-    
+    </ToastProvider>
   );
 }
 

@@ -1,26 +1,26 @@
-import { useContext, useState, useEffect, useRef } from "react";
+import { useContext, useState, useEffect } from "react";
 import { dataContext } from "../Context/DataContext";
-import { Toast } from 'primereact/toast';
+
 /*import { getAllProductos } from "../../api/productos.api";*/
 import axios from "axios";
 import styles from "./Products.module.css"
 import { Image } from 'primereact/image';
 import { useFilters } from "../../hooks/useFilters";
+import useToast from "../../hooks/useToast";
 import CartItemCounter from "../CartContent/CartItemCounter";
-
 
 
 const Products = () => {
   const [data, setData] = useState([]);
   const { buyProducts } = useContext(dataContext);
   const { cart } = useContext(dataContext);
-  const { filterProducts } = useFilters()
+  const { filterProducts } = useFilters();
+  const { displayToast } = useToast();
 
   const filteredProducts = filterProducts(data)
-  const toast = useRef(null);
 
   const showToast = () => {
-   toast.current.show({ severity: 'success', summary: 'Añadido Al Carrito!', life: 3000 });
+   displayToast({ severity: 'success', summary: 'Añadido Al Carrito!', life: 3000 });
   };
 
   //console.log(filteredProducts)
@@ -63,8 +63,7 @@ const Products = () => {
       <div className={styles["product-card"]} key={product.id}>
             <Image src={product.img} alt="imgProductCard" imageClassName={styles.imgCard} preview />
             <h2 title="Nombre del producto">{product.name}</h2>
-            <h3 title="Descripción del producto">{product.description}</h3>
-            
+            <h3 title="Descripción del producto">{product.description}</h3>            
             { cart.some((item) => item.id === product.id) ? 
             (<>
             <h4 className={styles.price} title="Precio en pesos argentinos">${cartedQuanty(product)},00</h4>
@@ -73,14 +72,12 @@ const Products = () => {
             </div>
             </>
             ) : 
-
             (<>
             <h4 className={styles.price} title="Precio en pesos argentinos">${product.price},00</h4>
             <button className={styles.addButton} onClick={() => buyAndToast(product)} title="Agregar producto al carrito" >Agregar al Carrito</button>
             </>
             )
             }
-           <Toast ref={toast} position="top-center"  />
       </div>
     )
   }))
