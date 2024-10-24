@@ -12,15 +12,15 @@ import CartItemCounter from "../CartContent/CartItemCounter";
 
 const Products = () => {
   const [data, setData] = useState([]);
-  const { buyProducts } = useContext(dataContext);
-  const { cart } = useContext(dataContext);
+  const { cart, buyProducts } = useContext(dataContext);
+
   const { filterProducts } = useFilters();
   const { displayToast } = useToast();
 
   const filteredProducts = filterProducts(data)
 
   const showToast = () => {
-   displayToast({ severity: 'success', summary: 'Añadido Al Carrito!', life: 3000 });
+   displayToast({ severity: 'success', summary: 'Añadido Al Carrito!', detail: "En Carrito" });
   };
 
   //console.log(filteredProducts)

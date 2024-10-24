@@ -16,8 +16,8 @@ function App() {
   return (
     <ToastProvider>
     <DataProvider>
-      
       <FiltersProvider>
+      
       <HashRouter>
         <Routes>
           <Route path='/' element={<Home />} />
@@ -32,10 +32,11 @@ function App() {
           
         </Routes>
       </HashRouter>
-      </FiltersProvider>
       
+      </FiltersProvider>
     </DataProvider>
     </ToastProvider>
+    
   );
 }
 
