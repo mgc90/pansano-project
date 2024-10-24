@@ -6,11 +6,10 @@ export function useFilters() {
     const { filters, setFilters } = useContext(FiltersContext);
     
     
-    //funcion para filtrar por categorías
+    //funcion para filtrar por
     const filterProducts = (products) => {
-      return products.filter(product => {
+      let filteredProducts = products.filter(product => {
         return (
-          (filters.sortByPrice === "majorToMinor" ? products.sort(function(a, b) {return b.price - a.price}) : products.sort(function(a, b) {return a.price - b.price}) ) &&
           (
             filters.category === "all" ||
             product.category === filters.category 
@@ -22,7 +21,16 @@ export function useFilters() {
           )
         )
       });
+      (
+        filters.sortByPrice === "majorToMinor" ? 
+        filteredProducts.sort((a, b) => b.price - a.price) : 
+        filteredProducts.sort((a, b) => a.price - b.price) 
+      ) 
+        
+        return filteredProducts;
     };
+
+    
   
     return { filters, filterProducts, setFilters }
   }
