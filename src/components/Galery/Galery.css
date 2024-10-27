@@ -12,7 +12,7 @@
 .galery {
     margin: auto;  
     padding: 2rem 0.5rem;
-    max-width: 90vmin;
+    max-width: 90%;
 }
 
 
@@ -32,7 +32,7 @@
     text-align: start;
     width: 45%;
     height: 45%;
-    font-size: 2.7vmin;
+    font-size: 2vmin;
     padding: 0 0.7rem;
     margin: 0;
 }

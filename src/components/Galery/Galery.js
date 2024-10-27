@@ -89,7 +89,7 @@ const Galery = () => {
         <div className='galery'>
             <ImageGallery items={images} ref={galleryRef}
             showBullets={true} showFullscreenButton={false} 
-            showPlayButton={false}  slideDuration={1500}
+            showPlayButton={false}  slideDuration={700}
             slideInterval={10000} renderItem={renderItem}
             onMouseEnter={handleMouseEnter} onClick={handleClick}  
             autoPlay={true}

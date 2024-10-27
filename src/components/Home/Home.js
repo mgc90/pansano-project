@@ -18,9 +18,9 @@ const Home = () => {
         <div className={styles.productsTitle}>
         <h1>Nuestros Productos</h1>
         </div>
-        <div className={styles.stickear}>
+       
             <Filters />
-        </div>
+        
         <div className={styles.productCardContainer}>
             <Products />
         </div>

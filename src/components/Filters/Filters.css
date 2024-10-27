@@ -4,13 +4,22 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-    font-size: 1.7rem;
+    font-size: 1.3rem;
     font-weight: 700;
     color:#eee;
-    width: 90vw;
-    padding: 0.5rem;
+    width: 100%;
+    padding: 0.2rem;
+    padding-right: 3rem;
     gap: 0.5rem;
     margin: 0;
+    position: sticky;
+    top: 0;
+    z-index: 99;
+    background-color: #444;
+    border: 0.3rem solid #ccc; 
+    align-items: center;
+    border-radius: 1cap;
+    min-height: 4rem;
 }
 
 .filtersContainer {
@@ -18,11 +27,11 @@
 }
 
 #category, #sortByPrice {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
 }
 
 .searchFilter {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     color: #eee;
 }
 
@@ -30,3 +39,17 @@ input, select {
     background-color: #777;
     color: #eee;
 }
+
+.stickear {
+    position: sticky;
+    top: 0;
+    z-index: 99;
+}
+
+@media screen and (max-width: 656px) {
+    .filters {
+        line-height: 0.5rem;
+        
+        
+    }
+}   

@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { dataContext } from "../Context/DataContext";
+import { ScrollTop } from 'primereact/scrolltop';
 
 import TotalItems from "../CartContent/TotalItems";
 
@@ -20,7 +21,7 @@ const Navbar = () => {
             <i className="pi pi-shopping-cart" />
             {cart.length > 0 ? <TotalItems /> : null}
           </Link>
-          <button onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})} className="back-to-top">↑</button>
+          <ScrollTop className="back-to-top" />
           <Link className="whatsapp" to={"https://wa.link/qoythq"} target="_blank" title="Hablanos por WhatsApp!" >
             <i className="pi pi-whatsapp" />
           </Link>

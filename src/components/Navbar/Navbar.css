@@ -11,33 +11,33 @@
 .navbar {
     display: flex;
     justify-content: space-between;
-    height: 5.4rem;
-    background-color: #eee;
+    height: 4rem;
+    background-color: #444;
     border: 0.3rem solid #ccc; 
     width: 100%;
     align-items: center;
-    border-radius: 2cap;
+    border-radius: 1cap;
 }
 
 .navbarLogo {
     justify-self: start;
     margin-left: 1rem;
     color: #fff;
-    margin-top: 1.5rem;
+    margin-top: 1.7rem;
     cursor: pointer;
 }
 
 .navbarLogo > img {
-    justify-self: self-start;
-    height: 4.3rem;
-    margin: 0px 0px;  
+    
+    height: 3.3rem;
+    margin: 0; 
 }
 
 
 .seeCart {
-    font-size: 2.8rem;
-    margin-right: 1rem;
-    margin-top: 1.5vh;
+    font-size: 2.3rem;
+    margin-right: 0.5rem;
+    margin-top: 0.5rem;
     cursor: pointer;
     text-decoration: none;
     position: fixed;   
@@ -47,7 +47,7 @@
 }
 
 .seeCart > i {
-    font-size: 3.9rem;
+    font-size: 3.3rem;
     color: #444;
     text-shadow: 1px 1px 10px #ccc;
     font-weight: 500;
@@ -57,12 +57,12 @@
     background-color: rgb(243, 59, 46);
     color: white;
     border-radius: 0.7cap;
-    font-size: 1.6rem;
+    font-size: 1.3rem;
     font-weight: bold;
     text-shadow: 1px 1px 4px black;
-    margin-top: -3.8rem;
-    margin-right: -1rem;
-    margin-left: 0.9rem;
+    margin-top: -3rem;
+    margin-right: -0.5rem;
+    margin-left: 0.5rem;
     width: 2.4rem;
     text-align: center;
     padding-top: 0;
@@ -108,10 +108,9 @@
 
 .back-to-top {
     position: fixed;
-    bottom: 4.5rem;
-    right: -0.5rem;
-    color: #007BFF;
-    background: none;
+    bottom: 4.3rem;
+    right: 0.1rem;
+    background-color: #007BFF;
     padding: 10px 15px;
     font-size: 4rem;
     font-weight: bolder;
