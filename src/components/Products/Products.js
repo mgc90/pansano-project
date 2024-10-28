@@ -1,4 +1,4 @@
-import { useContext, useState, useEffect } from "react";
+import { useContext, useState, useEffect, useRef } from "react";
 import { dataContext } from "../Context/DataContext";
 
 /*import { getAllProductos } from "../../api/productos.api";*/
@@ -18,6 +18,8 @@ const Products = () => {
   const { displayToast } = useToast();
 
   const filteredProducts = filterProducts(data)
+
+  const imageRef = useRef();
 
   const showToast = () => {
    displayToast({ severity: 'success', summary: 'Añadido Al Carrito!', detail: "En Carrito" });
@@ -56,14 +58,24 @@ const Products = () => {
       ))
     })
   }
+
+  const customTemplate = (description) => {
+    imageRef.current.show(
+      <span className="mask">
+        <h3 title="Descripción del producto">{description}</h3>
+      </span>
+    );
+  }
 //console.log(item)
 
-  return (filteredProducts.map((product) => {
-    return (
-      <div className={styles["product-card"]} key={product.id}>
-            <Image src={product.img} alt="imgProductCard" imageClassName={styles.imgCard} preview />
+  return (filteredProducts.length > 1 ?
+    (
+      filteredProducts.map((product) => {  
+        return (
+        <div className={styles["product-card"]} key={product.id}>
+            <Image ref={imageRef} src={product.img} alt="imgProductCard" onShow={() => customTemplate(product.description)} imageClassName={styles.imgCard} preview />
             <h2 title="Nombre del producto">{product.name}</h2>
-            <h3 title="Descripción del producto">{product.description}</h3>            
+                        
             { cart.some((item) => item.id === product.id) ? 
             (<>
             <h4 className={styles.price} title="Precio en pesos argentinos">${cartedQuanty(product)},00</h4>
@@ -78,9 +90,12 @@ const Products = () => {
             </>
             )
             }
-      </div>
-    )
-  }))
+        </div>)
+      })
+    ) :
+    (<h2 className={styles.noResults} >No hay resultados con esa búsqueda.</h2>
+  )
+ )
 };
 
 export default Products;

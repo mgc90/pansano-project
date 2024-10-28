@@ -115,7 +115,7 @@
 }
 
 .productsTitle > h1 {
-    font-size: 2.7rem;
+    font-size: 2.5rem;
     width: 100vw;
     color: #eee;
     margin: 0;
@@ -123,6 +123,22 @@
     text-align: center;
     padding: 0;
     background-color: black;
+}
+
+.noResults {
+    text-align: center;
+    justify-self: start;
+    margin-top: 30vh;
+    font-size: 5rem;
+    color: #ccc;
+    height: 90%;
+    padding-bottom: 20vh;
+}
+
+.descriptionProd {
+    z-index: 3000!important;
+    background-color: red;
+    position: absolute;
 }
 
 
