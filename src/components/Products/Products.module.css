@@ -68,7 +68,7 @@
     margin: auto;
 }
 
-.product-card .addButton {
+.addButton {
     border: black;
     outline: 0;
     padding: 0.6rem;
@@ -88,14 +88,14 @@
     background-color: coral;
 }
 
-.product-card .yaAgregado {
+ .yaAgregado {
     border: black;
     outline: 0;
     padding: 0.1rem 1rem;
     color: white;
     background-color:cornflowerblue;
     text-align: center;
-    min-height: 4rem;
+    min-height: 4.9rem;
     width: 100%;
     font-size: 1.5rem;
     font-weight: bold;
@@ -116,7 +116,7 @@
 
 .productsTitle > h1 {
     font-size: 2.5rem;
-    width: 100vw;
+    width: 100%;
     color: #eee;
     margin: 0;
     text-shadow: 3px 3px 3px black;
@@ -135,12 +135,23 @@
     padding-bottom: 20vh;
 }
 
-.descriptionProd {
-    z-index: 3000!important;
-    background-color: red;
-    position: absolute;
+.imgInDialog  {
+    width: 90vmin;
+    height: 60vmin;
+    padding: 0;
+    margin: 0;
 }
 
+.dialogContainer {
+    width: 90vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    padding: 0;
+    z-index: 50000;
+}
 
 @media screen and (max-width: 656px) {
     .productCardContainer {

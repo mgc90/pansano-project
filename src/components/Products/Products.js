@@ -1,10 +1,12 @@
-import { useContext, useState, useEffect, useRef } from "react";
+import { useContext, useState, useEffect } from "react";
 import { dataContext } from "../Context/DataContext";
+
+import { Dialog } from 'primereact/dialog';
 
 /*import { getAllProductos } from "../../api/productos.api";*/
 import axios from "axios";
 import styles from "./Products.module.css"
-import { Image } from 'primereact/image';
+
 import { useFilters } from "../../hooks/useFilters";
 import useToast from "../../hooks/useToast";
 import CartItemCounter from "../CartContent/CartItemCounter";
@@ -12,6 +14,8 @@ import CartItemCounter from "../CartContent/CartItemCounter";
 
 const Products = () => {
   const [data, setData] = useState([]);
+  const [currentProduct, setCurrentProduct] = useState([]);
+  const [visible, setVisible] = useState(false);
   const { cart, buyProducts } = useContext(dataContext);
 
   const { filterProducts } = useFilters();
@@ -19,7 +23,7 @@ const Products = () => {
 
   const filteredProducts = filterProducts(data)
 
-  const imageRef = useRef();
+  
 
   const showToast = () => {
    displayToast({ severity: 'success', summary: 'Añadido Al Carrito!', detail: "En Carrito" });
@@ -59,24 +63,9 @@ const Products = () => {
     })
   }
 
-  const customTemplate = (description) => {
-    imageRef.current.show(
-      <span className="mask">
-        <h3 title="Descripción del producto">{description}</h3>
-      </span>
-    );
-  }
-//console.log(item)
-
-  return (filteredProducts.length > 1 ?
-    (
-      filteredProducts.map((product) => {  
-        return (
-        <div className={styles["product-card"]} key={product.id}>
-            <Image ref={imageRef} src={product.img} alt="imgProductCard" onShow={() => customTemplate(product.description)} imageClassName={styles.imgCard} preview />
-            <h2 title="Nombre del producto">{product.name}</h2>
-                        
-            { cart.some((item) => item.id === product.id) ? 
+  const dinamicButton = (product) => {
+    return(
+      cart.some((item) => item.id === product.id) ? 
             (<>
             <h4 className={styles.price} title="Precio en pesos argentinos">${cartedQuanty(product)},00</h4>
             <div className={styles.yaAgregado} title="Producto ya agregado al carrito">
@@ -89,12 +78,51 @@ const Products = () => {
             <button className={styles.addButton} onClick={() => buyAndToast(product)} title="Agregar producto al carrito" >Agregar al Carrito</button>
             </>
             )
-            }
+            
+    )
+  }
+
+
+//console.log(item)
+
+const handleClickImage = (productId) => {
+  setCurrentProduct(filteredProducts.find((item) => item.id === productId));
+  setVisible(true);
+}
+
+
+  return (
+    <>
+    {filteredProducts.length > 1 ?
+    (
+      filteredProducts.map((product) => {  
+        return (
+        <div className={styles["product-card"]} key={product.id}>
+            <img src={product.img} alt="imgProductCard"
+             className={styles.imgCard} onClick={() => {handleClickImage(product.id)}} />
+            <h2 title="Nombre del producto">{product.name}</h2>         
+            {dinamicButton(product)}
         </div>)
       })
     ) :
-    (<h2 className={styles.noResults} >No hay resultados con esa búsqueda.</h2>
-  )
+    (<h2 className={styles.noResults} >
+      No hay resultados con esa búsqueda.
+      </h2>
+    )}
+    <Dialog header={currentProduct.name} visible={visible} 
+    
+    onHide={() => {if (!visible) return; setVisible(false); }} 
+    contentClassName={styles.dialogContainer} dismissableMask
+     
+    >
+      <img src={currentProduct.img} alt="imgProductCard"  
+      className={styles.imgInDialog} 
+      />
+      <h3 title="Descripción del producto">
+        {currentProduct.description}</h3>
+      {dinamicButton(currentProduct)}
+    </Dialog>
+  </>  
  )
 };
 
