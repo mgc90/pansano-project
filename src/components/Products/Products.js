@@ -107,13 +107,11 @@ const handleClickImage = (productId) => {
     ) :
     (<h2 className={styles.noResults} >
       No hay resultados con esa búsqueda.
-      </h2>
+     </h2>
     )}
     <Dialog header={currentProduct.name} visible={visible} 
-    
     onHide={() => {if (!visible) return; setVisible(false); }} 
     contentClassName={styles.dialogContainer} dismissableMask
-     
     >
       <img src={currentProduct.img} alt="imgProductCard"  
       className={styles.imgInDialog} 

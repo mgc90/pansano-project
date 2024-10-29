@@ -46,6 +46,7 @@
     color:black;
     padding-top: 1.5rem;
     text-shadow: 1px 1px 2px #444;
+    padding: 2rem;
 }
 
 .product-card > h4 {
@@ -66,6 +67,13 @@
     height: 13rem;
     border-bottom: 5px solid #eee;
     margin: auto;
+}
+
+.imgCard:hover {
+    opacity: 0.7;
+    color: coral;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    transform: scale(1.05);
 }
 
 .addButton {
@@ -151,7 +159,9 @@
     margin: auto;
     padding: 0;
     z-index: 50000;
+    text-align: center;
 }
+
 
 @media screen and (max-width: 656px) {
     .productCardContainer {
@@ -169,9 +179,9 @@
     }
 
     .product-card > h2 {
-        font-size: 5.2vw;
+        font-size: 5vw;
         line-height: 5vw;
-        height: 10vw;
+        height: 12vw;
         margin-bottom: 0.5rem;
     }
 
@@ -180,10 +190,15 @@
         line-height: 4.2vw;
         height: 35vw;
         margin-bottom: 1.2rem;
+        
     }
 
     .product-card > h4 {
         font-size: 1.7rem;
         height: inherit;
+    }
+
+    .dialogContainer {
+        width: 100%;
     }
 }
