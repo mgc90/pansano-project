@@ -12,7 +12,7 @@ import Ticket from "../Ticket/Ticket";
 
 const BuyForm = () => {
   
-  const optionsDelivery = ['Retira en Local', 'Envío a domicilio'];
+  const optionsDelivery = ['En el Local', 'A domicilio'];
   const [valueDelivery, setValueDelivery] = useState(optionsDelivery[0]);
 
   const optionsPay = [ 
@@ -23,12 +23,12 @@ const BuyForm = () => {
   return ( 
     <div className={styles["formContainer"]}>
         <Navbar />
-        <h1>Concretar Reserva</h1>
+        <h2>Concretar Reserva</h2>
         <form className={styles["buyForm"]}>
           <fieldset className={styles["fields"]}>
-            <div className={styles["buttonSwitchDelivery"]}>
+            <div >
               <label >Modo de Entrega: </label>
-            <SelectButton value={valueDelivery} onChange={(e) => setValueDelivery(e.value)} options={optionsDelivery} />
+            <SelectButton className={styles["buttonSwitchDelivery"]} value={valueDelivery} onChange={(e) => setValueDelivery(e.value)} options={optionsDelivery} />
             </div>
             <div className="buttonSwitchPay">
               <label >Medio de Pago: </label>

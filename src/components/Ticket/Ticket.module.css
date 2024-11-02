@@ -1,25 +1,26 @@
-.ticket .ticketDetail {
+.ticketDetail {
     display: grid;
-    grid-template-columns:  18rem 1rem 3rem ;
+    
+    grid-template-columns:  70% 10% 20% ;
     grid-template-areas: 
     "name quanty price";
-    justify-content: center;
+
     padding: 0;
-    margin: 0;
+    margin: auto;
     justify-items: stretch;
-    line-height: 0rem;
+    line-height: 1px;
     text-align: start;
     border: 2px groove rgb(192, 192, 192);
-    width: 100vw;
+    
     max-width: 500px;
     margin: auto;
 }
 
-.ticketDetail {
-    padding: 0;
-    margin: 0;
+.ticket {
+    max-width: 500px;
 }
 
 .quanty {
-    margin-left: -4rem;
+    width: 7rem;
+    margin-left: -3rem;
 }

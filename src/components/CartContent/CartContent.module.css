@@ -56,12 +56,12 @@
 }
 
 .quanty {
-    font-size: 1.7rem;
+    font-size: 1.2rem;
     font-weight: bold;
     margin: auto;
     border: 2px solid black;
     border-radius: 15%;
-    width: 4rem;
+    width: 3.6rem;
     padding: 0 0.2rem;
 }
 
@@ -85,7 +85,7 @@
 }
 
 .counterButton {
-    font-size: 1.7rem;
+    font-size: 1.3rem;
     text-align: center;
     cursor: pointer;
     font-weight: bold;
@@ -103,7 +103,6 @@
 .quantyCounter {
     display: flex;
     margin: auto;
-    
     text-align: center;
     flex-direction: row;
     padding: 0.1rem;
@@ -112,11 +111,11 @@
 .deleteButton {
     cursor: pointer;
     margin: auto;
-    font-size: 1.4rem;
+    font-size: 1rem;
     padding: 0.1rem 0;
     border-radius: 15%;
     border: 2px solid black;
-    width: 2.5rem;
+    width: 2.9rem;
 }
 
 .confirmBtn {
@@ -135,7 +134,7 @@
         width: 10rem;
         line-height: 1.777rem;
         margin: 0;
-        margin-top: -4.5rem;
+        margin-top: -5.4rem;
         padding: 0 0.3rem;
     }
 

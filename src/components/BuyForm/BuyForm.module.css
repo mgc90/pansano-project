@@ -4,23 +4,31 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    width: auto;
+    
+    max-width: 500px;
+    min-width: 300px;
+    padding: 0;
 }
 
 .buyForm {
     justify-content: center;
     text-align: center;
-    width: 100vw;
-    max-width: 500px;
-    min-width: 300px;
+    width: 100%;
+    
     margin: auto;
+    padding: 0;
     padding-bottom: 0.5em;
   }
 
+.fields > .p-button {
+    width: 10rem;
+}
+ 
 .formContainer {
     justify-content: center;
     text-align: center;
-    
+    width: auto;
+    padding: 0;
 }
 
 .payCheckContainer {
@@ -35,3 +43,10 @@
     padding: 1rem;
 }
 
+.buttonSwitchDelivery {
+    width: 100%;  
+}
+
+.buttonSwitchDelivery > .p-button {
+    margin-top: -1rem;
+}

@@ -46,7 +46,7 @@ const CartItemCounter = ({ inCartProduct }) => {
         <p className={stylesy["quanty"]} title="Cantidad de unidades del producto"> {productQuantity}u</p>
         <button className={stylesy['counterButton']} title="Sumar una unidad" onClick={() => buyProducts(inCartProduct)}>+</button>
 
-        <ConfirmPopup  />
+        
     </div>
   )
 }

@@ -6,7 +6,8 @@ export const FiltersProvider = ({ children }) => {
     const [filters, setFilters] = useState({
         category: "all",
         sortByPrice: "minorToMajor",
-        search: ""
+        search: "",
+        viewMode: "cards"
     });
 
 

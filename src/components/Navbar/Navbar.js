@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { dataContext } from "../Context/DataContext";
 import { ScrollTop } from 'primereact/scrolltop';
+import { ConfirmPopup } from "primereact/confirmpopup";
 
 import TotalItems from "../CartContent/TotalItems";
 
@@ -26,6 +27,7 @@ const Navbar = () => {
             <i className="pi pi-whatsapp" />
           </Link>
         </nav>
+        <ConfirmPopup  />
     </div>
   )
 }

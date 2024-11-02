@@ -16,6 +16,16 @@
     width: 100%;
 }
 
+.productsTitle > h1 {
+    font-size: 2.5rem;
+    width: 100%;
+    color: #eee;
+    margin: 0;
+    text-shadow: 3px 3px 3px black;
+    text-align: center;
+    padding: 0;
+    background-color: black;
+}
 
 .product-card {
     margin: 1rem;
@@ -64,12 +74,12 @@
 
 .imgCard {
     width: 17.4rem;
-    height: 13rem;
+    height: 11rem;
     border-bottom: 5px solid #eee;
     margin: auto;
 }
 
-.imgCard:hover {
+.imgCard:hover, .imgCardList:hover {
     opacity: 0.7;
     color: coral;
     transition: opacity 0.5s ease, transform 0.5s ease;
@@ -85,13 +95,13 @@
     text-align: center;
     cursor: pointer;
     width: 100%;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: bold;
     text-shadow: 1px 1px 3px #444;
-    min-height: 4.9rem;
+    min-height: 4.7rem;
 }
 
-.product-card button:hover {
+button:hover {
     opacity: 0.7;
     background-color: coral;
 }
@@ -99,13 +109,13 @@
  .yaAgregado {
     border: black;
     outline: 0;
-    padding: 0.1rem 1rem;
+    padding: 0.05rem 0.05rem;
     color: white;
     background-color:cornflowerblue;
     text-align: center;
-    min-height: 4.9rem;
+    min-height: 4.7rem;
     width: 100%;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: bold;
     justify-content: center;
     align-items: center;
@@ -113,16 +123,15 @@
     text-shadow: 1px 1px 3px #444;
 }
 
-.yaAgregado button p {
-    width: 1.8rem;
-}
-
-.yaAgregado p {
-    width: 4rem;
+.yaAgregado > p {
     padding: 0;
+    margin: 0 auto;
+    margin-top: -0.3rem;
+
 }
 
-.productsTitle > h1 {
+
+/*.productsTitle {
     font-size: 2.5rem;
     width: 100%;
     color: #eee;
@@ -131,7 +140,7 @@
     text-align: center;
     padding: 0;
     background-color: black;
-}
+}*/
 
 .noResults {
     text-align: center;
@@ -163,11 +172,88 @@
 }
 
 
-@media screen and (max-width: 656px) {
-    .productCardContainer {
-        margin: 0;
-    }
+/*LIST LAYOUT */
+.product-list-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 80vw;
+    align-items: center;
+    text-align: center;
+    align-content: center;
+    margin: auto;
+    border: 5px solid black;
+    text-shadow: 1px 1px 3px white;
+    background-color: rgba(250, 250, 250, 0.4);
+    padding: 0;
+    font-size: 1.3rem;
+    line-height: 1.4rem;
+    min-height: 1.5rem;
+}
 
+.product-list-container > h2 {
+    font-size: 1.25rem;
+    line-height: 1.1rem;
+    width: 43%;
+    margin: 0;
+    min-height: 1.3rem;
+}
+
+.product-list-container > h3 {
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    height: 1rem;
+    margin-bottom: 0.2rem;
+    padding: 0.5rem;
+    
+}
+
+.product-list-container > h4 {
+    font-size: 1.3rem;
+    height: 1rem;
+    padding: 0;
+    width: 7.5rem;
+    margin: 0;
+}
+
+
+
+.product-list-container > .yaAgregado > p {
+    padding: 0;
+    margin: 0 auto;
+    margin-top: -0.3rem;
+    margin-bottom: -0.3rem;
+}
+
+.product-list-container > .imgCard {
+    width: 6.3rem;
+    height: 3.3rem;
+    margin: 0;
+    padding: 0;
+    border: 2px solid black;
+}
+
+.product-list-container > .yaAgregado, .product-list-container > .addButton {
+    width: 6.3rem;
+    border: 2px solid black;
+    margin: 0;
+    min-height: 3rem;
+    font-size: 0.9rem;
+    padding: 0;
+}
+
+
+@media screen and (max-width: 950px) {
+    .product-list-container {
+        width: 100%;
+    }
+ 
+}
+
+
+@media screen and (max-width: 693px) {
+    
     .product-card {
         width: 45vw;
         margin: 0.2rem 0.2rem;
@@ -179,26 +265,39 @@
     }
 
     .product-card > h2 {
-        font-size: 5vw;
-        line-height: 5vw;
-        height: 12vw;
-        margin-bottom: 0.5rem;
+        font-size: 1.4rem;
+        line-height: 1.5rem;
+        height: 3.6rem;
+        margin-top: -0.5rem;
+        padding-top: 0;
     }
 
     .product-card > h3 {
         font-size: 4.3vw;
         line-height: 4.2vw;
         height: 35vw;
-        margin-bottom: 1.2rem;
+        margin-bottom: 0.2rem;
         
     }
 
     .product-card > h4 {
-        font-size: 1.7rem;
+        font-size: 1.4rem;
         height: inherit;
     }
 
     .dialogContainer {
         width: 100%;
     }
+
+    .yaAgregado {
+        min-height: 3.6rem;
+    }
+
+    .addButton {
+        font-size: 1.2rem;
+        min-height: 3.6rem;
+        padding: 0.2rem;
+    }
+    
+
 }

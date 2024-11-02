@@ -1,9 +1,25 @@
 import "./Filters.css"
 
+import { SelectButton } from 'primereact/selectbutton';
+
 import { useFilters } from "../../hooks/useFilters";
+
+import { useState } from "react";
+
+import { PrimeIcons } from 'primereact/api';
 
 const Filters = () => {
     const { filters, setFilters } = useFilters();
+    
+
+    const justifyOptions = [
+      {icon: 'pi pi-th-large', value: 'cards'},
+      {icon: PrimeIcons.LIST , value: 'list'}
+  ];
+    const [value, setValue] = useState(justifyOptions[0].value);
+    const justifyTemplate = (option) => {
+      return <i className={option.icon} style={{ fontSize: '0.7rem', paddingTop: "0" , margin: "0"}}></i>;
+  }
 
     const handleChangeSortByPrice = (event) => {
       setFilters(prevState => ({
@@ -26,10 +42,23 @@ const Filters = () => {
     }))
    }
       
-   
+   const viewMode = (e) => {
+    setValue(e.value);
+    setFilters(prevState => ({
+      ...prevState,
+      viewMode: e.target.value
+    }))
+   }
+
 
   return (
     <section className="filters">
+      <div >
+            <SelectButton  className="switchButton"
+               value={value} onChange={viewMode} 
+            options={justifyOptions} itemTemplate={justifyTemplate}
+            />
+        </div>
 
     <div>
       <label htmlFor="category">Categoría: </label>
@@ -44,8 +73,8 @@ const Filters = () => {
     <div>
         <label htmlFor="price">Precio: </label>
         <select id="sortByPrice" onChange={handleChangeSortByPrice} >
-          <option value="minorToMajor">Menor a Mayor</option>
-          <option value="majorToMinor">Mayor a Menor</option>
+          <option value="minorToMajor">Menor</option>
+          <option value="majorToMinor">Mayor</option>
         </select>  
     </div>
 
