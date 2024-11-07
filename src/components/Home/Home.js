@@ -7,6 +7,7 @@ import Filters from "../Filters/Filters";
 import Footer from "../Footer/Footer";
 
 
+
 const Home = () => {
     return (
     <div>
@@ -18,9 +19,7 @@ const Home = () => {
         <div className={styles.productsTitle}>
         <h1>Nuestros Productos</h1>
         </div>
-       
-            <Filters />
-        
+        <Filters />
         <div className={styles.productCardContainer}>
             <Products />
         </div>

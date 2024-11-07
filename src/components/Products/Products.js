@@ -2,6 +2,8 @@ import { useContext, useState, useEffect } from "react";
 import { dataContext } from "../Context/DataContext";
 
 import { Dialog } from 'primereact/dialog';
+import { Link } from "react-router-dom";
+import { Button } from 'primereact/button';
 
 /*import { getAllProductos } from "../../api/productos.api";*/
 import axios from "axios";
@@ -10,6 +12,7 @@ import styles from "./Products.module.css"
 import { useFilters } from "../../hooks/useFilters";
 import useToast from "../../hooks/useToast";
 import CartItemCounter from "../CartContent/CartItemCounter";
+import stylesy from "../CartContent/CartContent.module.css"
 
 
 const Products = () => {
@@ -96,20 +99,20 @@ const Products = () => {
 
 //console.log(item)
 
-const handleClickImage = (productId) => {
-  setCurrentProduct(filteredProducts.find((item) => 
-    item.id === productId));
-  setVisible(true);
-}
+  const handleClickImage = (productId) => {
+    setCurrentProduct(filteredProducts.find((item) => 
+      item.id === productId));
+    setVisible(true);
+  }
 
-const cardsLayout = (products) => {
-  return (
-    products.map((product) => {  
-      return (
-      <div className={filters.viewMode === "cards" ? 
-      styles["product-card"] : 
-      styles["product-list-container"]}
-       key={product.id} >
+  const cardsLayout = (products) => {
+    return (
+      products.map((product) => {  
+        return (
+        <div className={filters.viewMode === "cards" ? 
+        styles["product-card"] : 
+        styles["product-list-container"]}
+        key={product.id} >
           <img src={product.img} alt="imgProductCard"
            className={styles.imgCard} 
            onClick={() => {handleClickImage(product.id)}} />
@@ -117,17 +120,28 @@ const cardsLayout = (products) => {
           className={styles["productsTitle"]} >{product.name}
           </h2>         
           {dinamicButton(product)}
-      </div>)
-    })
-  )
-}
+        </div>)
+      })
+    )
+  }
+
+  const seeCartButton = () => {
+    return (
+      <Link  to={"/cart"} title="Carrito de compras" >
+            <Button label="Ver Mi Carrito" className={stylesy["confirmBtn"]} />
+      </Link>
+    )
+  }
 
 
   return (
     <>
     {filteredProducts.length > 1 ?
-    (
-      cardsLayout(filteredProducts)
+    ( 
+    <>
+      {cardsLayout(filteredProducts)}
+      {seeCartButton()}
+    </>
     ) :
     (<h2 className={styles.noResults} >
       No hay resultados con esa búsqueda.
