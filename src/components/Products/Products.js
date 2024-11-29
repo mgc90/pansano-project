@@ -128,7 +128,7 @@ const Products = () => {
   const seeCartButton = () => {
     return (
       <Link  to={"/cart"} title="Carrito de compras" >
-            <Button label="Ver Mi Carrito" className={stylesy["confirmBtn"]} />
+        <Button label="Ver Mi Carrito" className={stylesy["confirmBtn"]} />
       </Link>
     )
   }
