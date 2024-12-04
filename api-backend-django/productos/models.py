@@ -11,13 +11,13 @@ class Categorias(models.Model):
 
 class Productos(models.Model):
     id = models.IntegerField
-    category = models.ForeignKey(Categorias)
+    category = models.ForeignKey(Categorias, null=True, on_delete=models.CASCADE)
     name = models.CharField(max_length=100)
     price = models.IntegerField(default=0)
     img = models.CharField(max_length=200) #models.FileField(upload_to="imgs")
     quanty = models.IntegerField(default=1)
-    description = models.TextField(blank=True)
-    published = models.BooleanField(blank=False)
+    description = models.CharField(max_length=200, blank=True)
+    published = models.BooleanField(blank=False, default=False)
 
     def __str__(self):
         return self.name
