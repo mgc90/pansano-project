@@ -1,6 +1,6 @@
 from rest_framework import viewsets
-from .serializer import VentasSerializer, DetalleVentaSerializer, PagoSerializer, EstadoEntregaSerializer, EstadoPagoSerializer, MetodoPagoSerializer
-from .models import Ventas, Detalle_Venta, Pago, Estado_Pago, Estado_Entrega, Estado_Pago, Metodo_Pago
+from .serializer import VentasSerializer, DetalleVentaSerializer, PagoSerializer, EstadoEntregaSerializer
+from .models import Ventas, Detalle_Venta, Pago, Estado_Entrega
 
 # Create your views here.
 class VentasView(viewsets.ModelViewSet):
@@ -19,10 +19,10 @@ class EstadoEntregaView(viewsets.ModelViewSet):
     serializer_class = EstadoEntregaSerializer
     queryset = Estado_Entrega.objects.all()
 
-class EstadoPagoView(viewsets.ModelViewSet):
-    serializer_class = EstadoPagoSerializer
-    queryset = Estado_Pago.objects.all()
+#class EstadoPagoView(viewsets.ModelViewSet):
+ #   serializer_class = EstadoPagoSerializer
+  #  queryset = Estado_Pago.objects.all()
 
-class MetodoPagoView(viewsets.ModelViewSet):
-    serializer_class = MetodoPagoSerializer
-    queryset = Metodo_Pago.objects.all()
+#class MetodoPagoView(viewsets.ModelViewSet):
+ #   serializer_class = MetodoPagoSerializer
+  #  queryset = Metodo_Pago.objects.all()

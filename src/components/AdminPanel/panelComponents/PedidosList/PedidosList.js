@@ -306,10 +306,10 @@ export default function PedidosList() {
                     <Column headerClassName="hidden-header" key="Seleccionar" selectionMode="multiple" exportable={false}  ></Column>
                     <Column field="id" header="N°" headerClassName="hidden-header" className="ID" sortable  ></Column>
                     <Column field="creationDate" header="Fecha Creado" className="Fecha Creado" sortable ></Column>
-                    <Column field="zone" header="Zona" sortable className="Zona" ></Column>
-                    <Column field="ubication" header="Ubicación" className="Ubicación" headerClassName="hidden-header" ></Column>
+                    {/*<Column field="zone" header="Zona" sortable className="Zona" ></Column>*/}
+                    {/*<Column field="ubication" header="Ubicación" className="Ubicación" headerClassName="hidden-header" ></Column>*/}
                     <Column field="customerName" headerClassName="hidden-header" className="Cliente" header="Cliente" sortable ></Column>
-                    <Column field="customerTel" className="Teléfono" header="Teléfono" sortable headerClassName="hidden-header" ></Column>
+                    {/*<Column field="customerTel" className="Teléfono" header="Teléfono" sortable headerClassName="hidden-header" ></Column>*/}
                     <Column field="detail" header="Detalle" className="Detalle" headerClassName="hidden-header" ></Column>
                     <Column field="observations" header="Observaciones" className="Observaciones" headerClassName="hidden-header" ></Column>
                     <Column field="total" header="Total" body={totalBodyTemplate} sortable className="Total" ></Column>

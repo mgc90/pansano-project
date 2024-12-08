@@ -1,0 +1,17 @@
+{
+    "sqltools.useNodeRuntime": true,
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "database": "${workspaceFolder:pansano-project}/api-backend-django/db.sqlite3",
+            "name": "pansano-database"
+        },
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "name": "pansano-project-database",
+            "database": "${workspaceFolder:pansano-project}/api-backend-django/db.sqlite3"
+        }
+    ]
+}
