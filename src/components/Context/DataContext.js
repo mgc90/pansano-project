@@ -7,6 +7,8 @@ const DataProvider = ({children}) => {
     
     const [cart, setCart] = useState(savedCart);
 
+    const total = cart.reduce((acc, elem) => acc + elem.price * elem.quanty, 0);
+
     useEffect(() => {
         localStorage.setItem("cart", JSON.stringify(cart));
     }, [cart]);
@@ -33,7 +35,7 @@ const DataProvider = ({children}) => {
       };
 
     return (
-        <dataContext.Provider value={{ cart, setCart, buyProducts, deleteProduct }}>
+        <dataContext.Provider value={{ total, cart, setCart, buyProducts, deleteProduct }}>
             {children}
         </dataContext.Provider>
     )

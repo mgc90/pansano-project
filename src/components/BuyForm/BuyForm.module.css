@@ -50,3 +50,13 @@
 .buttonSwitchDelivery > .p-button {
     margin-top: -1rem;
 }
+
+.confirmBtn {
+    margin: 1rem;
+}
+
+.errorSpan {
+    display: block;
+    color: tomato;
+    font-size: small;
+}

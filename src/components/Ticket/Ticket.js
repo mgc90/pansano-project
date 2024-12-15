@@ -5,9 +5,9 @@ import { dataContext } from "../Context/DataContext";
 
 const Ticket = () => {
 
-    const { cart } = useContext(dataContext);
+    const { cart, total } = useContext(dataContext);
 
-    const total = cart.reduce((acc, elem) => acc + elem.price * elem.quanty, 0);
+    
 
     const ticketHeaders = () => {
       return (
