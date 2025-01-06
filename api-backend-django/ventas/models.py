@@ -46,7 +46,7 @@ class Estado_Entrega(models.Model):
         return self.name
 
 class Ventas(models.Model):
-    customer =  models.OneToOneField(
+    customer =  models.ForeignKey(
         Clientes, 
         null=True, 
         on_delete=models.CASCADE,
@@ -58,7 +58,7 @@ class Ventas(models.Model):
         on_delete=models.CASCADE,
         related_name='ventas_estado_entrega'
         )
-    pay =  models.OneToOneField(
+    pay =  models.ForeignKey(
         Pago, 
         null=True, 
         on_delete=models.CASCADE,
@@ -68,6 +68,8 @@ class Ventas(models.Model):
     created_date = models.DateTimeField(auto_now_add=True, null=False)
     delivered_date = models.DateTimeField(auto_now_add=False, null=True)
     shipment = models.BooleanField(blank=False, default=False)
+    observations = models.TextField(null=True, blank=True)
+    
     def __str__(self):
         return f"Venta #{self.id} - Cliente: {self.customer}"
 
@@ -83,6 +85,6 @@ class Detalle_Venta(models.Model):
         null=True, 
         on_delete=models.CASCADE
         )
-    quantity_product = models.IntegerField(default=1)
+    quantity_product = models.PositiveSmallIntegerField(default=1)
     def __str__(self):
         return f"Detalle de Venta #{self.sale}"

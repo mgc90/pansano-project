@@ -1,32 +1,32 @@
 from rest_framework import serializers
 from .models import Pago, Estado_Entrega, Ventas, Detalle_Venta
+from productos.models import Productos
+from clientes.models import Clientes
+from productos.serializer import ProductosSerializer
 
-#class MetodoPagoSerializer(serializers.ModelSerializer):
- #   class Meta:
-  #      model = Metodo_Pago
-   #     fields = '__all__'
-
-#class EstadoPagoSerializer(serializers.ModelSerializer):
- #   class Meta:
-  #      model = Estado_Pago
-   #     fields = '__all__'
+class DetalleVentasSerializer(serializers.ModelSerializer):
+    product = serializers.StringRelatedField()
+    quantity_product = serializers.IntegerField()
+    class Meta:
+        model = Detalle_Venta
+        fields = ['product', 'quantity_product']
 
 class PagoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Pago
-        fields = '__all__'
+        fields = ['pay_method', 'pay_status', 'payed_date']
 
 class EstadoEntregaSerializer(serializers.ModelSerializer):
     class Meta:
         model = Estado_Entrega
-        fields = '__all__'
+        fields = ['name']
 
 class VentasSerializer(serializers.ModelSerializer):
+    detalle = DetalleVentasSerializer(many=True)
+    pay = PagoSerializer(read_only=True)
+    delivery_state = EstadoEntregaSerializer(read_only=True)
+    customer = serializers.StringRelatedField()
+    
     class Meta:
         model = Ventas
-        fields = '__all__'
-
-class DetalleVentaSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Detalle_Venta
-        fields = '__all__'
+        fields = ['id', 'customer', 'detalle', 'delivery_state', 'pay', 'total_mount', 'created_date', 'observations']

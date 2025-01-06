@@ -1,28 +1,31 @@
+from django.http import JsonResponse
+import json
+from .services import registrar_venta
+from rest_framework.decorators import api_view
+from .models import Ventas
+from .serializer import VentasSerializer
 from rest_framework import viewsets
-from .serializer import VentasSerializer, DetalleVentaSerializer, PagoSerializer, EstadoEntregaSerializer
-from .models import Ventas, Detalle_Venta, Pago, Estado_Entrega
 
-# Create your views here.
+
 class VentasView(viewsets.ModelViewSet):
-    serializer_class = VentasSerializer
     queryset = Ventas.objects.all()
+    serializer_class = VentasSerializer
 
-class DetalleVentaView(viewsets.ModelViewSet):
-    serializer_class = DetalleVentaSerializer
-    queryset = Detalle_Venta.objects.all()
 
-class PagoView(viewsets.ModelViewSet):
-    serializer_class = PagoSerializer
-    queryset = Pago.objects.all()
+@api_view(['POST'])
+def registrar_venta_view(request):
+    
+    if request.method == 'POST':
+        data = request.data
+        try:
+            
+            venta = registrar_venta(data)
 
-class EstadoEntregaView(viewsets.ModelViewSet):
-    serializer_class = EstadoEntregaSerializer
-    queryset = Estado_Entrega.objects.all()
+            return JsonResponse({"mensaje": "Venta registrada con éxito", "venta_id": venta.id}, status=201)
+        
+        except Exception as e: 
 
-#class EstadoPagoView(viewsets.ModelViewSet):
- #   serializer_class = EstadoPagoSerializer
-  #  queryset = Estado_Pago.objects.all()
+            return JsonResponse({"error": str(e)}, status=400)
+        
+    
 
-#class MetodoPagoView(viewsets.ModelViewSet):
- #   serializer_class = MetodoPagoSerializer
-  #  queryset = Metodo_Pago.objects.all()

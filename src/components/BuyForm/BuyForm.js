@@ -178,9 +178,12 @@ const BuyForm = () => {
         <label className="name-label">Dirección: </label>
             <InputText placeholder="Escribí tu dirección" 
               {...register("direccion", {
-                required: {
-                  value: true,  //  VER COMO CONDICIONAR PARA QUE SEA FALSE SI SE RETIRA EN LOCAL
-                  message: "La dirección es requerida"
+                validate: (value) => {
+                    const modoEntrega = watch("modoEntrega");
+                    if (modoEntrega === "A domicilio" && !value) {
+                        return "La dirección es requerida";
+                    }
+                    return true;
                 },
                 /*pattern: {
                   value: /^[a-zA-ZáéíóúÁÉÍÓÚñÑ0-9'\-\s]+ \d+[a-zA-Z]*$/,
@@ -194,7 +197,7 @@ const BuyForm = () => {
                   value: 70,
                   message: "Dirección debe tener menos de 70 caracteres"
                 }
-              })}
+            })}
             />
             {showErrors("direccion")}
       </>
@@ -236,6 +239,12 @@ const BuyForm = () => {
     )
   }
 
+  const resetShipmentFields = () => {
+      setValue("direccion", "");
+      setValue("ubicacion", "")
+  }
+
+
   return ( 
     <div className={styles["formContainer"]}>
         <Navbar />
@@ -254,7 +263,10 @@ const BuyForm = () => {
             (<>
               {direccionField()}
               {ubicacionField()}
-            </>) : (null) }
+            </>) : 
+            (<>
+              {resetShipmentFields()}
+            </>) }
             
             {observacionesField()}       
           </fieldset>
