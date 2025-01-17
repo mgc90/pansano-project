@@ -28,4 +28,3 @@ def registrar_venta_view(request):
             return JsonResponse({"error": str(e)}, status=400)
         
     
-

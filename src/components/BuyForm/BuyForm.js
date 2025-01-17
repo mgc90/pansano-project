@@ -5,15 +5,18 @@ import Ticket from "../Ticket/Ticket";
 import { useContext } from "react";
 import { dataContext } from "../Context/DataContext";
 import { useForm } from "react-hook-form";
+import { registroDeVenta } from "../../api/ventas.api";
 
 import { Button } from 'primereact/button';
 import { InputText } from "primereact/inputtext";
 import { SelectButton } from 'primereact/selectbutton';
 
+import useToast from "../../hooks/useToast";
+
 
 const BuyForm = () => {
-
-  const { register, handleSubmit, formState: {errors}, setValue, watch } = useForm();
+  
+  const { register, handleSubmit, formState: {errors}, setValue, watch, reset } = useForm();
   
   const optionsDelivery = ['En el Local', 'A domicilio'];
   const modoEntrega = watch("modoEntrega")
@@ -22,18 +25,52 @@ const BuyForm = () => {
   const modoPago = watch("modoPago");
 
   const { cart, total } = useContext(dataContext);
+
+  const { displayToast } = useToast();
  
   const chartToSend = cart.map((item) => ({
     id: item.id,
     quanty: item.quanty
   }));
 
-  const chartToSendStrigified = JSON.stringify(chartToSend);
+  //const chartToSendStrigified = JSON.stringify(chartToSend);
   //console.log(errors)
 
-  const onSubmit = handleSubmit((data) => {
-    console.log(data)
+  const registeredWithSuccesToast = (response) => displayToast({ 
+    severity: 'succes',
+    summary: "Éxito",
+    detail: response.data.mensaje || "Venta registrada correctamente ahora"
   })
+
+  const errorWhileRegisterToast = (error) => displayToast({
+    severity: 'error',
+    summary: "Error",
+    detail: error.response?.data?.mensaje || "Hubo un error al procesar"
+  })
+
+  
+
+
+  const onSubmit = async (data) => {
+    const formData = {
+      ...data,           // Incluye los demás campos del formulario
+      carrito: chartToSend,  // El carrito como un arreglo
+      total: total       // El total como número o string, según lo que necesites
+    };
+
+    try {
+      const response = await registroDeVenta(formData);
+      registeredWithSuccesToast(response);
+      reset();
+    } catch (error) {
+      errorWhileRegisterToast(error);
+      console.log(error)
+    }
+    console.log(formData)
+    console.log(chartToSend)
+    
+
+  }
 
   const showErrors = (field) => {
     return(
@@ -163,14 +200,7 @@ const BuyForm = () => {
     )
   }
 
-  const hiddenFields = () => { //hidden fields for total and chart to send
-    return(
-      <>
-        <input type="hidden" {...register("carrito")} defaultValue={chartToSendStrigified} />
-        <input type="hidden" defaultValue={total} {...register("total")} />
-      </>
-    )
-  }
+
 
   const direccionField = () => {
     return(
@@ -250,14 +280,14 @@ const BuyForm = () => {
         <Navbar />
         <h2>Concretar Reserva</h2>
 
-        <form className={styles["buyForm"]} onSubmit={onSubmit} >
+        <form className={styles["buyForm"]} onSubmit={handleSubmit(onSubmit)} >
           <fieldset className={styles["fields"]}>
             {deliveryModeField()}
             {payModeField()}
             {nameField()}
             {apellidoField()}
             {telefonoField()}
-            {hiddenFields()}
+
 
             { (modoEntrega === 'A domicilio') ? 
             (<>

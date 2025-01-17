@@ -13,5 +13,5 @@ router.register(r'ventas', VentasView)
 
 urlpatterns = [
     path("api/v1/ventas/", include(router.urls)),
-    path("api/v1/procesar_venta/", registrar_venta_view, name='procesar_venta')
+    path("api/v1/registrar_venta/", registrar_venta_view, name='registrar_venta')
 ]
