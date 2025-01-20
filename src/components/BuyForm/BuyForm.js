@@ -55,19 +55,20 @@ const BuyForm = () => {
     const formData = {
       ...data,           // Incluye los demás campos del formulario
       carrito: chartToSend,  // El carrito como un arreglo
-      total: total       // El total como número o string, según lo que necesites
+      total: total       // El total como número o string
     };
 
     try {
       const response = await registroDeVenta(formData);
       registeredWithSuccesToast(response);
       reset();
+      localStorage.setItem("cart", JSON.stringify([]));
     } catch (error) {
       errorWhileRegisterToast(error);
       console.log(error)
     }
-    console.log(formData)
-    console.log(chartToSend)
+    //console.log(formData)
+    //console.log(chartToSend)
     
 
   }

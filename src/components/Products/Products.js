@@ -134,6 +134,7 @@ const Products = () => {
   }
 
 
+
   return (
     <>
     {filteredProducts.length > 1 ?
@@ -141,6 +142,7 @@ const Products = () => {
     <>
       {cardsLayout(filteredProducts)}
       {seeCartButton()}
+      
     </>
     ) :
     (<h2 className={styles.noResults} >
