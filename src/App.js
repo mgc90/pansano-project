@@ -11,13 +11,14 @@ import CategoriasDash from './components/AdminPanel/panelComponents/CategoriasDa
 import BuyForm from './components/BuyForm/BuyForm';
 import { FiltersProvider } from './components/Context/filtersContext';
 import { ToastProvider } from './components/Context/ToastContext';
+import { ConfirmDialogProvider } from './components/Context/ConfirmDialogContext';
 
 function App() {
   return (
     <ToastProvider>
     <DataProvider>
       <FiltersProvider>
-      
+      <ConfirmDialogProvider>
       <HashRouter>
         <Routes>
           <Route path='/' element={<Home />} />
@@ -32,7 +33,7 @@ function App() {
           
         </Routes>
       </HashRouter>
-      
+      </ConfirmDialogProvider>
       </FiltersProvider>
     </DataProvider>
     </ToastProvider>

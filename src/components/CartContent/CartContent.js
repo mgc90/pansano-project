@@ -9,22 +9,23 @@ import Navbar from "../Navbar/Navbar";
 import stylesy from "./CartContent.module.css"
 import { Button } from 'primereact/button';
 
-import { ConfirmDialog, confirmDialog } from 'primereact/confirmdialog';
+import useConfirmDialog from "../../hooks/useConfirmDialog";
 
 const CartContent = () => {
   const { cart, setCart } = useContext(dataContext);
+  const { displayConfirmDialog } = useConfirmDialog()
 
   const accept = () => {
     setCart([]);
   }
   
   const confirm1 = () => {
-    confirmDialog({
+    displayConfirmDialog({
         message: 'Desea eliminar el carrito?',
         header: 'Confirmación',
         icon: 'pi pi-exclamation-triangle',
         defaultFocus: 'accept',
-        accept,
+        accept: accept,
         acceptLabel: "Si",
         reject: null
     });
@@ -49,7 +50,7 @@ const CartContent = () => {
             <Button label="Confirmar Compra" className={stylesy["confirmBtn"]} />
           </Link>
           {resetCartbutton()}
-          <ConfirmDialog />
+          
         </div>
       ) : (
         <h2 className={stylesy["cartMessageEmpty"]}> Tu carrito está vacío! </h2>

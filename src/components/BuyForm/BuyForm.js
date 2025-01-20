@@ -11,7 +11,10 @@ import { Button } from 'primereact/button';
 import { InputText } from "primereact/inputtext";
 import { SelectButton } from 'primereact/selectbutton';
 
+import { useNavigate } from 'react-router-dom';
+
 import useToast from "../../hooks/useToast";
+import useConfirmDialog from "../../hooks/useConfirmDialog";
 
 
 const BuyForm = () => {
@@ -24,9 +27,13 @@ const BuyForm = () => {
   const optionsPay = ['Transferencia', 'Efectivo'];
   const modoPago = watch("modoPago");
 
-  const { cart, total } = useContext(dataContext);
+  const navigate = useNavigate();
+
+  const { cart, setCart, total } = useContext(dataContext);
 
   const { displayToast } = useToast();
+
+  const { displayConfirmDialog } = useConfirmDialog()
  
   const chartToSend = cart.map((item) => ({
     id: item.id,
@@ -48,7 +55,21 @@ const BuyForm = () => {
     detail: error.response?.data?.mensaje || "Hubo un error al procesar"
   })
 
-  
+  const finishSale = () => {
+    navigate("/");
+  }
+
+  const confirmSale = () => {
+    displayConfirmDialog({
+        message: 'Ya estamos procesando tu pedido, recibirás un mensaje con los detalles. Muchas gracias!',
+        header: 'Pedido registrado con éxito!',
+        icon: 'pi pi-check',
+        defaultFocus: 'accept',
+        accept: finishSale,
+        acceptLabel: "Volver a Página principal"
+    });
+};
+
 
 
   const onSubmit = async (data) => {
@@ -62,7 +83,8 @@ const BuyForm = () => {
       const response = await registroDeVenta(formData);
       registeredWithSuccesToast(response);
       reset();
-      localStorage.setItem("cart", JSON.stringify([]));
+      setCart([]);
+      confirmSale();
     } catch (error) {
       errorWhileRegisterToast(error);
       console.log(error)
