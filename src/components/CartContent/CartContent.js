@@ -9,34 +9,13 @@ import Navbar from "../Navbar/Navbar";
 import stylesy from "./CartContent.module.css"
 import { Button } from 'primereact/button';
 
-import useConfirmDialog from "../../hooks/useConfirmDialog";
+
 
 const CartContent = () => {
-  const { cart, setCart } = useContext(dataContext);
-  const { displayConfirmDialog } = useConfirmDialog()
-
-  const accept = () => {
-    setCart([]);
-  }
+  const { cart } = useContext(dataContext);
   
-  const confirm1 = () => {
-    displayConfirmDialog({
-        message: 'Desea eliminar el carrito?',
-        header: 'Confirmación',
-        icon: 'pi pi-exclamation-triangle',
-        defaultFocus: 'accept',
-        accept: accept,
-        acceptLabel: "Si" 
-    });
-};
 
-  const resetCartbutton = () => {
-    return (
-    <Button label="Borrar Carrito" onClick={confirm1} 
-    className={stylesy["confirmBtn"]} />
-  )
-  }
-
+  
 
   return (
     <div>
@@ -48,11 +27,22 @@ const CartContent = () => {
           <Link to={"/BuyForm"} title="Concretar Compra">
             <Button label="Confirmar Compra" className={stylesy["confirmBtn"]} />
           </Link>
-          {resetCartbutton()}
           
         </div>
       ) : (
+        <div >
         <h2 className={stylesy["cartMessageEmpty"]}> Tu carrito está vacío! </h2>
+        <div>
+        <Link to={"/"} title="Ir a página principal">
+            <h1 className={stylesy["navbarLogoVoidCart"]}>
+              <img alt="logo" src="imgs/pansanoLogoNegro.png" />
+              VOLVER A LA PÁGINA PRINCIPAL
+            </h1>
+          </Link>
+          </div>
+        </div>
+        
+        
       )}
     </div>
   );

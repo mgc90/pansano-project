@@ -12,6 +12,12 @@
             "driver": "SQLite",
             "name": "pansano-project-database",
             "database": "${workspaceFolder:pansano-project}/api-backend-django/db.sqlite3"
+        },
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "database": "${workspaceFolder:pansano-project}/api-backend-django",
+            "name": "pansano-database"
         }
     ]
 }

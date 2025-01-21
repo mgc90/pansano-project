@@ -59,21 +59,32 @@ const BuyForm = () => {
     navigate("/");
   }
 
-  const confirmSale = () => {
+  const confirmedSale = () => {
     displayConfirmDialog({
         message: 'Ya estamos procesando tu pedido, recibirás un mensaje con los detalles. Muchas gracias!',
         header: 'Pedido registrado con éxito!',
         icon: 'pi pi-check',
-        defaultFocus: 'accept',
         accept: finishSale,
         acceptLabel: "Volver a Página principal",
         rejectClassName: "hidden"
     });
-};
+  };
 
+
+  
+  const confirmSale = (data) => {
+    displayConfirmDialog({
+        message: '¿Estás seguro de confirmar la compra?',
+        header: 'Confirmar Compra',
+        icon: 'pi pi-exclamation-triangle',
+        accept: () => onSubmit(data),
+        acceptLabel: "Sí",
+    })
+  }
 
 
   const onSubmit = async (data) => {
+    
     const formData = {
       ...data,           // Incluye los demás campos del formulario
       carrito: chartToSend,  // El carrito como un arreglo
@@ -85,16 +96,16 @@ const BuyForm = () => {
       registeredWithSuccesToast(response);
       reset();
       setCart([]);
-      confirmSale();
+      confirmedSale();
     } catch (error) {
       errorWhileRegisterToast(error);
       console.log(error)
     }
     //console.log(formData)
     //console.log(chartToSend)
-    
-
   }
+
+
 
   const showErrors = (field) => {
     return(
@@ -130,17 +141,17 @@ const BuyForm = () => {
     return(
       <>
         <div className="buttonSwitchPay">
-              <label >Seleccione Medio de Pago: </label>
-            <SelectButton value={modoPago} onChange={(e) => setValue("modoPago", e.value)}  
-              options={optionsPay}  {...register("modoPago", {
-                required: {
-                  value: true,
-                  message: "Medio de pago es requerido"
-                }
-              })}
-            />
-            </div>
-            {showErrors("modoPago")}
+          <label >Seleccione Medio de Pago: </label>
+          <SelectButton value={modoPago} onChange={(e) => setValue("modoPago", e.value)}  
+            options={optionsPay}  {...register("modoPago", {
+              required: {
+                value: true,
+                message: "Medio de pago es requerido"
+              }
+            })}
+          />
+        </div>
+        {showErrors("modoPago")}
       </>
     )
   }
@@ -173,7 +184,7 @@ const BuyForm = () => {
   const apellidoField = () => {
     return(
       <>
-        <label className="name-label">Apellido: </label>
+        <label className="lastname-label">Apellido: </label>
             <InputText placeholder="Escribí tu Nombre y Apellido" keyfilter="alpha" 
               {...register("apellido", {
                 required: {
@@ -223,8 +234,6 @@ const BuyForm = () => {
       </>
     )
   }
-
-
 
   const direccionField = () => {
     return(
@@ -304,7 +313,8 @@ const BuyForm = () => {
         <Navbar />
         <h2>Concretar Reserva</h2>
 
-        <form className={styles["buyForm"]} onSubmit={handleSubmit(onSubmit)} >
+        <form className={styles["buyForm"]} 
+        onSubmit={handleSubmit(confirmSale)} >
           <fieldset className={styles["fields"]}>
             {deliveryModeField()}
             {payModeField()}
@@ -330,7 +340,8 @@ const BuyForm = () => {
           </div>  
 
           <Button label="Confirmar Compra" type="submit"
-            className={styles["confirmBtn"]} />
+            className={styles["confirmBtn"]}
+             />
 
         </form>
     </div>

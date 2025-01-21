@@ -10,14 +10,21 @@ import "./Navbar.css";
 
 const Navbar = () => {
   const { cart } = useContext(dataContext);
-  return (
-    <div className="nav-Container">
-        <nav className="navbar">
-          <Link to={"/"} title="Ir a página principal">
+
+  const mainLogo = () => {
+    return (
+           <Link to={"/"} title="Ir a página principal">
             <h1 className="navbarLogo">
               <img alt="logo" src="imgs/pansanoLogoNegro.png" />
             </h1>
           </Link>
+    )
+  }
+  
+  return (
+    <div className="nav-Container">
+        <nav className="navbar">
+          {mainLogo()}
           <Link className="seeCart" to={"/cart"} title="Carrito de compras" >
             <i className="pi pi-shopping-cart" />
             {cart.length > 0 ? <TotalItems /> : null}

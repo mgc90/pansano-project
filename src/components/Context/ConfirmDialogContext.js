@@ -6,9 +6,9 @@ export const ConfirmDialogContext = createContext();
 
 export const ConfirmDialogProvider = ({ children }) => {
     
-    
-
     const toConfirmDialog = ( { message, header, icon, accept, acceptLabel, rejectClassName } ) => {
+        const rejectHidden = rejectClassName === "hidden";
+
         confirmDialog({
             message: message,
             header: header,
@@ -17,8 +17,9 @@ export const ConfirmDialogProvider = ({ children }) => {
             accept: accept,
             acceptLabel: acceptLabel,
             rejectClassName: rejectClassName,
-            closable: rejectClassName === "hidden" ? false : true,
-            reject: rejectClassName === "hidden" ? accept : null
+            closable: rejectHidden ? false : true,
+            reject: rejectHidden ? accept : null,
+            dismissableMask: rejectHidden ? false : true
         });
     };
 

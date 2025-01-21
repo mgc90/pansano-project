@@ -246,6 +246,14 @@ button:hover {
     padding: 0;
 }
 
+.seeCartBtn {
+    margin: 2rem 40vw;
+    
+    height: 4rem;
+    font-size: 2rem;
+    width: 50vw;
+}
+
 
 @media screen and (max-width: 950px) {
     .product-list-container {
