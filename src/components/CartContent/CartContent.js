@@ -26,8 +26,7 @@ const CartContent = () => {
         icon: 'pi pi-exclamation-triangle',
         defaultFocus: 'accept',
         accept: accept,
-        acceptLabel: "Si",
-        reject: null
+        acceptLabel: "Si" 
     });
 };
 

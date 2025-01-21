@@ -66,7 +66,8 @@ const BuyForm = () => {
         icon: 'pi pi-check',
         defaultFocus: 'accept',
         accept: finishSale,
-        acceptLabel: "Volver a Página principal"
+        acceptLabel: "Volver a Página principal",
+        rejectClassName: "hidden"
     });
 };
 

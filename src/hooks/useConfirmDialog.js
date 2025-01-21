@@ -4,8 +4,8 @@ import { ConfirmDialogContext } from "../components/Context/ConfirmDialogContext
 const useConfirmDialog = () => {
     const { toConfirmDialog } = useContext(ConfirmDialogContext);
 
-    const displayConfirmDialog = ({message, header, icon, accept, acceptLabel}) => {
-        toConfirmDialog( {message, header, icon, accept, acceptLabel});
+    const displayConfirmDialog = ({message, header, icon, accept, acceptLabel, rejectClassName}) => {
+        toConfirmDialog( {message, header, icon, accept, acceptLabel, rejectClassName});
     }
 
     return { displayConfirmDialog };

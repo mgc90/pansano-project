@@ -8,14 +8,17 @@ export const ConfirmDialogProvider = ({ children }) => {
     
     
 
-    const toConfirmDialog = ( { message, header, icon, accept, acceptLabel } ) => {
+    const toConfirmDialog = ( { message, header, icon, accept, acceptLabel, rejectClassName } ) => {
         confirmDialog({
             message: message,
             header: header,
             icon: icon,
             defaultFocus: 'accept',
             accept: accept,
-            acceptLabel: acceptLabel
+            acceptLabel: acceptLabel,
+            rejectClassName: rejectClassName,
+            closable: rejectClassName === "hidden" ? false : true,
+            reject: rejectClassName === "hidden" ? accept : null
         });
     };
 
