@@ -18,8 +18,6 @@ import { InputNumber } from 'primereact/inputnumber';
 import { Dialog } from 'primereact/dialog';
 import { InputText } from 'primereact/inputtext';
 
-import axios from 'axios';
-
 
 
 
@@ -50,12 +48,12 @@ export default function ProductsDemo() {
 
     /*HOOK PARA LLAMAR PRODUCTOS DESDE EL SERVER DJANGO */
     /*useEffect(() => {
-        getAllProductos().then((res) => setProducts(res.data));
+        getAllProductos().then(setProducts);
       }, []);*/
 
       /*HOOK PARA LLAMAR PRODUCTOS DESDE JSON LOCAL */
       useEffect(() => {
-        axios("data.json").then((res) => setProducts(res.data));
+        fetch("data.json").then((res) => res.json()).then(setProducts);
     }, []);
 
     const formatCurrency = (value) => {
@@ -96,7 +94,7 @@ export default function ProductsDemo() {
                 _products[index] = _product;
                 toast.current.show({ severity: 'success', summary: 'Successful', detail: 'Product Updated', life: 3000 });
             } else {
-                /**HERE IS imported function for axios's connection with API, createProducto */
+                /**HERE IS imported function for fetch's connection with API, createProducto */
                  createProducto(product);
 
                 _product.img = 'product-placeholder.svg';

@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 import { Button } from 'primereact/button';
 
 /*import { getAllProductos } from "../../api/productos.api";*/
-import axios from "axios";
 import styles from "./Products.module.css"
 
 import { useFilters } from "../../hooks/useFilters";
@@ -36,11 +35,11 @@ const Products = () => {
   //console.log(filteredProducts)
   /*ESTA FUNCIÓN LLAMA A LOS PRODUCTOS DESDE ARCHIVO JSON */
   useEffect(() => {
-    axios("data.json").then((res) => setData(res.data));
+    fetch("data.json").then((res) => res.json()).then(setData);
   }, []);
 
   /*useEffect(() => {
-    getAllProductos().then((res) => setData(res.data));
+    getAllProductos().then(setData);
   }, []);*/
     /*ESTA FUNCIÓN LLAMA A LOS PRODUCTOS DESDE EL SERVER*/ 
   /*console.log(data)*/

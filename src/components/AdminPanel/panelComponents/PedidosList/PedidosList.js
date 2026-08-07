@@ -15,8 +15,6 @@ import { Dropdown } from "primereact/dropdown";
 import { InputTextarea } from "primereact/inputtextarea";
 import { Calendar } from 'primereact/calendar';
 
-import axios from 'axios';
-
 
 export default function PedidosList() {
     let emptyorder = {
@@ -47,7 +45,7 @@ export default function PedidosList() {
 
 
     useEffect(() => {
-        axios("pedidosData.json").then((res) => setorders(res.data));
+        fetch("pedidosData.json").then((res) => res.json()).then(setorders);
     }, []);
 
     const receptionStatusOptions = [

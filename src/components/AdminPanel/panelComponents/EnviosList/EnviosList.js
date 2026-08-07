@@ -15,8 +15,6 @@ import { Dropdown } from "primereact/dropdown";
 import { InputTextarea } from "primereact/inputtextarea";
 //import { Calendar } from 'primereact/calendar';
 
-import axios from 'axios';
-
 
 export default function EnviosList() {
     let emptydelivery = {
@@ -47,7 +45,7 @@ export default function EnviosList() {
 
 
     useEffect(() => {
-        axios("ejemploEnvíos.json").then((res) => setdeliverys(res.data));
+        fetch("ejemploEnvíos.json").then((res) => res.json()).then(setdeliverys);
     }, []);
 
     const receptionStatusOptions = [

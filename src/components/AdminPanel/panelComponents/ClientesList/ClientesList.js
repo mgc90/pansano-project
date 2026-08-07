@@ -13,10 +13,6 @@ import { InputText } from 'primereact/inputtext';
 
 
 
-import axios from 'axios';
-
-
-
 
 
 
@@ -50,7 +46,7 @@ export default function ClientesList() {
 
       /*HOOK PARA LLAMAR CLIENTES DESDE JSON LOCAL */
       useEffect(() => {
-        axios("ejemploClientes.json").then((res) => setclients(res.data));
+        fetch("ejemploClientes.json").then((res) => res.json()).then(setclients);
     }, []);
 
    
@@ -89,7 +85,7 @@ export default function ClientesList() {
                 _clients[index] = _client;
                 toast.current.show({ severity: 'success', summary: 'Successful', detail: 'client Updated', life: 3000 });
             } else {
-                /**HERE IS imported function for axios's connection with API, createclient */
+                /**HERE IS imported function for fetch's connection with API, createclient */
                  //createclient(client);
 
                 _client.img = 'client-placeholder.svg';
