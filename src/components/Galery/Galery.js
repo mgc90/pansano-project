@@ -2,6 +2,7 @@ import "./Galery.css"
 
 import ImageGallery from "react-image-gallery";
 import React, { useRef } from 'react';
+import { assetUrl } from "../../utils/assets";
 
 const Galery = () => {
     const galleryRef = useRef(null);
@@ -22,13 +23,13 @@ const Galery = () => {
     const images = [
         {
             
-            original: "imgs/pansanoBanner3.jpg",
+            original: assetUrl("imgs/pansanoBanner3.jpg"),
             originalTitle: "Panadería Artesanal de Masa Madre Agroecológica",
             description: ""
         },
         {
             
-            original: "imgs/visitanos2.jpg",
+            original: assetUrl("imgs/visitanos2.jpg"),
             originalTitle: "Conocé nuestro local.",
             description: (
                 <div>
@@ -60,13 +61,13 @@ const Galery = () => {
         },
         {
             
-            original: "imgs/envios.jpg",
+            original: assetUrl("imgs/envios.jpg"),
             originalTitle: "Hacemos Envíos!",
             description: ""
         },
         {
             
-            original: "imgs/agroeco.jpg",
+            original: assetUrl("imgs/agroeco.jpg"),
             originalTitle: "Utilizamos productos agroecológicos.",
             description: ""
         }

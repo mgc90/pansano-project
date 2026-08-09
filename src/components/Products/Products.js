@@ -10,6 +10,7 @@ import styles from "./Products.module.css"
 
 import { useFilters } from "../../hooks/useFilters";
 import useToast from "../../hooks/useToast";
+import { assetUrl } from "../../utils/assets";
 import CartItemCounter from "../CartContent/CartItemCounter";
 import stylesy from "../CartContent/CartContent.module.css"
 
@@ -32,11 +33,23 @@ const Products = () => {
     summary: 'Añadido Al Carrito!', detail: "En Carrito" });
   };
 
-  //console.log(filteredProducts)
+  console.log(filteredProducts)
   /*ESTA FUNCIÓN LLAMA A LOS PRODUCTOS DESDE ARCHIVO JSON */
   useEffect(() => {
-    fetch("data.json").then((res) => res.json()).then(setData);
-  }, []);
+  const controller = new AbortController();
+  fetch(assetUrl("data.json"), { signal: controller.signal })
+    .then((res) => {
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      return res.json();
+    })
+    .then(setData)
+    
+    .catch((err) => {
+      if (err.name !== "AbortError") console.error(err);
+    });
+
+  return () => controller.abort();
+}, []);
 
   /*useEffect(() => {
     getAllProductos().then(setData);
@@ -112,7 +125,7 @@ const Products = () => {
         styles["product-card"] : 
         styles["product-list-container"]}
         key={product.id} >
-          <img src={product.img} alt="imgProductCard"
+          <img src={assetUrl(product.img)} alt="imgProductCard"
            className={styles.imgCard} 
            onClick={() => {handleClickImage(product.id)}} />
           <h2 title="Nombre del producto" 
@@ -150,7 +163,7 @@ const Products = () => {
     onHide={() => {if (!visible) return; setVisible(false); }} 
     contentClassName={styles.dialogContainer} dismissableMask
     >
-      <img src={currentProduct.img} alt="imgProductCard"  
+      <img src={assetUrl(currentProduct.img)} alt="imgProductCard"  
       className={styles.imgInDialog} 
       />
       <h3 title="Descripción del producto">

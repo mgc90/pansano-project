@@ -5,6 +5,7 @@ import { ScrollTop } from 'primereact/scrolltop';
 import { ConfirmPopup } from "primereact/confirmpopup";
 
 import TotalItems from "../CartContent/TotalItems";
+import { assetUrl } from "../../utils/assets";
 
 import "./Navbar.css";
 
@@ -15,7 +16,7 @@ const Navbar = () => {
         <nav className="navbar">
           <Link to={"/"} title="Ir a página principal">
             <h1 className="navbarLogo">
-              <img alt="logo" src="imgs/pansanoLogoNegro.png" />
+              <img alt="logo" src={assetUrl("imgs/pansanoLogoNegro.png")} />
             </h1>
           </Link>
           <Link className="seeCart" to={"/cart"} title="Carrito de compras" >

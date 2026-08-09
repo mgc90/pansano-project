@@ -3,6 +3,7 @@ import { updateProducto, deleteProducto, createProducto/*, getAllProductos*/ } f
 import "./ProductosList.css"
 import 'primeicons/primeicons.css';
 import '/node_modules/primeflex/primeflex.css'
+import { assetUrl } from '../../../../utils/assets';
 
 import React, { useState, useEffect, useRef } from 'react';
 import { classNames } from 'primereact/utils';
@@ -53,7 +54,7 @@ export default function ProductsDemo() {
 
       /*HOOK PARA LLAMAR PRODUCTOS DESDE JSON LOCAL */
       useEffect(() => {
-        fetch("data.json").then((res) => res.json()).then(setProducts);
+        fetch(assetUrl("data.json")).then((res) => res.json()).then(setProducts);
     }, []);
 
     const formatCurrency = (value) => {
@@ -203,7 +204,7 @@ export default function ProductsDemo() {
     };
 
     const imageBodyTemplate = (rowData) => {
-        return <img src={`${rowData.img}`} alt={rowData.img} className="shadow-2" style={{ width: '3rem', height: '3rem' }} />;
+        return <img src={assetUrl(rowData.img)} alt={rowData.img} className="shadow-2" style={{ width: '3rem', height: '3rem' }} />;
     };
 
     const priceBodyTemplate = (rowData) => {
@@ -284,7 +285,7 @@ export default function ProductsDemo() {
                     <label htmlFor="img" className="font-bold">
                         Imagen
                     </label>
-                    {product.img && <img src={`${product.img}`} style={{ width: '15rem', height: '15rem' }} alt={product.img} className="product-image block m-auto pb-3" />}
+                    {product.img && <img src={assetUrl(product.img)} style={{ width: '15rem', height: '15rem' }} alt={product.img} className="product-image block m-auto pb-3" />}
                     <div style={{display: 'flex'}}>
                         <input type="hidden" id="img" value={product.img} onChange={(e) => onInputChange(e, 'img')} required autoFocus className={classNames({ 'p-invalid': submitted && !product.img })} style={{ width: '20rem'}} />
                         <FileUpload  filenameelement={product.img} mode="basic" name="demo[]" url="/public/imgs" accept="image/*" maxFileSize={1000000} /> 

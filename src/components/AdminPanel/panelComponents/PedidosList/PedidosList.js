@@ -14,6 +14,7 @@ import { Tag } from 'primereact/tag';
 import { Dropdown } from "primereact/dropdown";
 import { InputTextarea } from "primereact/inputtextarea";
 import { Calendar } from 'primereact/calendar';
+import { assetUrl } from '../../../../utils/assets';
 
 
 export default function PedidosList() {
@@ -45,7 +46,7 @@ export default function PedidosList() {
 
 
     useEffect(() => {
-        fetch("pedidosData.json").then((res) => res.json()).then(setorders);
+        fetch(assetUrl("pedidosData.json")).then((res) => res.json()).then(setorders);
     }, []);
 
     const receptionStatusOptions = [

@@ -10,6 +10,7 @@ import { Button } from 'primereact/button';
 import { Toolbar } from 'primereact/toolbar';
 import { Dialog } from 'primereact/dialog';
 import { InputText } from 'primereact/inputtext';
+import { assetUrl } from '../../../../utils/assets';
 
 
 
@@ -46,7 +47,7 @@ export default function ClientesList() {
 
       /*HOOK PARA LLAMAR CLIENTES DESDE JSON LOCAL */
       useEffect(() => {
-        fetch("ejemploClientes.json").then((res) => res.json()).then(setclients);
+        fetch(assetUrl("ejemploClientes.json")).then((res) => res.json()).then(setclients);
     }, []);
 
    

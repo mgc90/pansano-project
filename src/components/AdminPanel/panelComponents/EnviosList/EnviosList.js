@@ -14,6 +14,7 @@ import { Tag } from 'primereact/tag';
 import { Dropdown } from "primereact/dropdown";
 import { InputTextarea } from "primereact/inputtextarea";
 //import { Calendar } from 'primereact/calendar';
+import { assetUrl } from '../../../../utils/assets';
 
 
 export default function EnviosList() {
@@ -45,7 +46,7 @@ export default function EnviosList() {
 
 
     useEffect(() => {
-        fetch("ejemploEnvíos.json").then((res) => res.json()).then(setdeliverys);
+        fetch(assetUrl("ejemploEnvíos.json")).then((res) => res.json()).then(setdeliverys);
     }, []);
 
     const receptionStatusOptions = [

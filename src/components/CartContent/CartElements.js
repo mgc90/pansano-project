@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { dataContext } from "../Context/DataContext";
 
 import CartItemCounter from "./CartItemCounter";
+import { assetUrl } from "../../utils/assets";
 
 import stylesy from "./CartContent.module.css"
 
@@ -19,7 +20,7 @@ function CartElements() {
   return cart.map((product) => {
     return (
       <div className={stylesy["cartContent"]} key={product.id}>
-        <img src={product.img} alt="productCard" title="Imagen del producto" />
+        <img src={assetUrl(product.img)} alt="productCard" title="Imagen del producto" />
         <h3 className={stylesy["name"]} title="Nombre del producto">{product.name}</h3>
         <h4 className={stylesy["price"]} title="Precio del producto en Pesos Argentinos">${product.price * product.quanty},00</h4>
         <CartItemCounter inCartProduct={product} />
