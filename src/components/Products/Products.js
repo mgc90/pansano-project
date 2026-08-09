@@ -12,7 +12,7 @@ import { useFilters } from "../../hooks/useFilters";
 import useToast from "../../hooks/useToast";
 import { assetUrl } from "../../utils/assets";
 import CartItemCounter from "../CartContent/CartItemCounter";
-import stylesy from "../CartContent/CartContent.module.css"
+//import stylesy from "../CartContent/CartContent.module.css"
 
 
 const Products = () => {
@@ -140,7 +140,7 @@ const Products = () => {
   const seeCartButton = () => {
     return (
       <Link  to={"/cart"} title="Carrito de compras" >
-        <Button label="Ver Mi Carrito" className={stylesy["confirmBtn"]} />
+        <Button label="Ver Mi Carrito" className={styles["confirmBtn"]} />
       </Link>
     )
   }

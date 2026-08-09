@@ -91,7 +91,7 @@
     outline: 0;
     padding: 0.6rem;
     color: white;
-    background-color: cadetblue;
+    background-color: cornflowerblue;
     text-align: center;
     cursor: pointer;
     width: 100%;
@@ -100,6 +100,8 @@
     text-shadow: 1px 1px 3px #444;
     min-height: 4.7rem;
 }
+
+
 
 button:hover {
     opacity: 0.7;
@@ -111,7 +113,7 @@ button:hover {
     outline: 0;
     padding: 0.05rem 0.05rem;
     color: white;
-    background-color:cornflowerblue;
+    background-color: brown;
     text-align: center;
     min-height: 4.7rem;
     width: 100%;
@@ -141,6 +143,17 @@ button:hover {
     padding: 0;
     background-color: black;
 }*/
+
+.confirmBtn {
+    display: block;
+    height: 5rem;
+    width: 50vw;
+    margin: 2px 20vw;
+    font-size: 2rem;
+    text-shadow: 1px 1px 3px black;
+    color: white;
+    border: 2px solid black;
+}
 
 .noResults {
     text-align: center;

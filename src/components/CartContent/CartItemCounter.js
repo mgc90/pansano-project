@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { dataContext } from "../Context/DataContext";
 
 import useToast from '../../hooks/useToast';
-import { ConfirmPopup, confirmPopup } from 'primereact/confirmpopup';
+import { confirmPopup } from 'primereact/confirmpopup';
 
 import stylesy from "./CartContent.module.css"
 

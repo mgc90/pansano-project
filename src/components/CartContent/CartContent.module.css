@@ -93,7 +93,7 @@
     border-radius: 15%;
     width: 2.5rem;
     margin: auto; 
-    background-color: cadetblue;
+    background-color: cornflowerblue;
 }
 
 .counterButton:hover {
@@ -116,18 +116,10 @@
     border-radius: 15%;
     border: 2px solid black;
     width: 2.9rem;
+    background-color: cornflowerblue;
 }
 
-.confirmBtn {
-    justify-self: center;
-    height: 5rem;
-    width: 50vw;
-    
-    font-size: 2rem;
-    text-shadow: 1px 1px 3px black;
-    color: white;
-    border: 2px solid black;
-}
+
 
 @media screen and (max-width: 799px) {
     .name {
