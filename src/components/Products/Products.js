@@ -4,6 +4,7 @@ import { dataContext } from "../Context/DataContext";
 import { Dialog } from 'primereact/dialog';
 import { Link } from "react-router-dom";
 import { Button } from 'primereact/button';
+import { ProgressSpinner } from 'primereact/progressspinner';
 
 /*import { getAllProductos } from "../../api/productos.api";*/
 import styles from "./Products.module.css"
@@ -17,6 +18,7 @@ import CartItemCounter from "../CartContent/CartItemCounter";
 
 const Products = () => {
   const [data, setData] = useState([]);
+  
   const [currentProduct, setCurrentProduct] = useState([]);
   const [visible, setVisible] = useState(false);
   const { cart, buyProducts } = useContext(dataContext);
@@ -36,8 +38,8 @@ const Products = () => {
   console.log(filteredProducts)
   /*ESTA FUNCIÓN LLAMA A LOS PRODUCTOS DESDE ARCHIVO JSON */
   useEffect(() => {
-  const controller = new AbortController();
-  fetch(assetUrl("data.json"), { signal: controller.signal })
+  
+  fetch(assetUrl("data.json"))
     .then((res) => {
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       return res.json();
@@ -47,8 +49,7 @@ const Products = () => {
     .catch((err) => {
       if (err.name !== "AbortError") console.error(err);
     });
-
-  return () => controller.abort();
+  
 }, []);
 
   /*useEffect(() => {
@@ -56,6 +57,7 @@ const Products = () => {
   }, []);*/
     /*ESTA FUNCIÓN LLAMA A LOS PRODUCTOS DESDE EL SERVER*/ 
   /*console.log(data)*/
+  
 
   const buyAndToast = (product) => {
     buyProducts(product); 
@@ -148,17 +150,24 @@ const Products = () => {
 
   return (
     <>
-    {filteredProducts.length > 1 ?
+    {
+    filteredProducts.length > 0 ?
     ( 
     <>
       {cardsLayout(filteredProducts)}
       {seeCartButton()}
     </>
     ) :
+    (
+      <div className={styles.loaderContainer}>
+        <ProgressSpinner />
+      </div>
+    )} 
+    { filteredProducts === 0 ?
     (<h2 className={styles.noResults} >
       No hay resultados con esa búsqueda.
      </h2>
-    )}
+    ) : null}
     <Dialog header={currentProduct.name} visible={visible} 
     onHide={() => {if (!visible) return; setVisible(false); }} 
     contentClassName={styles.dialogContainer} dismissableMask

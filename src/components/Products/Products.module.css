@@ -165,6 +165,14 @@ button:hover {
     padding-bottom: 20vh;
 }
 
+.loaderContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 4rem 0;
+}
+
 .imgInDialog  {
     width: 90vmin;
     height: 60vmin;
